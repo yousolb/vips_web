@@ -1,0 +1,20 @@
+
+GreenForest - Environmental Ecology Responsive Template
+
+
+Version: 2.0.0  date: 04-07-2021
+
+1. Convert To Bootstrap 5
+2. Improved CSS & js file.
+1. Changing To Counter Up JS
+2. Improved HTML files Navbar, Tab, Nav, Slider & some HTML code conflict the Bootstrap 5 class isu fixed
+
+
+
+
+
+Version: 1.2.0  date: 09-11-2017
+1. Add RTL layout
+2. Fixed Responsive Issue.
+3. Fixed Isotope Issue.
+
