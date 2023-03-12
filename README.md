@@ -1,1 +1,1 @@
-# Front-End
+# vips_front_end
