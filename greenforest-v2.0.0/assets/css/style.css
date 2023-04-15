@@ -2358,7 +2358,7 @@ section{
 
 
 .bg-footer-top{
-	background: #000000;
+	background: #1E6E37;
 	padding: 95px 0 85px;
 }
 .widgets-title{
@@ -2368,7 +2368,9 @@ section{
 	color: #fefefe;
 	text-transform: uppercase;
 }
-.widgets-content {}
+.widgets-content {
+	color:rgba(247, 251, 240, 0.85)
+}
 .widgets-content p{
 	color: #bcbcbc;
 }
