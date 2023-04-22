@@ -24,28 +24,18 @@ const app = initializeApp(firebaseConfig);
 let fires = getFirestore(app);
 let col = collection(fires, 'products');
 let qs = await getDocs(col);
-let document = qs.docs[0];
-console.log(document.data());
+let doc = qs.docs[0];
+console.log(doc.data());
 
 let storage = getStorage(app);
-let reference = ref(storage, document.data().image_folder);
+let reference = ref(storage, doc.data().image_folder);
 let imglist = await list(reference);
-//let urls = imglist.items.forEach(r => getDownloadURL(r))
-//console.log(urls);
-
-//import { promises as fs } from "fs";
-/* 
-const downloadImage = async (url, path) => {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    const arrayBuffer = await blob.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    await fs.writeFile(path, buffer);
-} */
 
 for(let i = 0; i < imglist.items.length; i++) {
     let url = await getDownloadURL(imglist.items[i]);
-    //await downloadImage(url, `./image_${i}`);
     console.log(url);
-    document.querySelector(`#nikki-${i}`).src = url;
+    let elts = document.querySelectorAll(`.prod-img-${i+1}`);
+    for (let j=0; j < elts.length; j++) {
+        elts[j].src = url;
+    }
 }
