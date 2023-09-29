@@ -39,3 +39,24 @@ for(let i = 0; i < imglist.items.length; i++) {
         elts[j].src = url;
     }
 }
+
+let elts = document.querySelectorAll('.product_name');
+for (let j = 0; j < elts.length; j++) {
+  elts[j].innerHTML = doc.data().product_name
+}
+
+let price_elts = document.querySelectorAll('.product_price');
+for (let j = 0; j < price_elts.length; j++) {
+  let pricing = doc.data().price
+  price_elts[j].innerHTML = `\$${Math.floor(pricing/100)}.${pricing%100}`
+}
+
+let desc_elts = document.querySelectorAll('.product_desc');
+let desc = "";
+for (let i = 0; i < doc.data().description_lines.length; i++) {
+  desc += "- " + doc.data().description_lines[i];
+  desc += "<br/>";
+}
+for (let j = 0; j < desc_elts.length; j++) {
+  desc_elts[j].innerHTML = desc;
+}
