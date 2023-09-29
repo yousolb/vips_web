@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js'
-import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
+import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,16 +24,16 @@ const app = initializeApp(firebaseConfig);
 let fires = getFirestore(app);
 let col = collection(fires, 'products');
 let qs = await getDocs(col);
-let doc = qs.docs[0];
-console.log(doc.data());
+let docu = qs.docs[0];
+//console.log(docu.data());
+let product_data = docu.data()
 
 let storage = getStorage(app);
-let reference = ref(storage, doc.data().image_folder);
+let reference = ref(storage, product_data.image_folder);
 let imglist = await list(reference);
 
 for(let i = 0; i < imglist.items.length; i++) {
     let url = await getDownloadURL(imglist.items[i]);
-    console.log(url);
     let elts = document.querySelectorAll(`.prod-img-${i+1}`);
     for (let j=0; j < elts.length; j++) {
         elts[j].src = url;
@@ -42,21 +42,39 @@ for(let i = 0; i < imglist.items.length; i++) {
 
 let elts = document.querySelectorAll('.product_name');
 for (let j = 0; j < elts.length; j++) {
-  elts[j].innerHTML = doc.data().product_name
+  elts[j].innerHTML = product_data.product_name
 }
 
 let price_elts = document.querySelectorAll('.product_price');
 for (let j = 0; j < price_elts.length; j++) {
-  let pricing = doc.data().price
+  let pricing = product_data.price
   price_elts[j].innerHTML = `\$${Math.floor(pricing/100)}.${pricing%100}`
 }
 
 let desc_elts = document.querySelectorAll('.product_desc');
 let desc = "";
-for (let i = 0; i < doc.data().description_lines.length; i++) {
-  desc += "- " + doc.data().description_lines[i];
+for (let i = 0; i < product_data.description_lines.length; i++) {
+  desc += "- " + product_data.description_lines[i];
   desc += "<br/>";
 }
 for (let j = 0; j < desc_elts.length; j++) {
   desc_elts[j].innerHTML = desc;
+}
+
+let artist = await getDoc(product_data.artist);
+let artist_data = artist.data();
+let artist_info = `
+    Artist: ${artist_data.name} <br/>
+    ${artist_data.description}
+`
+
+let artist_desc_elts = document.querySelectorAll(".artist_desc")
+let artist_img_elts = document.querySelectorAll(".artist_img")
+let artist_img_ref = ref(storage, artist_data.image);
+let artist_url = await getDownloadURL(artist_img_ref);
+for (let i = 0; i < artist_desc_elts.length; i++) {
+  artist_desc_elts[i].innerHTML = artist_info;
+}
+for (let j = 0; j < artist_img_elts.length; j++) {
+  artist_img_elts[j].src = artist_url;
 }
