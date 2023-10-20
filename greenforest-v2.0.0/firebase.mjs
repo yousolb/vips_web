@@ -30,51 +30,19 @@ let product_data = docu.data()
 
 let storage = getStorage(app);
 let reference = ref(storage, product_data.image_folder);
-let imglist = await list(reference);
 
-for(let i = 0; i < imglist.items.length; i++) {
-    let url = await getDownloadURL(imglist.items[i]);
-    let elts = document.querySelectorAll(`.prod-img-${i+1}`);
-    for (let j=0; j < elts.length; j++) {
-        elts[j].src = url;
-    }
+
+function setHTML(selector, string) {
+  let elts = document.querySelectorAll(selector);
+  for (let i=0; i < elts.length; i++) {
+    elts[i].innerHTML = string;
+  }
 }
 
-let elts = document.querySelectorAll('.product_name');
-for (let j = 0; j < elts.length; j++) {
-  elts[j].innerHTML = product_data.product_name
-}
-
-let price_elts = document.querySelectorAll('.product_price');
-for (let j = 0; j < price_elts.length; j++) {
-  let pricing = product_data.price
-  price_elts[j].innerHTML = `\$${Math.floor(pricing/100)}.${pricing%100}`
-}
-
-let desc_elts = document.querySelectorAll('.product_desc');
-let desc = "";
-for (let i = 0; i < product_data.description_lines.length; i++) {
-  desc += "- " + product_data.description_lines[i];
-  desc += "<br/>";
-}
-for (let j = 0; j < desc_elts.length; j++) {
-  desc_elts[j].innerHTML = desc;
-}
-
-let artist = await getDoc(product_data.artist);
-let artist_data = artist.data();
-let artist_info = `
-    Artist: ${artist_data.name} <br/>
-    ${artist_data.description}
-`
-
-let artist_desc_elts = document.querySelectorAll(".artist_desc")
-let artist_img_elts = document.querySelectorAll(".artist_img")
-let artist_img_ref = ref(storage, artist_data.image);
-let artist_url = await getDownloadURL(artist_img_ref);
-for (let i = 0; i < artist_desc_elts.length; i++) {
-  artist_desc_elts[i].innerHTML = artist_info;
-}
-for (let j = 0; j < artist_img_elts.length; j++) {
-  artist_img_elts[j].src = artist_url;
+async function setSRC(selector, item) {
+  let elts = document.querySelectorAll(selector);
+  let url = await getDownloadURL(item);
+  for (let i=0; i < elts.length; i++) {
+    elts[i].src = url;
+  }
 }
