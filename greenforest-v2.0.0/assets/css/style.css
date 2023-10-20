@@ -2429,6 +2429,14 @@ section{
 	font-size: 14px;
 	color: #9b9b9b;
 }
+
+.about-greenforest-content p{
+	background-color: #EAE07B;
+}
+
+.about_philosophy p{
+	background-color: #C1ADE5;
+}
 .latest-news li:hover .thumbnail-content h5 a{
 	color: #53a92c;
 }
@@ -2767,6 +2775,40 @@ section{
 	End About Greenforest Section 
 ==========================================*/
 
+/*======================================
+	Start About Philosophy
+====================================================*/
+
+.about-philosophy{
+	padding: 110px 0 75px 0;
+	align-self: right;
+}
+.about-philosophy h2{
+	text-transform: uppercase;
+}
+.about-philosophy p{
+	display: inline-block;
+	font-weight: 600;
+	color: rgb(105, 105, 105);
+	background-color: #C1ADE5;
+	margin: 11px 0 18px 0;
+}
+.about-philosophy .btn-default{
+	padding: 14px 28px 12px 28px;
+    margin: 40px 20px 0 0;
+}
+.about-philosophy .btn-default:active,
+.about-philosophy-content .btn-default:focus {
+    color: #53a92c;
+}
+.about-philosophy-content .btn-default:hover {
+    color: #fff;
+}
+
+
+/*=======================
+	End About Greenforest Section 
+====================================================*/
 
 /*=======================
 	Start Recent Project Section 
