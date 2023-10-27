@@ -2430,7 +2430,7 @@ section{
 	color: #9b9b9b;
 }
 
-.about-greenforest-content p{
+.about-vips-content p{
 	background-color: #EAE07B;
 }
 
@@ -2746,27 +2746,27 @@ section{
 	Start About Greenforest Section 
 ====================================================*/
 
-.about-greenforest{
+.about-vips{
 	padding: 110px 0 75px 0;
 }
-.about-greenforest-content h2{
+.about-vips-content h2{
 	text-transform: uppercase;
 }
-.about-greenforest-content p span{
+.about-vips-content p span{
 	display: inline-block;
 	font-weight: 600;
 	color: #53a92c;
 	margin: 11px 0 18px 0;
 }
-.about-greenforest-content .btn-default{
+.about-vips-content .btn-default{
 	padding: 14px 28px 12px 28px;
     margin: 40px 20px 0 0;
 }
-.about-greenforest-content .btn-default:active,
-.about-greenforest-content .btn-default:focus {
+.about-vips-content .btn-default:active,
+.about-vips-content .btn-default:focus {
     color: #53a92c;
 }
-.about-greenforest-content .btn-default:hover {
+.about-vips-content .btn-default:hover {
     color: #fff;
 }
 
