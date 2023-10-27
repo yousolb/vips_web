@@ -2834,7 +2834,16 @@ section{
 /*=======================
 	End About Greenforest Section 
 ====================================================*/
+.vips-projects{
+	display: flex;
+	flex-wrap: nowrap;
+}
 
+.project-container {
+	display: flex;
+	flex-direction: column;
+	
+}
 /*=======================
 	Start Recent Project Section 
 ==========================================*/
