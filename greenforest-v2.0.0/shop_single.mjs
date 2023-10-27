@@ -2,9 +2,12 @@ import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
-let qs = await getDocs(col);
-let docu = qs.docs[0];
-let product_data = docu.data()
+let queryString = window.location.search;
+let urlParams = new URLSearchParams(queryString);
+let id = urlParams.get('prodid');
+let docRef = doc(fires, "products", id);
+let docu = await getDoc(docRef);
+let product_data = docu.data();
 let reference = ref(storage, product_data.image_folder);
 
 let imglist = await list(reference);
@@ -19,7 +22,6 @@ for(let i = 0; i < imglist.items.length; i++) {
         elts[j].src = url;
     }
 }
-
 
 setHTML('.product_name', product_data.product_name);
 let pricing = product_data.price;
