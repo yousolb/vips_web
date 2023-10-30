@@ -2854,6 +2854,24 @@ section{
 	flex-direction: column;
 	
 }
+
+.project-text {
+	flex: 1;
+	padding: 14px 28px 12px 28px;
+}
+
+.project-buttons {
+	display: flex;
+	flex-direction: row;
+	padding: 50px 50px 50px 50px;
+}
+
+.button-column {
+    flex: 1;
+	justify-content: center;
+	display: flex;
+}
+
 /*=======================
 	Start Recent Project Section 
 ==========================================*/
