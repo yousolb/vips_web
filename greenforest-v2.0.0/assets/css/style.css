@@ -2627,6 +2627,13 @@ section{
 .navbar-brand{
 	padding-left: 0;
 }
+
+.navbar-brand img {
+	width: 150px; /* Set the desired width of the image */
+	height: auto; /* Automatically adjust the height based on the width */
+	max-width: 100%; /* Ensure the image does not exceed the container */
+  }
+
 .header-style-2 .bg-main-menu{
 	background: #ffffff;
 }
@@ -2780,7 +2787,7 @@ section{
 	display: inline-block;
 	color: black;
 	font-weight: 400;
-	margin: 11px 10px 18px 10px;
+	padding: 10px 18px 10px 18px;
 }
 
 .about-vips-content .btn-default{
@@ -2818,7 +2825,7 @@ section{
 	font-weight: 400;
 	color: black;
 	background-color: #C1ADE5;
-	margin: 11px 0 18px 0;
+	padding: 10px 18px 10px 18px;
 	font-family: 'Roboto', monospace;
 }
 .about-philosophy .btn-default{
@@ -2837,7 +2844,16 @@ section{
 /*=======================
 	End About Greenforest Section 
 ====================================================*/
+.vips-projects{
+	display: flex;
+	flex-wrap: nowrap;
+}
 
+.project-container {
+	display: flex;
+	flex-direction: column;
+	
+}
 /*=======================
 	Start Recent Project Section 
 ==========================================*/
