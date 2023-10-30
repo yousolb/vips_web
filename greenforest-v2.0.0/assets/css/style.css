@@ -2762,6 +2762,9 @@ section{
 /*======================================
 	Start About Greenforest Section 
 ====================================================*/
+.row {
+	justify-content: flex-end;
+}
 .about-vips-content p{
 	background-color: #EAE07B;
 }
