@@ -2854,6 +2854,19 @@ section{
 	flex-direction: column;
 	
 }
+.project-pic {
+	max-width: 35%;
+}
+.project-pic img {
+	max-width: 100%; /* Set a maximum width for the image itself */
+    height: auto;     /* Allow the image to scale proportionally in height */
+    display: block;   /* Remove any extra space below the image */
+    margin: 0 auto;
+}
+.project-description {
+	display: flex;
+	flex-direction: row;
+}
 
 .project-text {
 	flex: 1;
@@ -2863,9 +2876,15 @@ section{
 .project-buttons {
 	display: flex;
 	flex-direction: row;
-	padding: 50px 50px 50px 50px;
+	padding: 50px 50px;
 }
-
+.project-buttons button {
+	background-color: #1E6E37;
+	width: 180px;
+	height: 50px;
+	color: white;
+	border-radius: 10px;
+}
 .button-column {
     flex: 1;
 	justify-content: center;
