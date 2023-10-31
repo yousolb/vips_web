@@ -2769,6 +2769,9 @@ section{
 /*======================================
 	Start About Greenforest Section 
 ====================================================*/
+.row {
+	justify-content: flex-end;
+}
 .about-vips-content p{
 	background-color: #EAE07B;
 }
@@ -2851,6 +2854,43 @@ section{
 	flex-direction: column;
 	
 }
+.project-pic {
+	max-width: 35%;
+}
+.project-pic img {
+	max-width: 100%; /* Set a maximum width for the image itself */
+    height: auto;     /* Allow the image to scale proportionally in height */
+    display: block;   /* Remove any extra space below the image */
+    margin: 0 auto;
+}
+.project-description {
+	display: flex;
+	flex-direction: row;
+}
+
+.project-text {
+	flex: 1;
+	padding: 14px 28px 12px 28px;
+}
+
+.project-buttons {
+	display: flex;
+	flex-direction: row;
+	padding: 50px 50px;
+}
+.project-buttons button {
+	background-color: #1E6E37;
+	width: 180px;
+	height: 50px;
+	color: white;
+	border-radius: 10px;
+}
+.button-column {
+    flex: 1;
+	justify-content: center;
+	display: flex;
+}
+
 /*=======================
 	Start Recent Project Section 
 ==========================================*/
