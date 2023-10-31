@@ -1,4 +1,5 @@
 import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
+import { addToCart } from './shop_cart.mjs';
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
@@ -9,6 +10,14 @@ let docRef = doc(fires, "products", id);
 let docu = await getDoc(docRef);
 let product_data = docu.data();
 let reference = ref(storage, product_data.image_folder);
+
+async function addCartSingle() {
+    addToCart(id);
+    console.log(id)
+}
+
+const button = document.getElementById("add_cart_id");
+button.onclick = addCartSingle
 
 let imglist = await list(reference);
 for(let i = 0; i < imglist.items.length; i++) {

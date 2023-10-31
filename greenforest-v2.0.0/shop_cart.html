@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
 
+    <script src="shop_cart.mjs" type = "module"></script>
 </head>
 
 <body>
@@ -353,148 +354,12 @@
                                     <tr>
                                         <th class="cart-product">Product</th>
                                         <th class="cart-price">Price</th>
-                                        <th class="cart-quantity">Quantity</th>
-                                        <th class="cart-total">Total</th>
                                         <th class="cart-edit">Edit</th>
                                     </tr>
                                 </thead>
 
-                                <tbody>
-                                    <tr>
-                                        <td class="cart-product">
-                                            <div class="product-cart-img">
-                                                <a href="#"><img src="assets/images/shop/product-cart-img-1.jpg" alt="product-cart-img-1" /></a>
-                                            </div>
-                                            <!-- .product-cart-img -->
-                                            <div class="product-cart-title">
-                                                <h4><a href="#">Product Title Here</a></h4>
-                                            </div>
-                                            <!-- .product-cart-title -->
-                                        </td>
-                                        <td class="cart-price">$250.00</td>
-                                        <td class="cart-quantity">
-                                            <div class="product-counter-option">
-                                                <div class="product-count">
-                                                    <input type="submit" name="remove" value="-">
-                                                    <input type="text" name="quantity" value="2">
-                                                    <input type="submit" name="add" value="+">
-                                                </div>
-                                                <!-- .product-count -->
-                                            </div>
-                                        </td>
-                                        <td class="cart-total">$500.00</td>
-                                        <td class="cart-edit">
-                                            <a href="#"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart-product">
-                                            <div class="product-cart-img">
-                                                <a href="#"><img src="assets/images/shop/product-cart-img-2.jpg" alt="product-cart-img-2" /></a>
-                                            </div>
-                                            <!-- .product-cart-img -->
-                                            <div class="product-cart-title">
-                                                <h4><a href="#">Product Title Here</a></h4>
-                                            </div>
-                                            <!-- .product-cart-title -->
-                                        </td>
-                                        <td class="cart-price">$440.00</td>
-                                        <td class="cart-quantity">
-                                            <div class="product-counter-option">
-                                                <div class="product-count">
-                                                    <input type="submit" name="remove" value="-">
-                                                    <input type="text" name="quantity" value="2">
-                                                    <input type="submit" name="add" value="+">
-                                                </div>
-                                                <!-- .product-count -->
-                                            </div>
-                                        </td>
-                                        <td class="cart-total">$880.00</td>
-                                        <td class="cart-edit">
-                                            <a href="#"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart-product">
-                                            <div class="product-cart-img">
-                                                <a href="#"><img src="assets/images/shop/product-cart-img-3.jpg" alt="product-cart-img-3" /></a>
-                                            </div>
-                                            <!-- .product-cart-img -->
-                                            <div class="product-cart-title">
-                                                <h4><a href="#">Product Title Here</a></h4>
-                                            </div>
-                                            <!-- .product-cart-title -->
-                                        </td>
-                                        <td class="cart-price">$120.00</td>
-                                        <td class="cart-quantity">
-                                            <div class="product-counter-option">
-                                                <div class="product-count">
-                                                    <input type="submit" name="remove" value="-">
-                                                    <input type="text" name="quantity" value="2">
-                                                    <input type="submit" name="add" value="+">
-                                                </div>
-                                                <!-- .product-count -->
-                                            </div>
-                                        </td>
-                                        <td class="cart-total">$240.00</td>
-                                        <td class="cart-edit">
-                                            <a href="#"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart-product">
-                                            <div class="product-cart-img">
-                                                <a href="#"><img src="assets/images/shop/product-cart-img-4.jpg" alt="product-cart-img-4" /></a>
-                                            </div>
-                                            <!-- .product-cart-img -->
-                                            <div class="product-cart-title">
-                                                <h4><a href="#">Product Title Here</a></h4>
-                                            </div>
-                                            <!-- .product-cart-title -->
-                                        </td>
-                                        <td class="cart-price">$300.00</td>
-                                        <td class="cart-quantity">
-                                            <div class="product-counter-option">
-                                                <div class="product-count">
-                                                    <input type="submit" name="remove" value="-">
-                                                    <input type="text" name="quantity" value="2">
-                                                    <input type="submit" name="add" value="+">
-                                                </div>
-                                                <!-- .product-count -->
-                                            </div>
-                                        </td>
-                                        <td class="cart-total">$500.00</td>
-                                        <td class="cart-edit">
-                                            <a href="#"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="cart-product">
-                                            <div class="product-cart-img">
-                                                <a href="#"><img src="assets/images/shop/product-cart-img-5.jpg" alt="product-cart-img-5" /></a>
-                                            </div>
-                                            <!-- .product-cart-img -->
-                                            <div class="product-cart-title">
-                                                <h4><a href="#">Product Title Here</a></h4>
-                                            </div>
-                                            <!-- .product-cart-title -->
-                                        </td>
-                                        <td class="cart-price">$360.00</td>
-                                        <td class="cart-quantity">
-                                            <div class="product-counter-option">
-                                                <div class="product-count">
-                                                    <input type="submit" name="remove" value="-">
-                                                    <input type="text" name="quantity" value="2">
-                                                    <input type="submit" name="add" value="+">
-                                                </div>
-                                                <!-- .product-count -->
-                                            </div>
-                                        </td>
-                                        <td class="cart-total">$720.00</td>
-                                        <td class="cart-edit">
-                                            <a href="#"><i class="fa fa-times"></i></a>
-                                        </td>
-                                    </tr>
+                                <tbody class="cart-products">
+
                                 </tbody>
                             </table>
                         </div>
@@ -553,9 +418,9 @@
                                 <div class="col-lg-6 col-12">
                                     <h4>Cart Totals</h4>
                                     <ul class="total-cart">
-                                        <li>Cart Subtotal <span>$ 0.00</span></li>
-                                        <li>Shipping and Handling <span>Free Shipping</span></li>
-                                        <li>Order Total <span>$ 2940.00</span></li>
+                                        <li class="cart-subtotal">Cart Subtotal <span>$ 0.00</span></li>
+                                        <li class="shipping-handling">Shipping and Handling <span>Free Shipping</span></li>
+                                        <li class="order-total">Order Total <span>$ 2940.00</span></li>
 
                                     </ul>
                                 </div>
