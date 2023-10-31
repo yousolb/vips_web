@@ -1,11 +1,27 @@
-import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
+import {col, storage, fires, setSRC, setHTML, cartItems } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
-let elt = document.querySelector(`.cart-products`);
+console.log(document)
+let elt = document.querySelector(`.cart-dropdown-menu`);
 let total_pricing = 0
 
 export async function addToCart(id) {
+    var words = JSON.parse(localStorage.getItem("carts"));
+    words.push(id);
+    localStorage.setItem("carts", JSON.stringify(words));
+    cartOneItem(id)
+}
+
+async function loadCart() {
+    var carts = JSON.parse(localStorage.getItem("carts"));
+    for(let i = 0; i < carts.length; i++) {
+        let id = carts[i]
+        cartOneItem(id)
+    }
+}
+
+async function cartOneItem(id) {
     let docRef = doc(fires, "products", id);
     let docu = await getDoc(docRef);
     let product_data = docu.data();
@@ -14,33 +30,26 @@ export async function addToCart(id) {
     let url = await getDownloadURL(imglist.items[0]);
     let pricing = product_data.price;
     let price = `\$${Math.floor(pricing/100)}.${pricing%100}`;
-    let prod_id = doc.id;
     total_pricing = total_pricing + +pricing
 
-    let collection_items = `<tr>
-    <td class="cart-product">
-        <div class="product-cart-img">
-            <a href="#"><img src="${url}" alt="product-cart-img-1" style="width:200px;height:auto;" /></a>
-        </div>
-        <!-- .product-cart-img -->
-        <div class="product-cart-title">
-        <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>
-        </div>
-        <!-- .product-cart-title -->
-    </td>
-    <td class="cart-price">${price}</td>
-    <td class="cart-edit">
-        <a href="#"><i class="fa fa-times"></i></a>
-    </td>
-    </tr>`
-    console.log(product_data.product_name)
-    console.log(price)
+    let collection_items = `<div class="cart-items">
+    <div class="cart-img">
+        <a href="#"><img src="${url}" alt="cart-img-3" style="width:70px;height:auto;"></a>
+    </div>
+    <div class="cart-content">
+    <h6><a href="shop_single.html?prodid=${id}">${product_data.product_name}</a></h6>
+        <p>1*<span>${price}</span></p>
+    </div>
+    <div class="cart-btn">
+        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+    </div>
+    <div class="clr"></div>
+</div>`
 
     var template = document.createElement('template');
     template.innerHTML = collection_items.trim();
-    elt.appendChild(template.content.firstChild);
+    elt.append(template.content.firstChild);
 }
 
 let total_price = `\$${Math.floor(total_pricing/100)}.${total_pricing%100}`;
-setHTML(".cart-subtotal", total_price)
-setHTML(".order-total", total_price)
+setHTML(".total-pricing", total_price)

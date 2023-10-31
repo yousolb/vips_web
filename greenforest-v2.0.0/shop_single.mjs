@@ -13,7 +13,6 @@ let reference = ref(storage, product_data.image_folder);
 
 async function addCartSingle() {
     addToCart(id);
-    console.log(id)
 }
 
 const button = document.getElementById("add_cart_id");

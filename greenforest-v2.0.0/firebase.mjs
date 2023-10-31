@@ -19,12 +19,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+localStorage.setItem("carts", JSON.stringify([]));
 //const analytics = getAnalytics(app);
 
 export let fires = getFirestore(app);
 export let col = collection(fires, 'products');
 export let storage = getStorage(app);
-
+export const cartItems = []
 
 export function setHTML(selector, string) {
   let elts = document.querySelectorAll(selector);
