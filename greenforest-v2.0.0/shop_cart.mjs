@@ -7,16 +7,17 @@ let elt = document.querySelector(`.cart-dropdown-menu`);
 let total_pricing = 0
 
 export async function addToCart(id) {
-    var words = JSON.parse(localStorage.getItem("carts"));
+    var words = JSON.parse(sessionStorage.getItem("carts"));
     words.push(id);
-    localStorage.setItem("carts", JSON.stringify(words));
+    sessionStorage.setItem("carts", JSON.stringify(words));
     cartOneItem(id)
 }
 
 async function loadCart() {
-    var carts = JSON.parse(localStorage.getItem("carts"));
+    var carts = JSON.parse(sessionStorage.getItem("carts"));
     for(let i = 0; i < carts.length; i++) {
-        let id = carts[i]
+        let id = carts[i];
+        console.log(id);
         cartOneItem(id)
     }
 }
@@ -51,5 +52,6 @@ async function cartOneItem(id) {
     elt.append(template.content.firstChild);
 }
 
+await loadCart();
 let total_price = `\$${Math.floor(total_pricing/100)}.${total_pricing%100}`;
 setHTML(".total-pricing", total_price)

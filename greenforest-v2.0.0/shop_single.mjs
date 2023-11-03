@@ -12,6 +12,7 @@ let product_data = docu.data();
 let reference = ref(storage, product_data.image_folder);
 
 async function addCartSingle() {
+    console.log(id);
     addToCart(id);
 }
 
