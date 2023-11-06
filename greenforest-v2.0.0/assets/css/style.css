@@ -2820,6 +2820,7 @@ section{
 }
 .about-philosophy h2{
 	text-transform: uppercase;
+	text-align: right;
 }
 .about-philosophy p{
 	display: inline-block;
@@ -2925,7 +2926,7 @@ section{
 	padding: 0 0 94px 0;
 }
 .recent-project .section-header{
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 }
 .recent-project .button{
 	position: relative;
