@@ -2437,8 +2437,8 @@ section{
 	padding-bottom: 0;
 }
 .thumbnail-img{
-	width: 70px;
-	height: 70px;
+	width: 100px;
+	height: 100px;
 	float: Left;
 	margin: 4px 15px 0 0;
 }
