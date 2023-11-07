@@ -2811,9 +2811,10 @@ section{
 /*======================================
 	Start About Philosophy
 ====================================================*/
-.about_philosophy p{
+/* .about_philosophy p{
 	background-color: #C1ADE5;
-}
+	border-radius: 5px;
+} */
 .about-philosophy{
 	padding: 0 75px 0;
 	align-self: right;
@@ -2829,6 +2830,7 @@ section{
 	background-color: #C1ADE5;
 	padding: 10px 18px 10px 18px;
 	font-family: 'Roboto', monospace;
+	border-radius: 5px;
 }
 .about-philosophy .btn-default{
 	padding: 14px 28px 12px 28px;
@@ -2842,6 +2844,9 @@ section{
     color: #fff;
 }
 
+.col-lg-4 img {
+	justify-self: left;
+}
 
 /*=======================
 	End About Greenforest Section 
@@ -2887,7 +2892,6 @@ section{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 50px 50px; 
 }
 .project-description {
 	display: flex;
