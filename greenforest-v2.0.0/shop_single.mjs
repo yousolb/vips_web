@@ -1,5 +1,5 @@
 import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
-import { addToCart } from './shop_cart.mjs';
+import { addToCart } from './cart_manager.mjs';
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
@@ -19,17 +19,27 @@ async function addCartSingle() {
 const button = document.getElementById("add_cart_id");
 button.onclick = addCartSingle
 
-let imglist = await list(reference);
+/* let imglist = await list(reference);
 for(let i = 0; i < imglist.items.length; i++) {
     await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
-}
+} */
 
+let imglist = await list(reference);
 for(let i = 0; i < imglist.items.length; i++) {
-    let url = await getDownloadURL(imglist.items[i]);
-    let elts = document.querySelectorAll(`.prod-img-${i+1}`);
-    for (let j=0; j < elts.length; j++) {
-        elts[j].src = url;
-    }
+    let item = imglist.items[i]
+    let url = await getDownloadURL(item);
+    console.log(url)
+    let prod_img = `
+    <img class="prod-img" src="${url}" />`
+    let largeImg = document.querySelector(`.largeImg`)
+    let smallImg = document.querySelector(`.smallImg`)
+    //var ul = document.createElement('ul');
+    var li = document.createElement('li')
+    li.innerHTML = prod_img.trim()
+    //template.innerHTML = prod_img.trim();
+    largeImg.appendChild(li);
+    smallImg.appendChild(li)
+    //await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
 }
 
 setHTML('.product_name', product_data.product_name);
