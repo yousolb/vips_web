@@ -3217,20 +3217,28 @@ div#filters {
 
 /* home-header section */
 
+.header-content .row{
+	align-items: flex-end;
+}
+
 .home-header {
 	text-align: center;
+	align-items: flex-end;
 }
 
 .pics-container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	margin: 0 -50px;
 }
 
 .col-lg-2 {
+	position: relative;
+	display: inline-block;
 	flex: 1;
 	margin: 0;
 	padding: 0;
+	align-items: flex-end;
 }
 
 .vip-pic {
@@ -3239,7 +3247,7 @@ div#filters {
 	height: au
 }
 .vip-pic img {
-	max-width: 100%; 
+	width: 100%; 
     height: auto;    
     display: block;   
 }
@@ -3250,18 +3258,17 @@ div#filters {
 	height: au
 }
 .madagascar-pic img {
-	max-width: 100%; 
+	width: 100%; 
     height: auto;     
-    display: block;   
+    display: block;  
+	justify-self: flex-end; 
 }
-
 
 .vip-pic-button {
 	position: absolute;
-    bottom: -30%; 
-    left: 30%; 
-    transform: translateX(-50%); 
-    padding: 10px; 
+	bottom: 0;
+	right: 0;
+	padding: 10px;
 }
 
 .vip-pic-button button {
@@ -3275,10 +3282,9 @@ div#filters {
 
 .madagascar-pic-button {
     position: absolute;
-    bottom: 20%; 
-    left: 87%; 
-    transform: translateX(-50%); 
-    padding: 10px; 
+	bottom: 0;
+	right: 0;
+	padding: 10px; 
 }
 
 .madagascar-pic-button button {
@@ -3301,22 +3307,58 @@ div#filters {
 .bg-collection-section{
 	background: #f7f7f7;
 	padding-bottom: 86px;
+	padding-top: 50px;
+	overflow: auto;
+	white-space: nowrap;
+	padding: 10px;
+}
+
+.bg-collection-section .button-container{
+	position: relative;
+	top: 50%; /* Adjust the vertical position as needed */
+	right: 20px; /* Adjust the right distance as needed */
+	transform: translateY(-50%);
+}
+.bg-collection-section .round-button{
+	background-color: #0074D9;
+	color: #fff;
+	border: none;
+	border-radius: 50%; /* Creates a round shape */
+	padding: 15px; /* Adjust the padding as needed */
+	cursor: pointer;
+	position: absolute;
+	left: 10px; /* Adjust the left distance as needed */
+	bottom: 10px; /* Adjust the bottom distance as needed */
+}
+
+
+div.scroll-container {
+	overflow: auto;
+	white-space: nowrap;
+	padding: 10px;
+}
+  
+div.scroll-container img {
+padding: 10px;
 }
 
 .collection-items{
 	text-align: center;
 	border: 1px solid #f0f0f0;
-	overflow: hidden;
 	margin-bottom: 30px;
+	/* overflow: auto;
+	white-space: nowrap;
+	padding: 10px; */
 }
-.collection-img{
+/* .collection-img{
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-}
+} */
 .collection-img img{
 	width: 100%;
-	overflow: hidden;
+	padding: 10px;
+	/* overflow: hidden; */
 }
 
 .shop-grid-view .collection-img{
@@ -3417,9 +3459,9 @@ ul>li>a:focus, ul>li>a:hover {
 	color: #53a92c;
 	padding: 0 !important;
 }
-.collection-items:hover .collection-overlay{
+/* .collection-items:hover .collection-overlay{
 	opacity: 1;
-}
+} */
 .collection-items:hover .collection-content h4 a{
 	color: #53a92c;
 }
