@@ -80,6 +80,13 @@ body {
 	font-size: 15px; 
 }
 
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
 article,
 aside,
 details,
@@ -1407,7 +1414,7 @@ section{
 .sub-sub-menu li a{
 	font-size: 14px;
 	font-weight: 600;
-	color: #fff;
+	color: #000000;
 	text-transform: uppercase;
 	padding: 13px 10px 10px 8px;
 	display: block;
@@ -2639,6 +2646,9 @@ section{
 }
 .header-style-2 .main-menu ul>li>a{
 	color: #000000;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: Helvetica Neue, sans-serif;
 }
 .header-style-2 .main-menu ul>li>a:hover, 
 .header-style-3 .main-menu ul>li>a:hover,
@@ -2653,7 +2663,7 @@ section{
 .header-style-3 .sub-menu,
 .header-style-2 .sub-sub-menu,
 .header-style-3 .sub-sub-menu {
-	background: #000000;
+	background: #ffffff;
 }
 .header-style-2 .navbar-right .dropdown-menu, 
 .header-style-3 .navbar-right .dropdown-menu {
@@ -2670,12 +2680,13 @@ section{
 }
 .header-style-2 .main-menu ul>li>a, 
 .header-style-3 .main-menu ul>li>a{
-	padding: 33px 17px;
+	color: black;
+	padding: 33px 10px;
 }
 .header-style-2 .main-menu .sub-menu li a:hover, 
 .header-style-3 .main-menu .sub-menu li a:hover{
-	background: #53a92c;
-	color: #fff;
+	background: #efefef;
+	color: #1E6E37;
 }
 .header-style-2 .navbar-nav li .active, 
 .header-style-3 .navbar-nav li .active {
@@ -3215,6 +3226,87 @@ div#filters {
 	padding-top: 3px;
 }
 
+/* home-header section */
+
+.header-content .row{
+	align-items: flex-end;
+}
+
+.home-header {
+	text-align: center;
+	align-items: flex-end;
+}
+
+.pics-container {
+	display: flex;
+	justify-content: center;
+	margin: 0 -50px;
+}
+
+.col-lg-2 {
+	position: relative;
+	display: inline-block;
+	flex: 1;
+	margin: 0;
+	padding: 0;
+	align-items: flex-end;
+}
+
+.vip-pic {
+	max-width: 100%;
+	position: relative;
+	height: au
+}
+.vip-pic img {
+	width: 100%; 
+    height: auto;    
+    display: block;   
+}
+
+.madagascar-pic {
+	max-width: 100%;
+	position: relative;
+	height: au
+}
+.madagascar-pic img {
+	width: 100%; 
+    height: auto;     
+    display: block;  
+	justify-self: flex-end; 
+}
+
+.vip-pic-button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px;
+}
+
+.vip-pic-button button {
+	background-color: #1E6E37;
+	width: 200px;
+	height: 65px;
+	color: white;
+	border-radius: 10px;
+	font-size: medium;
+}
+
+.madagascar-pic-button {
+    position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 10px; 
+}
+
+.madagascar-pic-button button {
+	background-color: #1E6E37;
+	width: 200px;
+	height: 65px;
+	color: white;
+	border-radius: 10px;
+	font-size: medium;
+}
+
 
 /*=======================
 	Start collection Section 
@@ -3226,22 +3318,58 @@ div#filters {
 .bg-collection-section{
 	background: #f7f7f7;
 	padding-bottom: 86px;
+	padding-top: 50px;
+	overflow: auto;
+	white-space: nowrap;
+	padding: 10px;
+}
+
+.bg-collection-section .button-container{
+	position: relative;
+	top: 50%; /* Adjust the vertical position as needed */
+	right: 20px; /* Adjust the right distance as needed */
+	transform: translateY(-50%);
+}
+.bg-collection-section .round-button{
+	background-color: #0074D9;
+	color: #fff;
+	border: none;
+	border-radius: 50%; /* Creates a round shape */
+	padding: 15px; /* Adjust the padding as needed */
+	cursor: pointer;
+	position: absolute;
+	left: 10px; /* Adjust the left distance as needed */
+	bottom: 10px; /* Adjust the bottom distance as needed */
+}
+
+
+div.scroll-container {
+	overflow: auto;
+	white-space: nowrap;
+	padding: 10px;
+}
+  
+div.scroll-container img {
+padding: 10px;
 }
 
 .collection-items{
 	text-align: center;
 	border: 1px solid #f0f0f0;
-	overflow: hidden;
 	margin-bottom: 30px;
+	/* overflow: auto;
+	white-space: nowrap;
+	padding: 10px; */
 }
-.collection-img{
+/* .collection-img{
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-}
+} */
 .collection-img img{
 	width: 100%;
-	overflow: hidden;
+	padding: 10px;
+	/* overflow: hidden; */
 }
 
 .shop-grid-view .collection-img{
@@ -3342,9 +3470,9 @@ ul>li>a:focus, ul>li>a:hover {
 	color: #53a92c;
 	padding: 0 !important;
 }
-.collection-items:hover .collection-overlay{
+/* .collection-items:hover .collection-overlay{
 	opacity: 1;
-}
+} */
 .collection-items:hover .collection-content h4 a{
 	color: #53a92c;
 }
@@ -5139,7 +5267,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 
 .navbar-nav > .active a{
-    color: #53a92c;
+    color: #1E6E37;
 }
 
 /*================================================= Start Shop Option ================================*/
