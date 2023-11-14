@@ -3395,11 +3395,11 @@ div#filters {
 	white-space: nowrap;
 	padding: 10px; */
 }
-/* .collection-img{
+.collection-img{
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-} */
+}
 .collection-img img{
 	width: 100%;
 	padding: 10px;
