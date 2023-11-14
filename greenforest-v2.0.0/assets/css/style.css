@@ -3403,11 +3403,11 @@ div#filters {
 	white-space: nowrap;
 	padding: 10px; */
 }
-/* .collection-img{
+.collection-img{
 	position: relative;
 	overflow: hidden;
 	text-align: center;
-} */
+}
 .collection-img img{
 	width: 100%;
 	padding: 10px;
@@ -3521,9 +3521,9 @@ ul>li>a:focus, ul>li>a:hover {
 	color: #53a92c;
 	padding: 0 !important;
 }
-/* .product-card:hover .collection-overlay{
+.product-card:hover .collection-overlay{
 	opacity: 1;
-} */
+}
 .product-card:hover .collection-content h4 a{
 	color: #53a92c;
 }

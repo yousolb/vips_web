@@ -19,28 +19,40 @@ async function addCartSingle() {
 const button = document.getElementById("add_cart_id");
 button.onclick = addCartSingle
 
-/* let imglist = await list(reference);
+let imglist = await list(reference);
 for(let i = 0; i < imglist.items.length; i++) {
     await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
-} */
+}
 
-let imglist = await list(reference);
+/* let imglist = await list(reference);
 for(let i = 0; i < imglist.items.length; i++) {
     let item = imglist.items[i]
     let url = await getDownloadURL(item);
-    console.log(url)
+    //console.log(url)
     let prod_img = `
-    <img class="prod-img" src="${url}" />`
-    let largeImg = document.querySelector(`.largeImg`)
-    let smallImg = document.querySelector(`.smallImg`)
+    <li> <img class="prod-img-${i+1}" src="${url}" /> </li>`
+    //console.log(prod_img)
+    //let largeImg = document.querySelector(`.largeImg`)
+    //let smallImg = document.querySelector(`.smallImg`)
+    let slides = document.querySelectorAll(`.slides`)
     //var ul = document.createElement('ul');
-    var li = document.createElement('li')
-    li.innerHTML = prod_img.trim()
-    //template.innerHTML = prod_img.trim();
-    largeImg.appendChild(li);
-    smallImg.appendChild(li)
+    //var li = document.createElement('li')
+    //li.innerHTML = prod_img
+    //console.log(li)
+    let template = document.createElement('template')
+    template.innerHTML = prod_img
+    //console.log(template.content.firstChild)
+    //largeImg.appendChild(template.content.firstChild)
+    //smallImg.appendChild(template.content.firstChild)
+    for(let j = 0; j < slides.length; j++) {
+        console.log(template.content.firstChild)
+        slides[j].appendChild(template.content.firstChild);
+        //console.log(li)
+    }
+    
+    //smallImg.appendChild(li)
     //await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
-}
+} */
 
 setHTML('.product_name', product_data.product_name);
 let pricing = product_data.price;
