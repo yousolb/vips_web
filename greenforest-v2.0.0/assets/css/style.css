@@ -80,6 +80,13 @@ body {
 	font-size: 15px; 
 }
 
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
 article,
 aside,
 details,
@@ -1407,7 +1414,7 @@ section{
 .sub-sub-menu li a{
 	font-size: 14px;
 	font-weight: 600;
-	color: #fff;
+	color: #000000;
 	text-transform: uppercase;
 	padding: 13px 10px 10px 8px;
 	display: block;
@@ -2639,6 +2646,9 @@ section{
 }
 .header-style-2 .main-menu ul>li>a{
 	color: #000000;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: Helvetica Neue, sans-serif;
 }
 .header-style-2 .main-menu ul>li>a:hover, 
 .header-style-3 .main-menu ul>li>a:hover,
@@ -2653,7 +2663,7 @@ section{
 .header-style-3 .sub-menu,
 .header-style-2 .sub-sub-menu,
 .header-style-3 .sub-sub-menu {
-	background: #000000;
+	background: #ffffff;
 }
 .header-style-2 .navbar-right .dropdown-menu, 
 .header-style-3 .navbar-right .dropdown-menu {
@@ -2670,12 +2680,13 @@ section{
 }
 .header-style-2 .main-menu ul>li>a, 
 .header-style-3 .main-menu ul>li>a{
-	padding: 33px 17px;
+	color: black;
+	padding: 33px 10px;
 }
 .header-style-2 .main-menu .sub-menu li a:hover, 
 .header-style-3 .main-menu .sub-menu li a:hover{
-	background: #53a92c;
-	color: #fff;
+	background: #efefef;
+	color: #1E6E37;
 }
 .header-style-2 .navbar-nav li .active, 
 .header-style-3 .navbar-nav li .active {
@@ -3529,7 +3540,61 @@ ul>li>a:focus, ul>li>a:hover {
 	End compaian video Section 
 ==========================================*/
 
+/*=======================
+	Start More Info Section 
+==========================================*/
+.more-info {
+	padding-bottom: 86px;
+	padding-top: 150px;
+}
+.info_container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
 
+.info-container .row {
+	padding-left: 40px;
+}
+
+
+.vips-info-bar {
+    width: 100%; /* Adjust the width as needed */
+    padding: 30px;
+	text-align: center;
+	padding-right: 40px;
+}
+.our-work-bar {
+	width: 100%; /* Adjust the width as needed */
+    padding: 30px;
+	text-align: center;
+	padding-left: 200px;
+}
+
+.newsletter-row {
+	padding-left: 200px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.newsletter-text {
+	padding-top: 30px;
+}
+
+.blog-text {
+	padding-top: 30px;
+}
+
+.blog-row {
+	padding-left: 200px;
+	padding-right: 40px;
+	text-align: center;
+}
+
+/*=======================
+	End More Info Section 
+==========================================*/
 
 /*=======================
 	Start Upcoming Events Section 
@@ -5299,7 +5364,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 
 .navbar-nav > .active a{
-    color: #53a92c;
+    color: #1E6E37;
 }
 
 /*================================================= Start Shop Option ================================*/

@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
 
     <script src="shop_single.mjs" type = "module"></script>
+    <script src="cart_manager.mjs" type="module"></script>
 </head>
 
 <body>
@@ -230,9 +231,8 @@
                                         </ul>
                                         <div class="menu-right-option pull-right">
                                             <div class="cart-option">
-                                                <div class="cart-icon">
+                                                <div class="cart-icon" id="cart-icon-id">
                                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                    <div class="count-cart">2</div>
                                                 </div>
                                                 <!-- .cart-icon -->
                                                 <div class="cart-dropdown-menu">
@@ -310,7 +310,7 @@
                                     <div class="col-md-5">
                                         <div class="single-product-slider">
                                             <div id="slider" class="flexslider">
-                                                <ul class="slides">
+                                                <ul class="slides largeImg">
                                                     <li>
                                                         <img class="prod-img-1" src="assets/images/shop/single-shop-img-1.jpg" />
                                                     </li>
@@ -326,7 +326,7 @@
                                                 </ul>
                                             </div>
                                             <div id="carousel" class="flexslider">
-                                                <ul class="slides">
+                                                <ul class="slides smallImg">
                                                     <li>
                                                         <img class="prod-img-1" src="assets/images/shop/single-shop-small-img-1.jpg" />
                                                     </li>
