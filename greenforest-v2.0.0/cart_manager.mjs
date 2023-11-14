@@ -17,6 +17,13 @@ export async function addToCart(id) {
     dropdownCartItem(id)
 }
 
+export async function removeFromCart(id) {
+    var carts = JSON.parse(localStorage.getItem("carts"))
+    const index = carts.indexOf(id)
+    carts.splice(index, 1)
+    localStorage.setItem("carts", JSON.stringify(carts))
+}
+
 async function populateDropdown() {
     dropdown_cart.innerHTML = `<div class="total-price">
     <p><span>Total Price :</span> <span class="total-pricing">$0</span> </p>
