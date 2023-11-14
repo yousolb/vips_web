@@ -2932,9 +2932,17 @@ section{
 	Start Recent Project Section 
 ==========================================*/
 
+.gallery-title {
+	width: 40%
+}
+
+.bg-recent-project-home3 .row {
+	justify-content: left;
+}
+
 .bg-recent-project{
 	background: #f7f7f7;
-	padding: 0 0 94px 0;
+	padding: 0 0 50px 0;
 }
 .recent-project .section-header{
 	padding-bottom: 20px;
@@ -4179,7 +4187,7 @@ ul>li>a:focus, ul>li>a:hover {
 	padding-bottom: 100px;
 }
 .bg-single-team{
-	padding: 118px 0 110px 0;
+	color: #446B41; 
 }
 .single-team-details h3,
 .single-team-content h3{
@@ -4216,7 +4224,41 @@ ul>li>a:focus, ul>li>a:hover {
 
 
 
+/*========================
+	Start Meet the Artist Section
+=======================================*/
 
+.artist-header {
+	color: #446B41;
+	padding-top: 200px;
+	padding-bottom: 40px;
+}
+.col-lg-4 {
+	position: relative;
+	display: inline-block;
+	flex: 1;
+	margin: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	align-items: flex-end;
+}
+.artist-more-header {
+	width: 100%; /* Adjust the width as needed */
+    padding: 150px 0 50px 0;
+}
+.artist-more-img {
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+.artist-more-pic {
+	/* padding-right: 30px; */
+	text-align: center;
+}
+
+/*========================
+	End Meet the Artist Section
+=======================================*/
 
 
 /*=============================================================project Css =====================================*/
