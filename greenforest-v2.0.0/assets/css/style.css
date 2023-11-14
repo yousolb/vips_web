@@ -3497,7 +3497,61 @@ ul>li>a:focus, ul>li>a:hover {
 	End compaian video Section 
 ==========================================*/
 
+/*=======================
+	Start More Info Section 
+==========================================*/
+.more-info {
+	padding-bottom: 86px;
+	padding-top: 150px;
+}
+.info_container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
 
+.info-container .row {
+	padding-left: 40px;
+}
+
+
+.vips-info-bar {
+    width: 100%; /* Adjust the width as needed */
+    padding: 30px;
+	text-align: center;
+	padding-right: 40px;
+}
+.our-work-bar {
+	width: 100%; /* Adjust the width as needed */
+    padding: 30px;
+	text-align: center;
+	padding-left: 200px;
+}
+
+.newsletter-row {
+	padding-left: 200px;
+	padding-right: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.newsletter-text {
+	padding-top: 30px;
+}
+
+.blog-text {
+	padding-top: 30px;
+}
+
+.blog-row {
+	padding-left: 200px;
+	padding-right: 40px;
+	text-align: center;
+}
+
+/*=======================
+	End More Info Section 
+==========================================*/
 
 /*=======================
 	Start Upcoming Events Section 
