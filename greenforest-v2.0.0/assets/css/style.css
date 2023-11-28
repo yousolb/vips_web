@@ -87,6 +87,8 @@ html, body {
     -ms-text-size-adjust: 100%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 article,
 aside,
 details,
@@ -302,7 +304,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 0;
+	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: 0;
 	margin-right: 0;
@@ -2586,7 +2588,25 @@ section{
 	/* float: right; */
 }
 .header-style-2 .bg-header-top{
-	background: #f7f7f7;
+	display: flex;
+	background: #1E6E37;
+	font-family: 'Inter', sans-serif;
+}
+.header-style-2 .bg-header-top h2{
+	color: white;
+	text-align: center;
+	overflow: hidden; 
+	white-space: nowrap;
+    overflow: hidden;
+    animation: scrollText 15s linear infinite;
+}
+@keyframes scrollText {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 .header-style-2 .menu-scroll.menu-fixed{
 	box-shadow: 0 0 7px 0 #ddd;
@@ -2938,6 +2958,10 @@ section{
 
 .bg-recent-project-home3 .row {
 	justify-content: left;
+	padding-top: 5px;
+}
+.bg-recent-project-home3 .gallery-title{
+	padding-top: 60px; 
 }
 
 .bg-recent-project{
@@ -2959,6 +2983,9 @@ section{
 }
 .recent-project .button:hover{
 	color: #53a92c;
+}
+.bg-recent-project-home3 .photo-gallery{
+	padding: 0px;
 }
 .recent-project .button:after{
 	position: absolute;
