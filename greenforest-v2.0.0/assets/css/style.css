@@ -87,6 +87,8 @@ html, body {
     -ms-text-size-adjust: 100%;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 article,
 aside,
 details,
@@ -302,7 +304,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 0;
+	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: 0;
 	margin-right: 0;
@@ -2586,7 +2588,25 @@ section{
 	/* float: right; */
 }
 .header-style-2 .bg-header-top{
-	background: #f7f7f7;
+	display: flex;
+	background: #1E6E37;
+	font-family: 'Inter', sans-serif;
+}
+.header-style-2 .bg-header-top h2{
+	color: white;
+	text-align: center;
+	overflow: hidden; 
+	white-space: nowrap;
+    overflow: hidden;
+    animation: scrollText 15s linear infinite;
+}
+@keyframes scrollText {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 .header-style-2 .menu-scroll.menu-fixed{
 	box-shadow: 0 0 7px 0 #ddd;
@@ -2932,9 +2952,21 @@ section{
 	Start Recent Project Section 
 ==========================================*/
 
+.gallery-title {
+	width: 40%
+}
+
+.bg-recent-project-home3 .row {
+	justify-content: left;
+	padding-top: 5px;
+}
+.bg-recent-project-home3 .gallery-title{
+	padding-top: 60px; 
+}
+
 .bg-recent-project{
 	background: #f7f7f7;
-	padding: 0 0 94px 0;
+	padding: 0 0 50px 0;
 }
 .recent-project .section-header{
 	padding-bottom: 20px;
@@ -2951,6 +2983,9 @@ section{
 }
 .recent-project .button:hover{
 	color: #53a92c;
+}
+.bg-recent-project-home3 .photo-gallery{
+	padding: 0px;
 }
 .recent-project .button:after{
 	position: absolute;
@@ -3539,6 +3574,25 @@ ul>li>a:focus, ul>li>a:hover {
 /*=======================
 	End compaian video Section 
 ==========================================*/
+
+/*=======================
+	Start Contact page Section 
+==========================================*/
+
+.page-header img {
+	padding-left: 100px;
+	padding-top: 50px;
+	width: 650px;
+	height: 200px;
+}
+
+.contact-form input::placeholder{
+	color: #1E6E37;
+}
+
+.contact-form textarea::placeholder{
+	color: #1E6E37;
+}
 
 /*=======================
 	Start More Info Section 
@@ -4179,7 +4233,7 @@ ul>li>a:focus, ul>li>a:hover {
 	padding-bottom: 100px;
 }
 .bg-single-team{
-	padding: 118px 0 110px 0;
+	color: #446B41; 
 }
 .single-team-details h3,
 .single-team-content h3{
@@ -4216,7 +4270,41 @@ ul>li>a:focus, ul>li>a:hover {
 
 
 
+/*========================
+	Start Meet the Artist Section
+=======================================*/
 
+.artist-header {
+	color: #446B41;
+	padding-top: 200px;
+	padding-bottom: 40px;
+}
+.col-lg-4 {
+	position: relative;
+	display: inline-block;
+	flex: 1;
+	margin: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	align-items: flex-end;
+}
+.artist-more-header {
+	width: 100%; /* Adjust the width as needed */
+    padding: 150px 0 50px 0;
+}
+.artist-more-img {
+	padding-bottom: 30px;
+	text-align: center;
+}
+
+.artist-more-pic {
+	/* padding-right: 30px; */
+	text-align: center;
+}
+
+/*========================
+	End Meet the Artist Section
+=======================================*/
 
 
 /*=============================================================project Css =====================================*/
@@ -4603,9 +4691,10 @@ ul>li>a:focus, ul>li>a:hover {
 	padding-top: 20px;
 }
 .contact-form .btn-default{
-	background: #65ac4c;
+	background: #1E6E37;
 	color: #fff;
 	padding: 13px 27px;
+	border: #1E6E37;
 }
 .contact-form .btn-default:before, 
 .contact-form .btn-default:after{
@@ -4615,7 +4704,7 @@ ul>li>a:focus, ul>li>a:hover {
 .contact-form .btn-default:focus, 
 .contact-form .btn-default.focus, 
 .contact-form .btn-default:active{
-	color: #53a92c;
+	color: #1E6E37;
 }
 
 .contact-address li{
@@ -5241,7 +5330,7 @@ ul>li>a:focus, ul>li>a:hover {
 	margin-top: 16px;
 }
 .comments-form .btn-default{
-	background: #53a92c;
+	background: #1E6E37;
 	padding: 13px 23px;
 	color: #fff;
 	margin-top: 40px;
@@ -5254,7 +5343,7 @@ ul>li>a:focus, ul>li>a:hover {
 .comments-form .btn-default:focus, 
 .comments-form .btn-default.focus, 
 .comments-form .btn-default:active{
-	color: #53a92c;
+	color: #1E6E37;
 }
 .comments-form .btn-default:hover:before {
     left: -18%;
