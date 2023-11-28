@@ -1,4 +1,4 @@
-import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
+import {col, storage, fires, setSRC, setHTML, getProductData } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 import { removeFromCart } from './cart_manager.mjs';
@@ -16,16 +16,11 @@ export async function populateCart() {
     }
     console.log(carts)
     for(let i = 0; i < carts.length; i++) {
-        let id = carts[i]
-        let docRef = doc(fires, "products", id);
-        let docu = await getDoc(docRef);
-        let product_data = docu.data();
-        let reference = ref(storage, product_data.image_folder);
-        let imglist = await list(reference);
-        let url = await getDownloadURL(imglist.items[0]);
-        let pricing = product_data.price;
-        let price = `\$${Math.floor(pricing/100)}.${pricing%100}`;
-        let prod_id = doc.id;
+        let id = carts[i];
+        let prod_obj = await getProductData(id);
+        let url = prod_obj.product_images[0];
+        let pricing = prod_obj.price_cents;
+        let price = prod_obj.product_price;
         total_pricing = total_pricing + +pricing
 
         let collection_items = `<tr>
@@ -35,7 +30,7 @@ export async function populateCart() {
             </div>
             <!-- .product-cart-img -->
             <div class="product-cart-title">
-            <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>
+            <h4><a href="shop_single.html?prodid=${id}">${prod_obj.product_name}</a></h4>
             </div>
             <!-- .product-cart-title -->
         </td>
@@ -44,8 +39,6 @@ export async function populateCart() {
             <button href="#" id="remove_cart_id_${i}"><i class="fa fa-times"></i></button>
         </td>
         </tr>`
-        console.log(product_data.product_name)
-        console.log(price)
 
         var template = document.createElement('template');
         template.innerHTML = collection_items.trim();
