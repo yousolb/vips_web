@@ -9,9 +9,9 @@ let id = urlParams.get('prodid');
 
 let product_object = await getProductData(id);
 
-for(let i = 0; i < product_object.product_images.length; i++) {
+/*for(let i = 0; i < product_object.product_images.length; i++) {
     await setSRC(`.prod-img-${i+1}`, product_object.product_images[i]);
-}
+}*/
 
 async function addCartSingle() {
     console.log(id);
@@ -21,35 +21,32 @@ async function addCartSingle() {
 const button = document.getElementById("add_cart_id");
 button.onclick = addCartSingle
 
-/* let imglist = await list(reference);
-for(let i = 0; i < imglist.items.length; i++) {
-    let item = imglist.items[i]
-    let url = await getDownloadURL(item);
-    //console.log(url)
-    let prod_img = `
-    <li> <img class="prod-img-${i+1}" src="${url}" /> </li>`
-    //console.log(prod_img)
-    //let largeImg = document.querySelector(`.largeImg`)
+for(let i = 0; i < product_object.product_images.length; i++) {
+    let url = product_object.product_images[i]
+    let largeImg = document.querySelector(`.largeImg`)
     //let smallImg = document.querySelector(`.smallImg`)
-    let slides = document.querySelectorAll(`.slides`)
-    //var ul = document.createElement('ul');
-    //var li = document.createElement('li')
-    //li.innerHTML = prod_img
+    //let slides = document.querySelectorAll(`.slides`)
+    var li = document.createElement('li')
+    var img = document.createElement('img')
+    img.class = `prod-img-${i+1}`
+    img.src = url
+    li.appendChild(img)
+    console.log(li)
     //console.log(li)
-    let template = document.createElement('template')
-    template.innerHTML = prod_img
+    //let template = document.createElement('template')
+    //template.innerHTML = prod_img
     //console.log(template.content.firstChild)
-    //largeImg.appendChild(template.content.firstChild)
-    //smallImg.appendChild(template.content.firstChild)
-    for(let j = 0; j < slides.length; j++) {
-        console.log(template.content.firstChild)
-        slides[j].appendChild(template.content.firstChild);
+    //console.log(template.content.firstChild)
+    largeImg.appendChild(li.cloneNode(true))
+    //smallImg.appendChild(li)
+    /*for(let j = 0; j < slides.length; j++) {
+        slides[j].appendChild(li);
         //console.log(li)
-    }
+    }*/
     
     //smallImg.appendChild(li)
-    //await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
-} */
+    //setSRC(`.prod-img-${i+1}`, url);
+}
 
 setHTML('.product_name', product_object.product_name);
 setHTML('.product_price', product_object.product_price);
