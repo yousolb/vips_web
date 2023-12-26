@@ -1,4 +1,4 @@
-import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
+import {col, storage, fires, setSRC, setHTML, getProductData } from './firebase.mjs'
 import { addToCart } from './cart_manager.mjs';
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
@@ -6,10 +6,12 @@ import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gsta
 let queryString = window.location.search;
 let urlParams = new URLSearchParams(queryString);
 let id = urlParams.get('prodid');
-let docRef = doc(fires, "products", id);
-let docu = await getDoc(docRef);
-let product_data = docu.data();
-let reference = ref(storage, product_data.image_folder);
+
+let product_object = await getProductData(id);
+
+/*for(let i = 0; i < product_object.product_images.length; i++) {
+    await setSRC(`.prod-img-${i+1}`, product_object.product_images[i]);
+}*/
 
 async function addCartSingle() {
     console.log(id);
@@ -19,56 +21,35 @@ async function addCartSingle() {
 const button = document.getElementById("add_cart_id");
 button.onclick = addCartSingle
 
-let imglist = await list(reference);
-for(let i = 0; i < imglist.items.length; i++) {
-    await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
-}
-
-/* let imglist = await list(reference);
-for(let i = 0; i < imglist.items.length; i++) {
-    let item = imglist.items[i]
-    let url = await getDownloadURL(item);
-    //console.log(url)
-    let prod_img = `
-    <li> <img class="prod-img-${i+1}" src="${url}" /> </li>`
-    //console.log(prod_img)
-    //let largeImg = document.querySelector(`.largeImg`)
+for(let i = 0; i < product_object.product_images.length; i++) {
+    let url = product_object.product_images[i]
+    let largeImg = document.querySelector(`.largeImg`)
     //let smallImg = document.querySelector(`.smallImg`)
-    let slides = document.querySelectorAll(`.slides`)
-    //var ul = document.createElement('ul');
-    //var li = document.createElement('li')
-    //li.innerHTML = prod_img
+    //let slides = document.querySelectorAll(`.slides`)
+    var li = document.createElement('li')
+    var img = document.createElement('img')
+    img.class = `prod-img-${i+1}`
+    img.src = url
+    li.appendChild(img)
+    console.log(li)
     //console.log(li)
-    let template = document.createElement('template')
-    template.innerHTML = prod_img
+    //let template = document.createElement('template')
+    //template.innerHTML = prod_img
     //console.log(template.content.firstChild)
-    //largeImg.appendChild(template.content.firstChild)
-    //smallImg.appendChild(template.content.firstChild)
-    for(let j = 0; j < slides.length; j++) {
-        console.log(template.content.firstChild)
-        slides[j].appendChild(template.content.firstChild);
+    //console.log(template.content.firstChild)
+    largeImg.appendChild(li.cloneNode(true))
+    //smallImg.appendChild(li)
+    /*for(let j = 0; j < slides.length; j++) {
+        slides[j].appendChild(li);
         //console.log(li)
-    }
+    }*/
     
     //smallImg.appendChild(li)
-    //await setSRC(`.prod-img-${i+1}`, imglist.items[i]);
-} */
-
-setHTML('.product_name', product_data.product_name);
-let pricing = product_data.price;
-setHTML('.product_price', `\$${Math.floor(pricing/100)}.${pricing%100}`);
-let desc = "";
-for (let i = 0; i < product_data.description_lines.length; i++) {
-  desc += "- " + product_data.description_lines[i];
-  desc += "<br/>";
+    //setSRC(`.prod-img-${i+1}`, url);
 }
-setHTML('.product_desc', desc);
-let artist = await getDoc(product_data.artist);
-let artist_data = artist.data();
-let artist_info = `
-    Artist: ${artist_data.name} <br/>
-    ${artist_data.description}
-`
-setHTML('.artist_desc', artist_info);
-let artist_img_ref = ref(storage, artist_data.image);
-setSRC('.artist_img', artist_img_ref);
+
+setHTML('.product_name', product_object.product_name);
+setHTML('.product_price', product_object.product_price);
+setHTML('.product_desc', product_object.product_desc);
+setHTML('.artist_desc', product_object.artist_info);
+setSRC('.artist_img', product_object.artist_img_url);
