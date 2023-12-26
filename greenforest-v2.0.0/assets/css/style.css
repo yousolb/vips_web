@@ -3554,6 +3554,12 @@ ul>li>a:focus, ul>li>a:hover {
 .product-card:hover .collection-content h4 a{
 	color: #53a92c;
 }
+.collection-items:hover .collection-overlay{
+	opacity: 1;
+}
+.collection-items:hover .collection-content h4 a{
+	color: #53a92c;
+}
 .collection-items:hover .collection-icon li{
 	-webkit-transform: scale(1, 1);
 	transform: scale(1, 1);
@@ -4279,7 +4285,7 @@ ul>li>a:focus, ul>li>a:hover {
 	padding-top: 200px;
 	padding-bottom: 40px;
 }
-.col-lg-4 {
+.single-team .col-lg-4 {
 	position: relative;
 	display: inline-block;
 	flex: 1;
