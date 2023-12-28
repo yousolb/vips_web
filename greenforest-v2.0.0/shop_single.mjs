@@ -24,28 +24,12 @@ button.onclick = addCartSingle
 for(let i = 0; i < product_object.product_images.length; i++) {
     let url = product_object.product_images[i]
     let largeImg = document.querySelector(`.largeImg`)
-    //let smallImg = document.querySelector(`.smallImg`)
-    //let slides = document.querySelectorAll(`.slides`)
     var li = document.createElement('li')
     var img = document.createElement('img')
     img.class = `prod-img-${i+1}`
     img.src = url
     li.appendChild(img)
-    console.log(li)
-    //console.log(li)
-    //let template = document.createElement('template')
-    //template.innerHTML = prod_img
-    //console.log(template.content.firstChild)
-    //console.log(template.content.firstChild)
     largeImg.appendChild(li.cloneNode(true))
-    //smallImg.appendChild(li)
-    /*for(let j = 0; j < slides.length; j++) {
-        slides[j].appendChild(li);
-        //console.log(li)
-    }*/
-    
-    //smallImg.appendChild(li)
-    //setSRC(`.prod-img-${i+1}`, url);
 }
 
 setHTML('.product_name', product_object.product_name);

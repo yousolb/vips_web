@@ -1,13 +1,13 @@
 import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
-import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
+import { query, orderBy, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
-let qs = await getDocs(col);
+let qs = await getDocs(query(col, orderBy('date_added', 'desc')));
 let docus = qs.docs;
 let elt = document.querySelector(`.shop-items`);
 
 for(let i = 0; i < docus.length; i++) {
-    let doc = qs.docs[i];
+    let doc = docus[i];
     let product_data = doc.data();
     let reference = ref(storage, product_data.image_folder);
     let imglist = await list(reference);

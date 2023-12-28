@@ -57,7 +57,7 @@ export async function getFromDatabase(id) {
       database_product.product_images.push(url)
   }
   let desc = "";
-  for (let i = 0; i < product_data.description_lines.length; i++) {
+  for (let i = product_data.description_lines.length - 1; i >= 0; i--) {
       desc += "- " + product_data.description_lines[i];
       desc += "<br/>";
   }
@@ -65,8 +65,8 @@ export async function getFromDatabase(id) {
   let artist = await getDoc(product_data.artist);
   let artist_data = artist.data();
   let artist_info = `
-      Artist: ${artist_data.name} <br/>
-      ${artist_data.description}
+      Created By: ${artist_data.name} <br/>
+      ${artist_data.label}
   `
   database_product.artist = artist
   database_product.artist_info = artist_info
