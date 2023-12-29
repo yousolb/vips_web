@@ -23,6 +23,7 @@ const app = initializeApp(firebaseConfig);
 
 export let fires = getFirestore(app);
 export let col = collection(fires, 'products');
+export let artist_col = collection(fires, 'artists');
 export let storage = getStorage(app);
 export const cartItems = []
 
@@ -76,11 +77,43 @@ export async function getFromDatabase(id) {
   return database_product
 }
 
+export async function artistDatabase(id) {
+  let database_artist = {}
+  let docRef = doc(fires, "artists", id);
+  let docu = await getDoc(docRef);
+  let artist_data = docu.data();
+  database_artist.name = artist_data.name;
+
+  database_artist.label = artist_data.label;
+  database_artist.description = artist_data.description;
+
+  let fav_animal = `
+      Favorite animal: ${artist_data.fav_animal} <br/>
+  `
+  database_artist.fav_animal = fav_animal
+
+  let artist_img_ref = ref(storage, artist_data.image);
+  database_artist.img_url = await getDownloadURL(artist_img_ref)
+
+  return database_artist
+}
+
 export async function getProductData(id) {
   if(sessionStorage.getItem(id) === null) {
     let product_object = await getFromDatabase(id);
     sessionStorage.setItem(id, JSON.stringify(product_object));
     return product_object;
+  }
+  else {
+    return JSON.parse(sessionStorage.getItem(id))
+  }
+}
+
+export async function getArtistData(id) {
+  if(sessionStorage.getItem(id) === null) {
+    let artist_object = await artistDatabase(id);
+    sessionStorage.setItem(id, JSON.stringify(artist_object));
+    return artist_object;
   }
   else {
     return JSON.parse(sessionStorage.getItem(id))

@@ -9,10 +9,6 @@ let id = urlParams.get('prodid');
 
 let product_object = await getProductData(id);
 
-/*for(let i = 0; i < product_object.product_images.length; i++) {
-    await setSRC(`.prod-img-${i+1}`, product_object.product_images[i]);
-}*/
-
 async function addCartSingle() {
     console.log(id);
     addToCart(id);
