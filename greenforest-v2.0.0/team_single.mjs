@@ -31,11 +31,11 @@ for(let i = 0; i < docus.length; i++) {
 
     console.log(prod_id)
 
-    let more_from_artist = `<div class="col-lg-4">
+    let more_from_artist = `<div class="col-lg-4" style="flex: 1 0 25%;">
     <div class="artist-more-img">
         <div class="artist-more-pic">
             <a href="shop_single.html?prodid=${prod_id}">
-            <img src="${url}" style="width:350px;">
+            <img src="${url}" style="width:30vw;height:40vh;object-fit: cover;">
         </div>
     </div>
     </div>`
