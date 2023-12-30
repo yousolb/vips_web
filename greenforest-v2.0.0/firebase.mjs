@@ -66,7 +66,7 @@ export async function getFromDatabase(id) {
   let artist = await getDoc(product_data.artist);
   let artist_data = artist.data();
   let artist_info = `
-      Created By: ${artist_data.name} <br/>
+      Created By: <strong>${artist_data.name}</strong></br>
       ${artist_data.label}
   `
   database_product.artist = artist

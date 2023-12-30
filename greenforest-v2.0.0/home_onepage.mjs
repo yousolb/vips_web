@@ -1,10 +1,10 @@
 import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
-import { query, orderBy, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
+import { limit, query, orderBy, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
-let qs = await getDocs(query(col, orderBy('date_added', 'desc')));
+let qs = await getDocs(query(col, orderBy('date_added', 'desc'), limit(6)));
 let docus = qs.docs;
-let elt = document.querySelector(`.shop-items`);
+let elt = document.querySelector(`.scroll-container`);
 
 for(let i = 0; i < docus.length; i++) {
     let doc = docus[i];
@@ -16,24 +16,19 @@ for(let i = 0; i < docus.length; i++) {
     let price = `\$${Math.floor(pricing/100)}.${pricing%100}`;
     let prod_id = doc.id;
 
-    let collection_items = `
-    <div class="col-lg-4 col-sm-6 col-12">
-    <div class="collection-items">
-    <div class="collection-img">
-        <div class="collection-overlay"></div>
-        <img src="${url}" alt="collection-img-1" style="width:25vw;height:50vh;object-fit: cover;"/>
-        <ul class="collection-icon">
-        </ul>
-    </div>
-    <!-- .collection-img -->
+    console.log(prod_id)
+
+    let collection_items = `<div class="product-card">
+    <img src="${url}" alt="varibolo-gloves" style="width:30vw;height:60vh;object-fit:cover;"/>
+    <ul class="collection-icon">
+        <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+        <li><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+    </ul>
     <div class="collection-content">
         <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>
         <h5>${price}</h5>
     </div>
-    <!-- .collection-content -->
-    </div>
-    <!-- .collection-items -->
-    </div>`
+</div>  `
 
     var div = document.createElement('div');
     div.innerHTML = collection_items.trim();

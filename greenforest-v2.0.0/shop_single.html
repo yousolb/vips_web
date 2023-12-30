@@ -277,13 +277,13 @@
                     <div class="row">
                         <div class="page-header">
                             <div class="page-title">
-                                <h2>product single page</h2>
+                                <h2 class="product_name">product single page</h2>
                             </div>
                             <!-- .page-title -->
                             <div class="page-header-content">
                                 <ol class="breadcrumb">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>Shop</li>
+                                    <li><a href="home_onepage.html">Home</a></li>
+                                    <li><a href="shop.html"></a>Shop</li>
                                 </ol>
                             </div>
                             <!-- .page-header-content -->
@@ -342,36 +342,50 @@
                                     <div class="tab-content">
                                         <div role="tabpanel" class="tab-pane active" id="description">
                                             <div class="product-description">
-                                                <h4 class="description-title">Additional Information</h4>
+                                                <style>
+                                                    .description-title{
+                                                        font-size: 30px;
+                                                        color: #000000;
+                                                        font-weight: 700;
+                                                        text-transform: uppercase;
+                                                        margin-bottom: 0px;
+                                                        margin-top: 0px;
+                                                    }
+                                                </style>
+                                                <p class="description-title">Meet the Artist</p>
+                                                <style>
+                                                    .desc-content {
+                                                        display: flex;
+                                                        align-content: flex-start;
+                                                    }
+                                                    .artist_desc {
+                                                        margin-left: 1em;
+                                                    }
+                                                    .artist_img {
+                                                        border-radius: 50%;
+                                                        display: block;
+                                                    }
+                                                </style>
                                                 <div class="desc-content">
-                                                    <p class="artist_desc"></p>
-                                                    <img src="" class="artist_img" style="width:150px;height:150px;"></img>
+                                                    <div>
+                                                        <img src="" class="artist_img" style="width:200px;"></img>
+                                                    </div>
+                                                    <div>
+                                                        <p class="artist_desc"></p>
+                                                    </div>
                                                 </div>
                                                 <!-- .desc-content -->
                                             </div>
                                             <!-- .product-description -->
                                         </div>
                                         <!-- .description -->
-
-                                        
+                                    </div>
+                                     <!-- .tab-content -->
+                                </div>
+                                 <!-- .product-review -->
                             </div>
                             <!-- .col-lg-9 -->
-                            <div class="col-lg-3">
-                                <div class="shop-sidebar">
-                                    <div class="widget">
-                                        <div class="shop-widget-content">
-                                            <form action="#" method="POST" class="sidebar-form">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" id="searchId" name="search" placeholder="Search...">
-                                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                                </div>
-                                            </form>
-                                        </div>                                    
-                                    </div>
-                                </div>
-                                <!-- .sidebar -->
-                            </div>
-                            <!-- .col-lg-3 -->
+                            
                         </div>
                         <!-- .row -->
                     </div>

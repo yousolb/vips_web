@@ -5004,9 +5004,8 @@ ul>li>a:focus, ul>li>a:hover {
 /*================================================= Start Shop Option ================================*/
 
 .bg-shop-section{
-	padding: 120px 0;
+	padding: 10px 0;
 }
-.shop-option{}
 .shop-results-box{
 	border: 1px solid #f0f0f0;
 	padding: 15px 20px;
@@ -5034,7 +5033,6 @@ ul>li>a:focus, ul>li>a:hover {
 .shop-collection{
 	margin-top: 30px;
 }
-.shop-collection{}
 
 .shop-sidebar{
 	padding: 0 18px 55px 18px;
@@ -5342,7 +5340,6 @@ ul>li>a:focus, ul>li>a:hover {
 	End Flex Slider
 ==================================*/
 
-.about-product-datails{}
 .about-product-datails h3{
 	font-size: 30px;
 	font-weight: 600;
@@ -5354,9 +5351,6 @@ ul>li>a:focus, ul>li>a:hover {
 	color: #53a92c;
 	padding: 3px 0 5px 0;
 }
-.about-product-datails{}
-.about-product-datails{}
-.about-product-datails{}
 
 .select-option{
 	margin-top: 18px;
@@ -5488,14 +5482,6 @@ ul>li>a:focus, ul>li>a:hover {
 	border-bottom: 4px solid #53a92c;
 }
 
-.description-title{
-	margin-bottom: 30px;
-}
-.desc-content{
-	border: 1px solid #f7f7f7;
-	padding: 30px;
-}
-.costomer-review-items{}
 .costomer-review-items{
 	border-bottom: 1px solid #f0f0f0;
 	padding: 30px 0;
