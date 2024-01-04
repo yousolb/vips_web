@@ -24,6 +24,8 @@ for(let i = 0; i < product_object.product_images.length; i++) {
     var img = document.createElement('img')
     img.class = `prod-img-${i+1}`
     img.src = url
+    img.alt = 'product pic'
+    img.title = 'product-pic'
     li.appendChild(img)
     largeImg.appendChild(li.cloneNode(true))
 }

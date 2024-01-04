@@ -3486,6 +3486,14 @@ ul>li>a:focus, ul>li>a:hover {
     padding: 10px 10px;
     cursor: pointer;
 }
+
+.bg-shop-section .container {
+	display: inline-flex;
+	margin-left: 50px;
+}
+.bg-shop-section .row {
+	/* justify-self: flex-start; */
+}
 .collection-overlay{
 	position: absolute;
 	width: 100%;
@@ -5497,7 +5505,9 @@ ul>li>a:focus, ul>li>a:hover {
 .shop-collection{
 	margin-top: 30px;
 }
-.shop-collection{}
+.shop-collection .row{
+	justify-content: flex-start;
+}
 
 .shop-sidebar{
 	padding: 0 18px 55px 18px;
