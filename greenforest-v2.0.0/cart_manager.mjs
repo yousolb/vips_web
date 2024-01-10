@@ -31,7 +31,7 @@ export async function populateDropdown() {
 </div>
 <!-- .total-prices -->
 <div class="checkout-btn">
-    <a href="#" class="btn btn-default">donate now</a>
+    <a href="donate.html" class="btn btn-default">donate now</a>
 </div>`
     let total_pricing = 0
     var carts = []
