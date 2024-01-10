@@ -17,7 +17,7 @@ for(let i = 0; i < docus.length; i++) {
     let prod_id = doc.id;
 
     let collection_items = `
-    <div class="col-lg-4 col-sm-6 col-12">
+    <div class="col-lg-4 col-sm-6 col-12" style="display:flex;">
     <div class="collection-items">
     <div class="collection-img">
         <div class="collection-overlay"></div>
