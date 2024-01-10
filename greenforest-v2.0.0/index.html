@@ -38,6 +38,16 @@
         .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
 </script>
 
+<script type="module">
+    // Import the function from the module file
+    import { populateDropdown } from './cart_manager.mjs';
+
+    window.addEventListener("load", () => {
+        // Call the imported function
+        populateDropdown();
+    });
+</script>
+
 <style>
     body {
         width: 100%;
@@ -136,65 +146,6 @@
                 </div>
             </div>
         </div>
-
-        <header class="header-style-2">
-            <!-- .bg-header-top -->
-            <!-- Start Menu -->
-            <div class="bg-main-menu menu-scroll">
-               <div class="container">
-                  <div class="row">
-                     <div class="main-menu">
-                        <div class="main-menu-bottom">
-                           <div class="navbar-header">
-                              <a class="navbar-brand" href="index.html"><img src="assets/images/home01/logo.png" alt="logo" class="img-responsive" /></a>
-                              <button type="button" class="navbar-toggler collapsed d-lg-none" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false">
-                              <span class="navbar-toggler-icon">
-                              <i class="fa fa-bars"></i>
-                              </span>
-                              </button>
-                           </div>
-                           <div class="main-menu-area">
-                              <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-                                 <ul>
-                                    <li>
-                                       <a href="shop.html">SHOP</a>
-                                       <ul class="sub-menu">
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 1</a></li>
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 2</a></li>
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 3</a></li>
-                                       </ul>
-                                    </li>
-                                    <li><a href="about.html">ABOUT</a></li>
-                                    <li>
-                                       <a href="team.html">OUR TEAM</a>
-                                       <ul class="sub-menu">
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 1</a></li>
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 2</a></li>
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 3</a></li>
-                                       </ul>
-                                    </li>
-                                    <li><a href="contact.html">CONTACT</a></li>
-                                    <li>
-                                       <a href="#">SEARCH</a>
-                                       <ul class="sub-menu">
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 1</a></li>
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 2</a></li>
-                                          <li><a href="#"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Dummy Element 3</a></li>
-                                       </ul>
-                                    </li>
-                                 </ul>
-                                 <div class="menu-right-option pull-right">
-                                    <!-- Shopping Cart, Search Box, etc. -->
-                                 </div>
-                                 <!-- .header-search-box -->
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </header>
          
 
         <section class="home-header">

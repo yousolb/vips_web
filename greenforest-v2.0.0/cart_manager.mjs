@@ -24,7 +24,8 @@ export async function removeFromCart(id) {
     localStorage.setItem("carts", JSON.stringify(carts))
 }
 
-async function populateDropdown() {
+export async function populateDropdown() {
+    let dropdown_cart = document.querySelector(`.cart-dropdown-menu`);
     dropdown_cart.innerHTML = `<div class="total-price">
     <p><span>Total Price :</span> <span class="total-pricing">$0</span> </p>
 </div>
@@ -53,6 +54,7 @@ async function dropdownCartItem(id) {
     // let docRef = doc(fires, "products", id);
     // let docu = await getDoc(docRef);
     // let product_data = docu.data();
+    let dropdown_cart = document.querySelector(`.cart-dropdown-menu`);
 
     let prod_obj = await getProductData(id);
     let url = prod_obj.product_images[0];
@@ -64,7 +66,7 @@ async function dropdownCartItem(id) {
     </div>
     <div class="cart-content">
     <h6><a href="shop_single.html?prodid=${id}">${prod_obj.product_name}</a></h6>
-        <p>1*<span>${price}</span></p>
+        <p><span>${price}</span></p>
     </div>
     <div class="cart-btn">
         <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
@@ -77,5 +79,3 @@ async function dropdownCartItem(id) {
     dropdown_cart.append(template.content.firstChild);
     return prod_obj.price_cents;
 }
-
-await populateDropdown();

@@ -2556,10 +2556,6 @@ section{
 	Header 2
 ====================================================*/
 
-.header-style-2 .main-menu .navbar-collapse,
-.header-style-3 .main-menu .navbar-collapse{
-	/* float: right; */
-}
 .header-style-2 .bg-header-top{
 	background: #f7f7f7;
 }

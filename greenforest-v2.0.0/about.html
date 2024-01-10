@@ -37,6 +37,16 @@
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
     </script>
 
+    <script type="module">
+        // Import the function from the module file
+        import { populateDropdown } from './cart_manager.mjs';
+
+        window.addEventListener("load", () => {
+            // Call the imported function
+            populateDropdown();
+        });
+    </script>
+
     <div class="box-style">
         <div class="color-btn">
             <a href="#"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
@@ -124,144 +134,7 @@
             </div>
         </div>
     </div>
-    <header class="header-style-2">
-        <!-- .bg-header-top -->
-        <!-- Start Menu -->
-        <div class="bg-main-menu menu-scroll">
-            <div class="container">
-                <div class="row">
-                    <div class="main-menu">
-                        <div class="main-menu-bottom">
-                            <div class="navbar-header">
-                                <a class="navbar-brand" href="index.html"><img src="assets/images/home01/logo.png" alt="logo" class="img-responsive" /></a>
-                                <button type="button" class="navbar-toggler collapsed d-lg-none" data-bs-toggle="collapse" data-bs-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false">
-                                    <span class="navbar-toggler-icon">
-                                        <i class="fa fa-bars"></i>
-                                    </span>
-                                </button>
-                            </div>
-                            <div class="main-menu-area">
-                                <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
-                                    <ul>
-                                        <li>
-                                            <a href="shop.html">SHOP</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> ALL</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> COLLECTIONS</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> TOPS</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> BOTTOMS</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> ACCESSORIES</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> PLUSHIES</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> SALE</a></li>
-                                                <li><a href="index.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> CUSTOM</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="about.html">ABOUT</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="about.html#about-vips-section"><i class="fa fa-angle-double-right" aria-hidden="true"></i> STORY</a></li>
-                                                <li><a href="about.html#about-philosophy"><i class="fa fa-angle-double-right" aria-hidden="true"></i> PHILOSOPHY</a></li>
-                                                <li><a href="about.html#vips-projects"><i class="fa fa-angle-double-right" aria-hidden="true"></i> PROJECTS</a></li>
-                                                <li><a href="event.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> MATERIALS</a></li>
-                                                <li><a href="event.html"><i class="fa fa-angle-double-right" aria-hidden="true"></i> ARTISTS</a></li>
-
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">GET INVOLVED</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">SEARCH</a>
-                                        </li>
-
-                                        <li><a href="contact.html">CONTACT</a></li>
-                                    </ul>
-                                    <div class="menu-right-option pull-right">
-                                        <div class="cart-option">
-                                            <div class="cart-icon">
-                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                <div class="count-cart">2</div>
-                                            </div>
-                                            <!-- .cart-icon -->
-                                            <div class="cart-dropdown-menu">
-                                                <div class="cart-items">
-                                                    <div class="cart-img">
-                                                        <a href="single_shop_cat.html"><img src="assets/images/home01/cart-img-1.jpg" alt="cart-img-1"></a>
-                                                    </div>
-                                                    <div class="cart-content">
-                                                        <h6><a href="single_shop_cat.html">Product Title Here</a></h6>
-                                                        <p>1*<span>$350</span></p>
-                                                    </div>
-                                                    <div class="cart-btn">
-                                                        <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                                    </div>
-                                                    <div class="clr"></div>
-                                                </div>
-                                                <!-- .cart-items -->
-
-                                                <div class="cart-items">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/images/home01/cart-img-2.jpg" alt="cart-img-2"></a>
-                                                    </div>
-                                                    <div class="cart-content">
-                                                        <h6><a href="single_shop_cat.html">Product Title Here</a></h6>
-                                                        <p>1*<span>$350</span></p>
-                                                    </div>
-                                                    <div class="cart-btn">
-                                                        <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                                    </div>
-                                                    <div class="clr"></div>
-                                                </div>
-                                                <!-- .cart-items -->
-                                                <div class="cart-items">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/images/home01/cart-img-3.jpg" alt="cart-img-3"></a>
-                                                    </div>
-                                                    <div class="cart-content">
-                                                        <h6><a href="single_shop_cat.html">Product Title Here</a></h6>
-                                                        <p>1*<span>$350</span></p>
-                                                    </div>
-                                                    <div class="cart-btn">
-                                                        <a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-                                                        <a href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                                    </div>
-                                                    <div class="clr"></div>
-                                                </div>
-                                                <!-- .cart-items -->
-                                                <div class="total-price">
-                                                    <p><span>Total Price :</span> $700 </p>
-                                                </div>
-                                                <!-- .total-prices -->
-                                                <div class="checkout-btn">
-                                                    <a href="#" class="btn btn-default">donate now</a>
-                                                </div>
-                                            </div>
-                                            <!-- .cart--->
-                                        </div>
-                                        <!-- .cart-option -->
-
-                                        <div class="search-box">
-                                            <i class="fa fa-search first_click" aria-hidden="true" style="display: block;"></i>
-                                            <i class="fa fa-times second_click" aria-hidden="true" style="display: none;"></i>
-                                        </div>
-                                        <div class="search-box-text">
-                                            <form action="search">
-                                                <input type="text" name="search" id="all-search" placeholder="Search Here">
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <!-- .header-search-box -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+    
         <!-- Start Page Header Section -->
         <section class="bg-page-header">
             <div class="page-header-overlay">
