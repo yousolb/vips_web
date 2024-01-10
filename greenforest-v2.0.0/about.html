@@ -20,10 +20,23 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
     <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
+    </script>
+
     <div class="box-style">
         <div class="color-btn">
             <a href="#"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
@@ -417,96 +430,6 @@
         <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
         <!-- End Scrolling -->
     </div>
-
-    <!-- Start Footer -->
-    <footer>
-        <div class="bg-footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="footer-top">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="footer-widgets">
-                                    <div class="widgets-title"></div>
-                                    <div class="widgets-content">
-                                        <h3>
-                                            <a href="#">
-                                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                                Contact
-                                            </a>
-                                        </h3>
-                                        <h3>
-                                            <a href="https://instagram.com/vipsfund?igshid=YmMyMTA2M2Y=">
-                                                <i class="fa fa-instagram" aria-hidden="true"></i> 
-                                                Instagram
-                                            </a>
-                                        </h3>
-                                        <h3>
-                                            <a href="#">
-                                                <i class="fa-solid fa-question" aria-hidden="true"></i>
-                                                FAQ
-                                            </a>
-                                        </h3>
-                                    </div>
-                                    <div class="latest-news">
-                                        <li>
-                                            <span class="thumbnail-img">
-                                            <img src="assets/images/white_logo.png" alt="small-bog-img-1" class="img-responsive" />
-                                        </span>
-                                            <div class="thumbnail-content">
-                                                <h5>VERY IMPORTANT PRIMATES' FUND</h5>
-                                                <h5>501(C)(3)</h5>
-                                                <h5>ANN ARBOR, MI</h5>
-                                            </div>
-                                            <!-- .thumbnail-content -->
-                                        </li>
-                                    </div>
-                                </div>
-                                <!-- .footer-widgets -->
-                            </div>
-                            <!-- .col-lg-3 -->
-                            <div class="col-sm-6">
-                                <div class="widgets-title"></div>
-                                <div class="widgets-content">
-                                    <h3>
-                                        <a href="#">
-                                            <i class="fa-solid fa-truck-fast" aria-hidden="true"></i>
-                                            Shipping & Returns
-                                        </a>
-                                    </h3>
-                                    <h3>
-                                        <a href="#">
-                                            <i class="fa fa-store" aria-hidden="true"></i>
-                                            Store Policy
-                                        </a>
-                                    </h3>
-                                    <h3>
-                                        <a href="#">
-                                            <i class="fa-solid fa-money" aria-hidden="true"></i>
-                                            Payment Methods
-                                        </a>
-                                    </h3>
-                                    <h3>
-                                        <a href="#">
-                                            <i class="fa-solid fa-envelope-o" aria-hidden="true"></i>
-                                            Mailing List
-                                        </a>
-                                    </h3>
-                                </div>
-                            </div>
-                            <!-- .col-lg-3 -->
-                        </div>
-                        <!-- .row -->
-                    </div>
-                    <!-- .footer-top -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .bg-footer-top -->
-
-    <!-- End Footer -->
 
     <!-- Start Pre-Loader-->
 
