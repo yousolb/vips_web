@@ -15,6 +15,7 @@ for(let i = 0; i < docus.length; i++) {
     let pricing = product_data.price;
     let price = `\$${Math.floor(pricing/100)}.${pricing%100}`;
     let prod_id = doc.id;
+    console.log(product_data.product_name)
 
     let collection_items = `
     <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 25%">

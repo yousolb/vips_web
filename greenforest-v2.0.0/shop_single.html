@@ -49,6 +49,22 @@
             populateDropdown();
         });
     </script>
+
+    <script type="module">
+        import { artist_id } from './shop_single.mjs';
+
+        function artistPage() {
+            window.location.href = `team_single.html?prodid=${artist_id}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Find the image element and attach the click event
+            const imageElement = document.querySelector('.artist_img');
+            if (imageElement) {
+                imageElement.addEventListener('click', artistPage);
+            }
+        });
+    </script>
     
     <div class="box-layout">
         <div class="box-style">
@@ -231,10 +247,18 @@
                                                         border-radius: 50%;
                                                         display: block;
                                                     }
+                                                    .artist_img {
+                                                        transition: transform 0.3s ease;
+                                                    }
+
+                                                    .artist_img:hover {
+                                                        transform: scale(1.1);
+                                                        filter: opacity(80%)
+                                                    }
                                                 </style>
                                                 <div class="desc-content">
                                                     <div>
-                                                        <img src="" class="artist_img" style="width:200px;"></img>
+                                                        <img src="" class="artist_img" style="width:200px;" onclick="artistPage()"></img>
                                                     </div>
                                                     <div>
                                                         <p class="artist_desc"></p>

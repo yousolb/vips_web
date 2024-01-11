@@ -70,6 +70,7 @@ export async function getFromDatabase(id) {
       ${artist_data.label}
   `
   database_product.artist = artist
+  database_product.artist_id = product_data.artist.id
   database_product.artist_info = artist_info
   let artist_img_ref = ref(storage, artist_data.image);
   database_product.artist_img_url = await getDownloadURL(artist_img_ref)

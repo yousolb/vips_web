@@ -26,10 +26,10 @@ export async function populateCart() {
         let collection_items = `<tr>
         <td class="cart-product">
             <div class="product-cart-img">
-                <a href="#"><img src="${url}" alt="product-cart-img-1" style="width:200px;height:auto;" /></a>
+                <a href="shop_single.html?prodid=${id}"><img src="${url}" alt="product-cart-img-1" style="width:25vw;height:45vh;object-fit:cover;" /></a>
             </div>
             <!-- .product-cart-img -->
-            <div class="product-cart-title">
+            <div class="product-cart-title"style="padding-top:19.8vh;padding-left:7vw;">
             <h4><a href="shop_single.html?prodid=${id}">${prod_obj.product_name}</a></h4>
             </div>
             <!-- .product-cart-title -->

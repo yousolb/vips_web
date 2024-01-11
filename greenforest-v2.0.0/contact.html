@@ -155,29 +155,32 @@
                                 <img src="assets/images/box-style/01.png" alt="fixme">
                             </div>
                             <div class="col-lg-8">
-                                <form action="#" method="POST" class="contact-form">
+                                <form action="send_email.php" method="post" class="contact-form">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nameId" name="name" color="#1E6E37" placeholder="Full Name">
+                                                <input type="text" class="form-control" id="nameId" name="name" color="#1E6E37" placeholder="Full Name" required>
                                             </div>
                                             <!-- .form-group -->
                                         </div>
                                         <!-- .col-md-6 -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="emailId" name="email" placeholder="Email Address">
+                                                <input type="email" class="form-control" id="emailId" name="email" placeholder="Email Address" required>
                                             </div>
                                         </div>
                                         <!-- .col-md-6 -->
                                     </div>
                                     <!-- .row -->
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subjectId" name="subject" placeholder="Subject">
+                                        <input type="text" class="form-control" id="subjectId" name="subject" placeholder="Subject" required>
                                     </div>
                                     <textarea class="form-control text-area" rows="3" placeholder="Message"></textarea>
                                     <button type="submit" class="btn btn-default">Send Email</button>
                                 </form>
+                                
+                                <!-- TODO: once we have domain name, follow rest of steps to actually send emails w/ phpmailer -->
+                                
                             </div>
                             
                         </div>

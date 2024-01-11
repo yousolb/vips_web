@@ -30,6 +30,8 @@ for(let i = 0; i < product_object.product_images.length; i++) {
     largeImg.appendChild(li.cloneNode(true))
 }
 
+export const artist_id = product_object.artist_id
+
 setHTML('.product_name', product_object.product_name);
 setHTML('.product_price', product_object.product_price);
 setHTML('.product_desc', product_object.product_desc);
