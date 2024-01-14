@@ -1,7 +1,7 @@
 import {col, storage, fires, setSRC, setHTML, getProductData } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
-import { removeFromCart } from './cart_manager.mjs';
+import { removeFromCart, populateDropdown } from './cart_manager.mjs';
 
 let elt = document.querySelector(`.cart-products`);
 let total_pricing = 0
@@ -47,6 +47,7 @@ export async function populateCart() {
         async function removeShopCart() {
             removeFromCart(id)
             elt.innerHTML = ``
+            populateDropdown()
             populateCart()
         }
 
