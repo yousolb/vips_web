@@ -159,24 +159,24 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" id="nameId" name="name" color="#1E6E37" placeholder="Full Name" required>
+                                                <input type="text" class="form-control" id="name" name="name" color="#1E6E37" placeholder="Full Name" required>
                                             </div>
                                             <!-- .form-group -->
                                         </div>
                                         <!-- .col-md-6 -->
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" id="emailId" name="email" placeholder="Email Address" required>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
                                             </div>
                                         </div>
                                         <!-- .col-md-6 -->
                                     </div>
                                     <!-- .row -->
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="subjectId" name="subject" placeholder="Subject" required>
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
                                     </div>
-                                    <textarea class="form-control text-area" rows="3" placeholder="Message"></textarea>
-                                    <button type="submit" class="btn btn-default">Send Email</button>
+                                    <textarea class="form-control text-area" id="message" name="message" rows="3" placeholder="Message" required></textarea>
+                                    <button type="submit" value="Send" class="btn btn-default">Send Email</button>
                                 </form>
                                 
                                 <!-- TODO: once we have domain name, follow rest of steps to actually send emails w/ phpmailer -->
