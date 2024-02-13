@@ -48,40 +48,40 @@
 
  
 html {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
  
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
 	font-size: 15px; 
 }
 
 html {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'PT Serif', serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
 
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'PT Serif', serif;
     font-size: 15px; 
 }
 
 html {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'PT Serif', serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'PT Serif', serif;
 	font-size: 15px; 
 }
 
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'PT Serif', serif;
     font-size: 15px;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -294,7 +294,7 @@ input,
 select,
 textarea {
     color: #696969;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
     line-height: 1.8;
 }
  
@@ -427,7 +427,7 @@ tt,
 var,
 samp,
 pre {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'PT Serif', serif;
 }
  
 pre {
@@ -626,7 +626,7 @@ input[type="submit"][disabled]:focus {
     border: 0;
 	border-radius: 0px;
     color: #696969;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
     font-weight: 700;
     letter-spacing: 0.046875em;
     line-height: 1;
@@ -1174,7 +1174,7 @@ section{
 	text-transform: uppercase;
 }
 .page-header-content .breadcrumb>li+li:before{
-	font-family: FontAwesome;
+	font-family: 'PT Serif', serif;
 	content: "\f068";
 	color: #fff;
 	font-size: 11px;
@@ -2590,7 +2590,7 @@ section{
 .header-style-2 .bg-header-top{
 	display: flex;
 	background: #1E6E37;
-	font-family: 'Inter', sans-serif;
+	font-family: 'PT Serif', serif;
 }
 .header-style-2 .bg-header-top h2{
 	color: white;
@@ -2668,7 +2668,7 @@ section{
 	color: #000000;
 	font-size: 14px;
 	font-weight: 600;
-	font-family: Helvetica Neue, sans-serif;
+	font-family: 'PT Serif', serif;
 }
 .header-style-2 .main-menu ul>li>a:hover, 
 .header-style-3 .main-menu ul>li>a:hover,
@@ -2815,7 +2815,7 @@ section{
 	text-transform: uppercase;
 }
 .about-vips-content p {
-	font-family: Roboto;
+	font-family: 'PT Serif', serif;
 	display: inline-block;
 	color: black;
 	font-weight: 400;
@@ -2859,7 +2859,7 @@ section{
 	color: black;
 	background-color: #C1ADE5;
 	padding: 10px 18px 10px 18px;
-	font-family: 'Roboto', monospace;
+	font-family: 'PT Serif', serif;
 }
 .about-philosophy .btn-default{
 	padding: 14px 28px 12px 28px;
@@ -3275,7 +3275,6 @@ div#filters {
 .pics-container {
 	display: flex;
 	justify-content: center;
-	margin: 0 -50px;
 }
 
 .col-lg-2 {
@@ -5183,7 +5182,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 .quate-para:before{
 	position: absolute;
-	font-family: FontAwesome;
+	font-family: 'PT Serif', serif;
 	content: "\f10d";
 	top: 0;
 	left: 0;
@@ -5191,7 +5190,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 .quate-para:after{
 	position: absolute;
-	font-family: FontAwesome;
+	font-family: 'PT Serif', serif;
 	content: "\f10e";
 	bottom: 0;
 	right: 23%;
@@ -5696,7 +5695,7 @@ ul>li>a:focus, ul>li>a:hover {
 	top: 3px;
 }
 .low-price:after{
-	font-family: fontAwesome;
+	font-family: 'PT Serif', serif;
 	position: absolute;
 	content: "\f068";
 	top: 3px;
@@ -5752,7 +5751,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 
 .flex-direction-nav a:before {
-  font-family: FontAwesome;
+  font-family: 'FontAwesome', serif;
   font-size: 28px;
   content: "\f104";
   color: #fff;
@@ -5815,7 +5814,6 @@ ul>li>a:focus, ul>li>a:hover {
 	End Flex Slider
 ==================================*/
 
-.about-product-datails{}
 .about-product-datails h3{
 	font-size: 30px;
 	font-weight: 600;
