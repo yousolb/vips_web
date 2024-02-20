@@ -38,7 +38,7 @@
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:300,400,500,600,700');
 
 /*======================
 	Start Reset css
@@ -46,13 +46,13 @@
 
  
 html {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
  
 body {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
 	font-size: 15px; 
 }
  
@@ -261,7 +261,7 @@ input,
 select,
 textarea {
     color: #696969;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
     line-height: 1.8;
 }
  
@@ -394,7 +394,7 @@ tt,
 var,
 samp,
 pre {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'PT Serif', serif;
 }
  
 pre {
@@ -593,7 +593,7 @@ input[type="submit"][disabled]:focus {
     border: 0;
 	border-radius: 0px;
     color: #696969;
-	font-family: 'Poppins', sans-serif;
+	font-family: 'PT Serif', serif;
     font-weight: 700;
     letter-spacing: 0.046875em;
     line-height: 1;
@@ -1151,7 +1151,7 @@ section{
 	text-transform: uppercase;
 }
 .page-header-content .breadcrumb>li+li:before{
-	font-family: FontAwesome;
+	font-family: 'PT Serif', serif;
 	content: "\f068";
 	color: #fff;
 	font-size: 11px;
@@ -4707,7 +4707,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 .quate-para:before{
 	position: absolute;
-	font-family: FontAwesome;
+	font-family: 'PT Serif', serif;
 	content: "\f10d";
 	top: 0;
 	left: 0;
@@ -4715,7 +4715,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 .quate-para:after{
 	position: absolute;
-	font-family: FontAwesome;
+	font-family: 'PT Serif', serif;
 	content: "\f10e";
 	bottom: 0;
 	right: 23%;
@@ -5216,7 +5216,7 @@ ul>li>a:focus, ul>li>a:hover {
 	top: 3px;
 }
 .low-price:after{
-	font-family: fontAwesome;
+	font-family: 'PT Serif', serif;
 	position: absolute;
 	content: "\f068";
 	top: 3px;
@@ -5272,7 +5272,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 
 .flex-direction-nav a:before {
-  font-family: FontAwesome;
+  font-family: 'PT Serif', serif;
   font-size: 28px;
   content: "\f104";
   color: #fff;
