@@ -163,8 +163,24 @@
                 bottom: 0;
                 right: 0;
             }
+            .shop-scroll-bar button {
+                width: 150px;
+                height: 60px;
+            }
 
         </style>
+
+        <div class="shop-scroll-bar">
+            <div class="scroll-container">
+                
+            </div>
+            <button type="button" id="shop-all" onclick="redirectToShop()"><p style="font-size:35px;color:white"> SHOP</p></button>
+            <script>
+                function redirectToShop() {
+                window.location.href = "shop.html";
+                }
+            </script>
+        </div>
 
         <section class="home-header">
             <div class="pics-container">
@@ -181,11 +197,11 @@
                         <div class="col-lg-2">
                             <div class="madagascar-pic" style="position: relative;">
                                 <img src="assets/images/homeonepage/kojima1.jpg" style="width: 850px;">
-                                <div class="madagascar-pic-button" style="position: absolute; bottom: 0; right: 0;">
+                                <div class="madagascar-pic-button" style="position: absolute; top: 0; right: 0;">
                                     <button style="font-size: 20px;" type="button">Learn More</button>
                                 </div>
                             </div>
-                            <div class="horizontal-box" style="position: absolute; top: calc(25% - 380px); left: -200px; width: 900px; height: 150px; background-color: lightgray;">
+                            <div class="horizontal-box" style="position: absolute; top: calc(25% - 380px); left: -100px; width: 800px; height: 150px; background-color: lightgray;">
                                 <h3 style="font-size: 22px; color: black; text-align: left; display: grid; place-items: center; height: 120px; font-weight:300;"> Very Important Primates<br>
                                 100% of profits from every sale go to wildlife conservation<br>
                                 Each product is one-of-a-kind and handmade with sustainably-sourced materials
@@ -197,20 +213,7 @@
             </div>
         </section>
 
-        <div class="shop-scroll-bar">
-            <div class="section-header">
-                <h2>SHOP OUR STYLES</h2>
-            </div>
-            <div class="scroll-container">
-                
-            </div>
-            <button type="button" id="shop-all" onclick="redirectToShop()"><i> SHOP ALL</i></button>
-            <script>
-                function redirectToShop() {
-                 window.location.href = "shop.html";
-                }
-            </script>
-        </div>
+
 
         <!-- Start More Info Section -->
         <section class="more-info">

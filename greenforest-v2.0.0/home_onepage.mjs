@@ -19,7 +19,7 @@ for(let i = 0; i < docus.length; i++) {
     console.log(prod_id)
 
     let collection_items = `<div class="product-card">
-    <img src="${url}" alt="varibolo-gloves" style="width:30vw;height:60vh;object-fit:cover;"/>
+    <img src="${url}" alt="varibolo-gloves" style="width:15vw;height:30vh;object-fit:cover;"/>
     <ul class="collection-icon">
         <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
         <li><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
