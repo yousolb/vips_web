@@ -2,7 +2,7 @@ import {col, storage, fires, setSRC, setHTML } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { limit, query, orderBy, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
-let qs = await getDocs(query(col, orderBy('date_added', 'desc'), limit(6)));
+let qs = await getDocs(query(col, orderBy('date_added', 'desc'), limit(10)));
 let docus = qs.docs;
 let elt = document.querySelector(`.scroll-container`);
 
@@ -19,7 +19,7 @@ for(let i = 0; i < docus.length; i++) {
     console.log(prod_id)
 
     let collection_items = `<div class="product-card">
-    <img src="${url}" alt="varibolo-gloves" style="width:15vw;height:30vh;object-fit:cover;"/>
+    <img src="${url}" alt="varibolo-gloves" style="height:30vh;object-fit:cover;display:flex;justify-content:center;"/>
     <ul class="collection-icon">
         <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
         <li><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
