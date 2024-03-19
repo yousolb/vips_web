@@ -26,6 +26,10 @@ export async function removeFromCart(id) {
 
 export async function populateDropdown() {
     let dropdown_cart = document.querySelector(`.cart-dropdown-menu`);
+    while (dropdown_cart === null) {
+        await new Promise(r => setTimeout(r, 10));
+        dropdown_cart = document.querySelector(`.cart-dropdown-menu`);
+    }
     dropdown_cart.innerHTML = `<div class="total-price">
     <p><span>Total Price :</span> <span class="total-pricing">$0</span> </p>
 </div>

@@ -6581,6 +6581,15 @@ ul>li>a:focus, ul>li>a:hover {
 }
 
 
+/*================================
+	Sustainability Style Section
+==================================*/
 
 
+.section-title a {
+	color: black; /* Links will be black */
+}
 
+.section-title a:hover {
+	color: blue; /* Links will turn blue on hover */
+}
