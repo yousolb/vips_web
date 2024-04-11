@@ -45,6 +45,10 @@ if (selectedItem === 'gameday') {
     let header = document.getElementById('header-title')
     header.innerHTML = 'Accessories Collection';
     qs = await getDocs(query(col, where('type', '==', 'accessory')));
+} else if (selectedItem === 'kojima') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'KOJIMA Collection';
+    qs = await getDocs(query(col, where('collection', '==', 'kojima')));
 }
 let docus = qs.docs;
 
