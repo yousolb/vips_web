@@ -21,8 +21,7 @@ for(let i = 0; i < docus.length; i++) {
     let collection_items = `<div class="product-card">
     <img src="${url}" alt="varibolo-gloves" style="height:30vh;object-fit:cover;display:flex;justify-content:center;"/>
     <ul class="collection-icon">
-        <li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
-        <li><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+        <li style="padding: 0 4em;"><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
     </ul>
     <div class="collection-content">
         <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>

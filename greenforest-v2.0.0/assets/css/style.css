@@ -42,46 +42,58 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap');
 
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@800&display=swap');
+
+
+.manrope {
+	font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 800;
+	font-style: normal;
+}
+
+
 /*======================
 	Start Reset css
 ======================================================*/
 
  
 html {
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
  
 body {
-	font-family: 'PT Serif', serif;
-	font-size: 15px; 
+	font-family: 'Manrope', sans-serif;
+	font-size: 15px;
 }
 
 html {
-    font-family: 'PT Serif', serif;
+    font-family: 'Manrope', sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 }
 
 body {
-    font-family: 'PT Serif', serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 15px; 
 }
 
 html {
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
 
 body {
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	font-size: 15px; 
 }
 
 html, body {
-    font-family: 'PT Serif', serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 15px;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -294,7 +306,7 @@ input,
 select,
 textarea {
     color: #696969;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
     line-height: 1.8;
 }
  
@@ -427,7 +439,7 @@ tt,
 var,
 samp,
 pre {
-    font-family: 'PT Serif', serif;
+    font-family: 'Manrope', sans-serif;
 }
  
 pre {
@@ -626,7 +638,7 @@ input[type="submit"][disabled]:focus {
     border: 0;
 	border-radius: 0px;
     color: #696969;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
     font-weight: 700;
     letter-spacing: 0.046875em;
     line-height: 1;
@@ -1174,7 +1186,7 @@ section{
 	text-transform: uppercase;
 }
 .page-header-content .breadcrumb>li+li:before{
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	content: "\f068";
 	color: #fff;
 	font-size: 11px;
@@ -2590,7 +2602,7 @@ section{
 .header-style-2 .bg-header-top{
 	display: flex;
 	background: #1E6E37;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 }
 .header-style-2 .bg-header-top h2{
 	color: white;
@@ -2668,7 +2680,7 @@ section{
 	color: #000000;
 	font-size: 14px;
 	font-weight: 600;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 }
 .header-style-2 .main-menu ul>li>a:hover, 
 .header-style-3 .main-menu ul>li>a:hover,
@@ -2815,7 +2827,7 @@ section{
 	text-transform: uppercase;
 }
 .about-vips-content p {
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	display: inline-block;
 	color: black;
 	font-weight: 400;
@@ -2859,7 +2871,7 @@ section{
 	color: black;
 	background-color: #C1ADE5;
 	padding: 10px 18px 10px 18px;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 }
 .about-philosophy .btn-default{
 	padding: 14px 28px 12px 28px;
@@ -3486,12 +3498,20 @@ ul>li>a:focus, ul>li>a:hover {
     cursor: pointer;
 }
 
+.bg-shop-section .row.shop-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between items */
+}
+
 .bg-shop-section .container {
 	display: inline-flex;
-	margin-left: 50px;
+	margin-left: 10%;
+	width: 100%;
 }
 .bg-shop-section .row {
-	/* justify-self: flex-start; */
+	justify-self: flex-start;
 }
 .collection-overlay{
 	position: absolute;
@@ -5182,7 +5202,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 .quate-para:before{
 	position: absolute;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	content: "\f10d";
 	top: 0;
 	left: 0;
@@ -5190,7 +5210,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 .quate-para:after{
 	position: absolute;
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	content: "\f10e";
 	bottom: 0;
 	right: 23%;
@@ -5501,12 +5521,6 @@ ul>li>a:focus, ul>li>a:hover {
 .results-icon .fa:hover{
 	color: #53a92c;
 }
-.shop-collection{
-	margin-top: 30px;
-}
-.shop-collection .row{
-	justify-content: flex-start;
-}
 
 .shop-sidebar{
 	padding: 0 18px 55px 18px;
@@ -5695,7 +5709,7 @@ ul>li>a:focus, ul>li>a:hover {
 	top: 3px;
 }
 .low-price:after{
-	font-family: 'PT Serif', serif;
+	font-family: 'Manrope', sans-serif;
 	position: absolute;
 	content: "\f068";
 	top: 3px;
@@ -5751,7 +5765,7 @@ ul>li>a:focus, ul>li>a:hover {
 }
 
 .flex-direction-nav a:before {
-  font-family: 'FontAwesome', serif;
+  font-family: 'FontAwesome', sans-serif;
   font-size: 28px;
   content: "\f104";
   color: #fff;
