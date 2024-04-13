@@ -1,4 +1,4 @@
-import {col, storage, fires, setSRC, setHTML, cartItems, getProductData } from './firebase.mjs'
+import { col, storage, fires, setSRC, setHTML, cartItems, getProductData } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
@@ -6,7 +6,7 @@ let dropdown_cart = document.querySelector(`.cart-dropdown-menu`);
 
 export async function addToCart(id) {
     var carts = []
-    if(localStorage.getItem("carts") === null) {
+    if (localStorage.getItem("carts") === null) {
         carts = []
     }
     else {
@@ -39,18 +39,18 @@ export async function populateDropdown() {
 </div>`
     let total_pricing = 0
     var carts = []
-    if(localStorage.getItem("carts") === null) {
+    if (localStorage.getItem("carts") === null) {
         carts = []
     }
     else {
         carts = JSON.parse(localStorage.getItem("carts"));
     }
-    for(let i = 0; i < carts.length; i++) {
+    for (let i = 0; i < carts.length; i++) {
         let id = carts[i];
         let pricing = await dropdownCartItem(id)
         total_pricing = total_pricing + pricing
     }
-    let total_price = `\$${Math.floor(total_pricing/100)}.${total_pricing%100}`;
+    let total_price = `\$${Math.floor(total_pricing / 100)}.${total_pricing % 100}`;
     setHTML(".total-pricing", total_price)
 }
 
