@@ -12,26 +12,43 @@ if (selectedItem === 'gameday') {
     let header = document.getElementById('header-title')
     header.innerHTML = 'GAMEDAY Collection';
     header.style.color = 'white';
-    let header_desc = document.getElementById('header-desc')
-    header_desc.innerHTML = 'VIP\'s Fund originated at the University of Michigan, so we are beyond excited to announce the first collection of the 2023 academic year paying homage to the Maize and Blue!';
-    header_desc.style.color = '#2268B8';
+    // ISSUE: header_desc does not exist in shop.html; who deleted & why lol
+    //let header_desc = document.getElementById('header-desc')
+    //header_desc.innerHTML = 'VIP\'s Fund originated at the University of Michigan, so we are beyond excited to announce the first collection of the 2023 academic year paying homage to the Maize and Blue!';
+    //header_desc.style.color = '#2268B8';
     qs = await getDocs(query(col, where('collection', '==', 'gameday')));
 } else if (selectedItem === 'varibolo') {
     let header = document.getElementById('header-title')
     header.innerHTML = 'VARIBOLO Collection';
-    let header_desc = document.getElementById('header-desc')
-    header_desc.innerHTML = '"Varibolo" is the local Malagasy word for the bamboo lemur, a species that lives in Ranomafana National Park, Madagascar. VIP\'s is working to protect wildlife in this region in collaboration with Varibolo Resto and its owner, Patrick Randriamamonjy.';
-    header_desc.style.color = '#784040'
+    //let header_desc = document.getElementById('header-desc')
+    //header_desc.innerHTML = '"Varibolo" is the local Malagasy word for the bamboo lemur, a species that lives in Ranomafana National Park, Madagascar. VIP\'s is working to protect wildlife in this region in collaboration with Varibolo Resto and its owner, Patrick Randriamamonjy.';
+    //header_desc.style.color = '#784040'
     qs = await getDocs(query(col, where('collection', '==', 'varibolo')));
 } else if (selectedItem === 'affection') {
     qs = await getDocs(query(col, where('collection', '==', 'affection')));
 } else if (selectedItem === 'gaia') {
     let header = document.getElementById('header-title')
     header.innerHTML = 'GAIA Collection';
-    let header_desc = document.getElementById('header-desc')
-    header_desc.innerHTML = 'We bring you the GAIA collection on Earth Day 2023 to honor the ecological essence of VIP\'s. Named after the greek goddess of the earth, Gaia theory encourages us to look at the earth as one giant living, breathing organism that in turn gives us life. Please rejoice in the abundance of nature with us as you shop this collection!';
-    header_desc.style.color = 'green'
+    //let header_desc = document.getElementById('header-desc')
+    //header_desc.innerHTML = 'We bring you the GAIA collection on Earth Day 2023 to honor the ecological essence of VIP\'s. Named after the greek goddess of the earth, Gaia theory encourages us to look at the earth as one giant living, breathing organism that in turn gives us life. Please rejoice in the abundance of nature with us as you shop this collection!';
+    //header_desc.style.color = 'green'
     qs = await getDocs(query(col, where('collection', '==', 'gaia')));
+} else if (selectedItem === 'fashion') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'Fashion Collection';
+    qs = await getDocs(query(col, where('type', '==', 'fashion')));
+} else if (selectedItem === 'plushes') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'Plushes Collection';
+    qs = await getDocs(query(col, where('type', '==', 'plush')));
+} else if (selectedItem === 'accessories') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'Accessories Collection';
+    qs = await getDocs(query(col, where('type', '==', 'accessory')));
+} else if (selectedItem === 'kojima') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'KOJIMA Collection';
+    qs = await getDocs(query(col, where('collection', '==', 'kojima')));
 }
 let docus = qs.docs;
 
@@ -47,11 +64,11 @@ for(let i = 0; i < docus.length; i++) {
     console.log(product_data.product_name)
 
     let collection_items = `
-    <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 25%">
+    <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 22%;">
     <div class="collection-items">
     <div class="collection-img">
         <div class="collection-overlay"></div>
-        <img src="${url}" alt="collection-img-1" style="width:25vw;height:50vh;object-fit: cover;"/>
+        <img src="${url}" alt="collection-img-1" style="width:20vw;height:40vh;object-fit: cover;"/>
         <ul class="collection-icon">
         </ul>
     </div>
