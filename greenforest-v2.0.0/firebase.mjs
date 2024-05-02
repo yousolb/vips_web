@@ -48,8 +48,14 @@ export async function getFromDatabase(id) {
   let product_data = docu.data();
   database_product.product_name = product_data.product_name;
 
-  database_product.price_cents = product_data.price;
-  database_product.product_price = `\$${Math.floor(product_data.price/100)}.${product_data.price%100}`
+  const priceInDollars = Math.floor(product_data.price / 100);
+  const cents = product_data.price % 100;
+  let formattedCents = cents < 10 ? `0${cents}` : `${cents}`;
+  if (formattedCents.length < 2) {
+      formattedCents = formattedCents.padEnd(2, '0');
+  }
+  database_product.product_price = `$${cents === 0 ? `${priceInDollars}.00` : formattedPrice}`;
+
   database_product.product_images = []
   let reference = ref(storage, product_data.image_folder);
   let imglist = await list(reference);

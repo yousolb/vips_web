@@ -58,8 +58,14 @@ for(let i = 0; i < docus.length; i++) {
     let reference = ref(storage, product_data.image_folder);
     let imglist = await list(reference);
     let url = await getDownloadURL(imglist.items[0]);
-    let pricing = product_data.price;
-    let price = `\$${Math.floor(pricing/100)}.${pricing%100}`;
+    const priceInDollars = Math.floor(product_data.price / 100);
+    const cents = product_data.price % 100;
+    let formattedCents = cents < 10 ? `0${cents}` : `${cents}`;
+    if (formattedCents.length < 2) {
+        formattedCents = formattedCents.padEnd(2, '0');
+    }
+    const formattedPrice = `${priceInDollars}.${formattedCents}`;
+    let price = `$${cents === 0 ? `${priceInDollars}.00` : formattedPrice}`;
     let prod_id = doc.id;
     console.log(product_data.product_name)
 
