@@ -41,9 +41,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&display=swap');
 
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Manrope:wght@800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 .manrope {
 	font-family: "Manrope", sans-serif;
@@ -334,13 +332,13 @@ h1 {
 h2 {
 	font-size: 36px;
 	color: #070707;
-	font-weight: 700;
+	font-weight: 800;
 }
 
 h3 {
 	font-size: 24px;
 	color: #fff;
-	font-weight: 700;
+	font-weight: 800;
 }
 
 h4 {
@@ -2365,17 +2363,15 @@ section {
 }
 
 .volunteers-items {
-	text-align: center;
+	text-align: left;
 	background: #ffffff;
 	padding-top: 30px;
-	border: 1px solid #f0f0f0;
 	margin-bottom: 28px;
 }
 
 .volunteers-img {
-	width: 200px;
-	height: 200px;
-	border-radius: 100%;
+	width: 90%;
+	height: 90%;
 	background: #ddd;
 	display: inline-block;
 	overflow: hidden;
@@ -2394,7 +2390,7 @@ section {
 	padding: 10px 0;
 }
 
-.volunteers-items:hover {
+/* .volunteers-items:hover {
 	box-shadow: 1px 0px 14px 1px #ebebeb;
 }
 
@@ -2405,7 +2401,7 @@ section {
 .volunteers-items:hover .volunteers-img {
 	-webkit-transform: scale(1.05, 1.05);
 	transform: scale(1.05, 1.05);
-}
+} */
 
 
 
@@ -3125,84 +3121,50 @@ section {
 	justify-content: flex-end;
 }
 
-.about-vips-content p {
-	background-color: #EAE07B;
-	border-radius: 5px;
-}
-
-.about-vips {
-	padding: 110px 0 75px 0;
-}
-
-.about-vips-content h2 {
-	text-transform: uppercase;
-}
-
-.about-vips-content p {
-	font-family: 'Manrope', sans-serif;
-	display: inline-block;
-	color: black;
-	font-weight: 400;
-	padding: 10px 18px 10px 18px;
-}
-
-.about-vips-content .btn-default {
-	padding: 14px 28px 12px 28px;
-	margin: 40px 20px 0 0;
-}
-
-.about-vips-content .btn-default:active,
-.about-vips-content .btn-default:focus {
-	color: #53a92c;
-}
-
-.about-vips-content .btn-default:hover {
-	color: #fff;
-}
-
 
 /*=======================
 	End About Greenforest Section 
 ==========================================*/
 
 /*======================================
-	Start About Philosophy
+	Start About
 ====================================================*/
-.about_philosophy p {
-	background-color: #C1ADE5;
-}
 
-.about-philosophy {
-	padding: 0 75px 0;
-	align-self: right;
-}
-
-.about-philosophy h2 {
-	text-transform: uppercase;
-	text-align: right;
-}
-
-.about-philosophy p {
-	display: inline-block;
-	font-weight: 400;
+.about-mission p {
 	color: black;
 	background-color: #C1ADE5;
-	padding: 10px 18px 10px 18px;
+	padding: 20px 25px 20px 25px;
 	font-family: 'Manrope', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	letter-spacing: 0.8px;
 }
 
-.about-philosophy .btn-default {
-	padding: 14px 28px 12px 28px;
-	margin: 40px 20px 0 0;
+.about-col {
+	background-color: white;
+	padding: 20px 35px 20px 0px;
 }
 
-.about-philosophy .btn-default:active,
-.about-philosophy-content .btn-default:focus {
-	color: #53a92c;
+.about-col p {
+	color: black;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	letter-spacing: 0.8px;
 }
 
-.about-philosophy-content .btn-default:hover {
-	color: #fff;
+.vip-about-container {
+	border-right: 3px solid #28562b;
+}
+
+.about-container {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.staff-items {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr)
 }
 
 
