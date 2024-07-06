@@ -39,6 +39,19 @@ async function addUser(db, inEmail, inFName, inLName) {
     const newDocRef = await addDoc(userCol, myDocumentData);
 }
 
+const alertBar = document.getElementById('alertContainer')
+const appendAlert = (message, type) => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+        `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+        `   <div>${message}</div>`,
+        '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+        '</div>'
+    ].join('')
+
+    alertBar.append(wrapper)
+}
+
 document.getElementById("test-form").addEventListener("submit", async function (e) {
     e.preventDefault();
 
@@ -52,9 +65,9 @@ document.getElementById("test-form").addEventListener("submit", async function (
     console.log(userExists);
 
     if (userExists) {
-        alert("Email already in use! Please try a different one.");
+        appendAlert("Email already in use! Please try a different one.", 'danger');
     } else {
-        alert("You're signed up!");
+        appendAlert('You\'re signed up!', 'success')
         addUser(db, formProps['email'], formProps['fname'], formProps['lname']);
     }
 
