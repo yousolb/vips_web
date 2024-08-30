@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Checkout</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Plugin css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lightcase.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.nstSlider.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css" media="all" />
+
+    <!-- own style css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="checkout.js" defer></script>
+    <style>
+        /* Basic styling for the checkout form */
+        .checkout-form {
+            max-width: 400px;
+            margin-bottom: 200px;
+            margin-top: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group .stripe-element {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-group button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
+    <!-- stripe -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+
+<body>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
+    </script>
+
+    <script type="module">
+        // Import the function from the module file
+        import { populateDropdown } from './cart_manager.mjs';
+
+        window.addEventListener("load", () => {
+            // Call the imported function
+            populateDropdown();
+        });
+    </script>
+
+    <div class="box-layout">
+        <div class="box-style">
+            <div class="color-btn">
+                <a href="#"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
+            </div>
+            <div class="box-style-inner">
+                <h3>Box Layout</h3>
+                <div class="box-element">
+                    <div class="box-heading">
+                        <h5>HTML Layout</h5>
+                    </div>
+                    <div class="box-content">
+                        <ul class="box-customize">
+                            <li><a class="boxed-btn" href="#">Boxed</a></li>
+                            <li><a class="wide-btn" href="#">Wide</a></li>
+                            <li><a class="rtl-btn" href="#">Rtl</a></li>
+                            <li><a class="ltl-btn" href="#">Ltl</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box-element">
+                    <div class="box-heading">
+                        <h5>Backgroud Images</h5>
+                    </div>
+                    <div class="box-content">
+                        <ul class="box-bg-img">
+                            <li>
+                                <a class="bg-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-2" href="#"><img src="assets/images/box-style/02.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-3" href="#"><img src="assets/images/box-style/03.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-4" href="#"><img src="assets/images/box-style/04.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-5" href="#"><img src="assets/images/box-style/05.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-6" href="#"><img src="assets/images/box-style/06.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-7" href="#"><img src="assets/images/box-style/07.jpg" alt=""></a>
+                            </li>
+                            <li>
+                                <a class="bg-8" href="#"><img src="assets/images/box-style/08.jpg" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="box-element">
+                    <div class="box-heading">
+                        <h5>Backgroud Pattern</h5>
+                    </div>
+                    <div class="box-content">
+                        <ul class="box-pattern-img">
+                        <li>
+                            <a class="pt-1" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/01.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-2" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/02.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-3" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/03.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-4" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/04.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-5" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/05.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-6" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/06.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-7" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/07.png"" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-8" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/08.png"" alt=""></a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+        <!-- Start Checkout Section -->
+        <div class="checkout-form">
+            <h2>Payment</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <label for="card-element">Credit or debit card</label>
+                    <div id="card-element" class="stripe-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submit-button">Pay</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="checkout">
+            <!-- Checkout will insert the payment form here -->
+        </div>
+        <!-- Load Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Your Stripe publishable key
+        const stripe = Stripe('pk_test_51OtTziFV91ot5Yz8BU1VQ0Ed4OGqMQOB6wyY0EnesOTu2vy5Ewns4BnUPpFB5gMngIcAftnAaofTA54E7kJNUqO200RmsdEDBb');
+
+        // Create an instance of Elements
+        const elements = stripe.elements();
+
+        // Custom styling can be passed to options when creating an Element.
+        const style = {
+            base: {
+                color: '#32325d',
+                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                    color: '#aab7c4'
+                }
+            },
+            invalid: {
+                color: '#fa755a',
+                iconColor: '#fa755a'
+            }
+        };
+
+        // Create an instance of the card Element
+        const card = elements.create('card', {style: style});
+
+        // Add an instance of the card Element into the `card-element` <div>
+        card.mount('#card-element');
+
+        // Handle real-time validation errors from the card Element
+        card.on('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Inform the user if there was an error
+                    const errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server
+                    stripeTokenHandler(result.token);
+                    window.location.href = "http://127.0.0.1:5500/greenforest-v2.0.0/return.html";
+                }
+            });
+        });
+
+        // Submit the token to your server
+        function stripeTokenHandler(token) {
+            const form = document.getElementById('payment-form');
+            const hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            // Submit the form
+            form.submit();
+        }
+    </script>
+
+
+        <!-- Start Scrolling -->
+        <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+        <!-- End Scrolling -->
+    </div>
+
+    <!-- Start Pre-Loader-->
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+    <!-- End Pre-Loader -->
+
+
+
+
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+    <!-- Map Api -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqVIkdttPNjl5c5hKlc_Hk3bfXQQlf2Rc&callback=initMap">
+
+
+    </script>
+
+
+</body>
+
+</html>
