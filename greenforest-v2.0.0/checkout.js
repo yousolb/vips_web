@@ -23,3 +23,5 @@ async function initialize() {
   // Mount Checkout
   checkout.mount('#checkout');
 }}
+
+// following this tutorial: https://docs.stripe.com/checkout/embedded/quickstart

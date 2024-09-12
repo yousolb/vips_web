@@ -1,6 +1,6 @@
 <?php
 $errors = [];
-
+// TODO: need to use an email service for this to work (eg SendGrid, MailGun, NodeMailer)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get POST data
     $name = isset($_POST['name']) ? strip_tags(trim($_POST['name'])) : '';
