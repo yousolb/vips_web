@@ -29,14 +29,14 @@ export const cartItems = []
 
 export function setHTML(selector, string) {
   let elts = document.querySelectorAll(selector);
-  for (let i=0; i < elts.length; i++) {
+  for (let i = 0; i < elts.length; i++) {
     elts[i].innerHTML = string;
   }
 }
 
 export async function setSRC(selector, url) {
   let elts = document.querySelectorAll(selector);
-  for (let i=0; i < elts.length; i++) {
+  for (let i = 0; i < elts.length; i++) {
     elts[i].src = url;
   }
 }
@@ -52,21 +52,21 @@ export async function getFromDatabase(id) {
   const cents = product_data.price % 100;
   let formattedCents = cents < 10 ? `0${cents}` : `${cents}`;
   if (formattedCents.length < 2) {
-      formattedCents = formattedCents.padEnd(2, '0');
+    formattedCents = formattedCents.padEnd(2, '0');
   }
-  database_product.product_price = `$${cents === 0 ? `${priceInDollars}.00` : formattedPrice}`;
+  database_product.product_price = `$${cents === 0 ? `${priceInDollars}.00` : `${priceInDollars}.${formattedCents}`}`;
 
   database_product.product_images = []
   let reference = ref(storage, product_data.image_folder);
   let imglist = await list(reference);
-  for(let j = 0; j < imglist.items.length; j++) {
-      let url = await getDownloadURL(imglist.items[j]);
-      database_product.product_images.push(url)
+  for (let j = 0; j < imglist.items.length; j++) {
+    let url = await getDownloadURL(imglist.items[j]);
+    database_product.product_images.push(url)
   }
   let desc = "";
   for (let i = product_data.description_lines.length - 1; i >= 0; i--) {
-      desc += "- " + product_data.description_lines[i];
-      desc += "<br/>";
+    desc += "- " + product_data.description_lines[i];
+    desc += "<br/>";
   }
   database_product.product_desc = desc
   let artist = await getDoc(product_data.artist);
@@ -106,7 +106,7 @@ export async function artistDatabase(id) {
 }
 
 export async function getProductData(id) {
-  if(sessionStorage.getItem(id) === null) {
+  if (sessionStorage.getItem(id) === null) {
     let product_object = await getFromDatabase(id);
     sessionStorage.setItem(id, JSON.stringify(product_object));
     return product_object;
@@ -117,7 +117,7 @@ export async function getProductData(id) {
 }
 
 export async function getArtistData(id) {
-  if(sessionStorage.getItem(id) === null) {
+  if (sessionStorage.getItem(id) === null) {
     let artist_object = await artistDatabase(id);
     sessionStorage.setItem(id, JSON.stringify(artist_object));
     return artist_object;
