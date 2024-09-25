@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thank you!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Plugin css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lightcase.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.nstSlider.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css" media="all" />
+    <!-- own style css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
+    </script>
+
+    <script type="module">
+        // Import the function from the module file
+        import { populateDropdown } from './cart_manager.mjs';
+
+        window.addEventListener("load", () => {
+            // Call the imported function
+            populateDropdown();
+        });
+    </script>
+
+    <div class="box-style">
+        <div class="color-btn">
+            <a href="#"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
+        </div>
+        <div class="box-style-inner">
+            <h3>Box Layout</h3>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>HTML Layout</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-customize">
+                        <li><a class="boxed-btn" href="#">Boxed</a></li>
+                        <li><a class="wide-btn" href="#">Wide</a></li>
+                        <li><a class="rtl-btn" href="#">Rtl</a></li>
+                        <li><a class="ltl-btn" href="#">Ltl</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>Backgroud Images</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-bg-img">
+                        <li>
+                            <a class="bg-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-2" href="#"><img src="assets/images/box-style/02.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-3" href="#"><img src="assets/images/box-style/03.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-4" href="#"><img src="assets/images/box-style/04.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-5" href="#"><img src="assets/images/box-style/05.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-6" href="#"><img src="assets/images/box-style/06.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-7" href="#"><img src="assets/images/box-style/07.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-8" href="#"><img src="assets/images/box-style/08.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>Backgroud Pattern</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-pattern-img">
+                        <li>
+                            <a class="pt-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-2" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-3" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-4" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-5" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-6" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-7" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-8" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Start Page Header Section -->
+    <section class="bg-page-header">
+        <div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h2>Thank you!</h2>
+                        </div>
+                        <!-- .page-title -->
+                        <div class="page-header-content">
+                            <ol class="breadcrumb">
+                                <li><a href="index.html">Home</a></li>
+                            </ol> 
+                        </div>
+                        <!-- .page-header-content -->
+                    </div>
+                    <!-- .page-header -->
+                </div>
+                <!-- .row -->
+                <p>We appreciate your business! If you have any questions regarding your order,
+                  please email <a href="mailto:web@vipsfund.org">web@vipsfund.org</a>
+                </p>
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .page-header-overlay -->
+    </section>
+    <!-- End Page Header Section -->
+
+    <section class="checkout-confirmation" id = "checkout-confirmation">
+
+    
+
+    <!-- Start Pre-Loader-->
+
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Pre-Loader -->
+
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>

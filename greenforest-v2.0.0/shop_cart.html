@@ -22,8 +22,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
 
-     <!-- font awesome-->
-     <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
 
     <script src="shop_cart.mjs" type="module"></script>
 </head>
@@ -34,7 +34,7 @@
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -50,7 +50,7 @@
             populateDropdown();
         });
     </script>
-    
+
     <div class="box-layout">
         <div class="box-style">
             <div class="color-btn">
@@ -110,29 +110,37 @@
                     </div>
                     <div class="box-content">
                         <ul class="box-pattern-img">
-                        <li>
-                            <a class="pt-1" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/01.png"" alt=""></a>
+                            <li>
+                                <a class="pt-1" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/01.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-2" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/02.png"" alt=""></a>
+                            <a class=" pt-2" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/02.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-3" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/03.png"" alt=""></a>
+                            <a class=" pt-3" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/03.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-4" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/04.png"" alt=""></a>
+                            <a class=" pt-4" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/04.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-5" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/05.png"" alt=""></a>
+                            <a class=" pt-5" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/05.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-6" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/06.png"" alt=""></a>
+                            <a class=" pt-6" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/06.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-7" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/07.png"" alt=""></a>
+                            <a class=" pt-7" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/07.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-8" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/08.png"" alt=""></a>
+                            <a class=" pt-8" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/08.png"" alt=""></a>
                         </li>
                     </ul>
                     </div>
@@ -141,160 +149,229 @@
         </div>
 
         <!-- Start Page Header Section -->
-        <section class="bg-page-header">
-            <div class="page-header-overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h2>product cart page</h2>
-                            </div>
-                            <!-- .page-title -->
-                        </div>
-                        <!-- .page-header -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .page-header-overlay -->
-        </section>
-        <!-- Start Shop Cart Section -->
-
-
-        <section class="bg-product-cart-option">
-            <div class="container">
-                <div class="row">
-                    <div class="product-cart-option">
-                        <div class="table-box">
-                            <table class="cart-products-table">
-                                <thead>
-                                    <tr>
-                                        <th class="cart-product">Product</th>
-                                        <th class="cart-price">Price</th>
-                                        <th class="cart-edit">Edit</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody class="cart-products">
-
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- .table-box -->
-
-                        <div class="cart-checked-box">
-                            <div class="cart-coupon-code">
-                                <input type="text" name="text" placeholder="Coupon Code...">
-                                <input type="submit" name="submit" value="apply coupon">
-                            </div>
-                            <!-- .coupon-code -->
-                            <div class="cart-update">
-                                <button type="submit">update cart</button>
-                                <button type="submit">proceed checkout</button>
-                            </div>
-                            <!-- .coupon-code -->
-                        </div>
-                        <!-- .cart-checked-box -->
-
-                        <div class="chipping-box">
-                            <div class="row g-4">
-                                <div class="col-lg-6 col-12">
-                                    <h4>Calculate Shipping</h4>
-                                    <form action="#" method="POST" class="shipping-form">
-                                        <div class="country-select">
-                                            <select>
-												<option value="uk">United Kingdom (UK)</option>
-												<option value="bd">Bangladesh</option>
-												<option value="India">India</option>
-												<option value="pakistan">Pakistan</option>
-											</select>
-                                            <span class="select-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
-                                        </div>
-                                        <!-- .country-select -->
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="country">State / Country</label>
-                                                    <input type="text" class="form-control" name="countryName" id="country" placeholder="State / Country">
+        <section class=" bg-page-header">
+                                    <div class="page-header-overlay">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="page-header">
+                                                    <div class="page-title">
+                                                        <h2>product cart page</h2>
+                                                    </div>
+                                                    <!-- .page-title -->
                                                 </div>
+                                                <!-- .page-header -->
                                             </div>
-                                            <!-- .col-md-6 -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="sr-only" for="postcode">Postcode / ZIP</label>
-                                                    <input type="text" class="form-control" name="postCode" id="postcode" placeholder="Postcode / ZIP">
-                                                </div>
-                                            </div>
-                                            <!-- .col-md-6 -->
+                                            <!-- .row -->
                                         </div>
-                                        <!-- .row -->
-                                        <button type="submit" class="btn btn-default">Update Total</button>
-                                    </form>
-                                </div>
-                                <!-- .col-md-6 -->
-                                <div class="col-lg-6 col-12">
-                                    <h4>Cart Totals</h4>
-                                    <ul class="total-cart">
-                                        <li class="cart-subtotal">Cart Subtotal <span>$ 0.00</span></li>
-                                        <li class="shipping-handling">Shipping and Handling <span>Free Shipping</span></li>
-                                        <li class="order-total">Order Total <span>$ 2940.00</span></li>
-
-                                    </ul>
-                                </div>
-                                <!-- .col-md-6 -->
-                            </div>
-                            <!-- .row -->
-                        </div>
-                        <!-- .chipping-box -->
+                                        <!-- .container -->
+                                    </div>
+                                    <!-- .page-header-overlay -->
+                                    </section>
+                                    <!-- Start Shop Cart Section -->
 
 
+                                    <section class="bg-product-cart-option">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="product-cart-option">
+                                                    <div class="table-box">
+                                                        <table class="cart-products-table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="cart-product">Product</th>
+                                                                    <th class="cart-price">Price</th>
+                                                                    <th class="cart-edit">Edit</th>
+                                                                </tr>
+                                                            </thead>
 
+                                                            <tbody class="cart-products">
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- .table-box -->
+
+                                                    <div class="cart-checked-box">
+                                                        <div class="cart-coupon-code">
+                                                            <input type="text" name="text" placeholder="Coupon Code...">
+                                                            <input type="submit" name="submit" value="apply coupon">
+                                                        </div>
+                                                        <!-- .coupon-code -->
+                                                        <div class="cart-update">
+                                                            <button type="submit">update cart</button>
+                                                            <button type="submit">proceed checkout</button>
+                                                        </div>
+                                                        <!-- .coupon-code -->
+                                                    </div>
+                                                    <!-- .cart-checked-box -->
+
+                                                    <div class="chipping-box">
+                                                        <div class="row g-4">
+                                                            <div class="col-lg-6 col-12">
+                                                                <h4>Calculate Shipping</h4>
+                                                                <form action="#" method="POST" class="shipping-form">
+                                                                    <div class="country-select">
+                                                                        <select name="countries" id="countries">
+                                                                        </select>
+                                                                        <span class="select-icon"><i
+                                                                                class="fa fa-angle-down"
+                                                                                aria-hidden="true"></i></span>
+                                                                    </div>
+                                                                    <!-- .country-select -->
+                                                                    <div class="row">
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label class="sr-only"
+                                                                                    for="country">State/Province
+                                                                                    Province</label>
+                                                                                <select name="states" id="states">
+                                                                                </select>
+                                                                                <span class="select-icon"><i
+                                                                                        class="fa fa-angle-down"
+                                                                                        aria-hidden="true"></i></span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- .col-md-6 -->
+                                                                        <div class="col-md-6">
+                                                                            <div class="form-group">
+                                                                                <label class="sr-only"
+                                                                                    for="postcode">Postcode /
+                                                                                    ZIP</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    name="postCode" id="postcode"
+                                                                                    placeholder="Postcode / ZIP">
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- .col-md-6 -->
+                                                                    </div>
+                                                                    <!-- .row -->
+                                                                    <button type="submit" class="btn btn-default">Update
+                                                                        Total</button>
+                                                                </form>
+                                                            </div>
+                                                            <!-- .col-md-6 -->
+                                                            <div class="col-lg-6 col-12">
+                                                                <h4>Cart Totals</h4>
+                                                                <ul class="total-cart">
+                                                                    <li>Cart Subtotal <span
+                                                                            class="cart-subtotal"></span></li>
+                                                                    <li class="shipping-handling">Shipping and Handling
+                                                                        <span>Free Shipping</span>
+                                                                    </li>
+                                                                    <li>Order Total <span class="order-total"></span>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <!-- .col-md-6 -->
+                                                        </div>
+                                                        <!-- .row -->
+                                                    </div>
+                                                    <!-- .chipping-box -->
+
+
+
+                                                </div>
+                                                <!-- .product-cart-option -->
+                                            </div>
+                                            <!-- .row -->
+                                        </div>
+                                        <!-- .container -->
+                                    </section>
+                                    <!-- End Shop Cart Section -->
+
+
+                                    <!-- Start Scrolling -->
+                                    <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+                                    <!-- End Scrolling -->
                     </div>
-                    <!-- .product-cart-option -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </section>
-        <!-- End Shop Cart Section -->
 
-
-        <!-- Start Scrolling -->
-        <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-        <!-- End Scrolling -->
-    </div>
-
-    <!-- Start Pre-Loader-->
-    <div id="loading">
-        <div id="loading-center">
-            <div id="loading-center-absolute">
-                <div class="object" id="object_one"></div>
-                <div class="object" id="object_two"></div>
-                <div class="object" id="object_three"></div>
-                <div class="object" id="object_four"></div>
-            </div>
-        </div>
-    </div>
-    <!-- End Pre-Loader -->
+                    <!-- Start Pre-Loader-->
+                    <div id="loading">
+                        <div id="loading-center">
+                            <div id="loading-center-absolute">
+                                <div class="object" id="object_one"></div>
+                                <div class="object" id="object_two"></div>
+                                <div class="object" id="object_three"></div>
+                                <div class="object" id="object_four"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Pre-Loader -->
 
 
 
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+                    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+                    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+                    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+                    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+                    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+                    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+                    <script type="text/javascript" src="assets/js/custom.map.js"></script>
 
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+                    <script type="text/javascript" src="assets/js/custom.js"></script>
+                    <script>
+                        async function fetchCountries() {
+                            try {
+                                const response = await fetch('https://restcountries.com/v3.1/all');
+                                const countries = await response.json();
+                                countries.sort((a, b) => { return a.name.common < b.name.common ? -1 : 1 })
+
+                                const countrySelect = document.getElementById('countries');
+
+                                // Dynamically populate the select element
+                                countries.forEach(country => {
+                                    const option = document.createElement('option');
+                                    option.value = country.name.common;
+                                    option.textContent = country.name.common;
+                                    countrySelect.appendChild(option);
+                                    console.log(option.value + " " + option.textContent)
+                                });
+                                countrySelect.addEventListener('change', async function () {
+                                    countryName = this.value
+                                    console.log(countryName)
+                                    const response = await fetch('https://countriesnow.space/api/v0.1/countries/states', {
+                                        method: 'POST',
+                                        headers: {
+                                            'Content-Type': 'application/json',
+                                        },
+                                        body: JSON.stringify({
+                                            country: countryName,
+                                        }),
+                                    });
+
+                                    const data = await response.json();
+                                    const stateSelect = document.getElementById('states');
+                                    stateSelect.innerHTML = '';
+
+                                    if (data && data.data && data.data.states) {
+                                        console.log(`States in ${countryName}:`, data.data.states);
+                                        data.data.states.forEach(state => {
+                                            const option = document.createElement('option');
+                                            option.value = state.name;
+                                            option.textContent = state.name;
+                                            stateSelect.appendChild(option);
+                                            console.log(option.value + " " + option.textContent)
+                                        });
+                                    } else {
+                                        console.log(`No states found for ${countryName}`);
+                                        return [];
+                                    }
+
+                                })
+                            } catch (error) {
+                                console.error('Error fetching countries:', error);
+                            }
+                        }
+
+                        fetchCountries()
+                    </script>
 
 
 </body>

@@ -1,4 +1,4 @@
-import {col, storage, fires, setSRC, setHTML, getProductData } from './firebase.mjs'
+import { col, storage, fires, setSRC, setHTML, getProductData } from './firebase.mjs'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 import { removeFromCart, populateDropdown } from './cart_manager.mjs';
@@ -8,20 +8,20 @@ let total_pricing = 0
 
 export async function populateCart() {
     var carts = []
-    if(localStorage.getItem("carts") === null) {
+    if (localStorage.getItem("carts") === null) {
         carts = []
     }
     else {
         carts = JSON.parse(localStorage.getItem("carts"));
     }
     console.log(carts)
-    for(let i = 0; i < carts.length; i++) {
+    for (let i = 0; i < carts.length; i++) {
         let id = carts[i];
         let prod_obj = await getProductData(id);
         let url = prod_obj.product_images[0];
-        let pricing = prod_obj.price_cents;
         let price = prod_obj.product_price;
-        total_pricing = total_pricing + +pricing
+        let pricing = parseFloat(prod_obj.product_price.replace('$', ''));
+        total_pricing = total_pricing + pricing
 
         let collection_items = `<tr>
         <td class="cart-product">
@@ -58,6 +58,7 @@ export async function populateCart() {
 
 await populateCart()
 
-let total_price = `\$${Math.floor(total_pricing/100)}.${total_pricing%100}`;
+let total_price = `\$${parseFloat(total_pricing).toFixed(2)}`;
+console.log(total_pricing)
 setHTML(".cart-subtotal", total_price)
 setHTML(".order-total", total_price)
