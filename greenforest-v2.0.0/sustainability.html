@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sustainability</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Plugin css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lightcase.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.nstSlider.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css" media="all" />
+    <!-- own style css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
+    <script src="team.mjs" type = "module"></script>
+
+</head>
+
+<body>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
+    </script>
+
+    <script type="module">
+        // Import the function from the module file
+        import { populateDropdown } from './cart_manager.mjs';
+
+        window.addEventListener("load", () => {
+            // Call the imported function
+            populateDropdown();
+        });
+    </script>
+
+    <div class="box-style">
+        <div class="color-btn">
+            <a href="#"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
+        </div>
+        <div class="box-style-inner">
+            <h3>Box Layout</h3>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>HTML Layout</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-customize">
+                        <li><a class="boxed-btn" href="#">Boxed</a></li>
+                        <li><a class="wide-btn" href="#">Wide</a></li>
+                        <li><a class="rtl-btn" href="#">Rtl</a></li>
+                        <li><a class="ltl-btn" href="#">Ltl</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>Backgroud Images</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-bg-img">
+                        <li>
+                            <a class="bg-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-2" href="#"><img src="assets/images/box-style/02.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-3" href="#"><img src="assets/images/box-style/03.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-4" href="#"><img src="assets/images/box-style/04.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-5" href="#"><img src="assets/images/box-style/05.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-6" href="#"><img src="assets/images/box-style/06.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-7" href="#"><img src="assets/images/box-style/07.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-8" href="#"><img src="assets/images/box-style/08.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>Backgroud Pattern</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-pattern-img">
+                        <li>
+                            <a class="pt-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-2" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-3" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-4" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-5" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-6" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-7" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-8" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Start Page Header Section -->
+        <section class="bg-page-header">
+            <div class="page-header-overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h2>Sustainability</h2>
+                            </div>
+                            <!-- .page-title -->
+                        </div>
+                        <!-- .page-header -->
+                    </div>
+                    <!-- .row -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .page-header-overlay -->
+        </section>
+        <!-- End Page Header Section -->
+
+        <section class="bg-our-promisw" id = "bg-our-promise">
+            <div class="our-promise-container">
+                <br><br>
+                <h3 style="color:black;font-size:30px;">Our Promise<h3>
+                    <div class="row">
+                        <div class="our-promise">
+                            <p>The fast fashion industry promotes constant avalanches of microtrends that last only a couple of weeks before being trumped by the next trend. But where do all these clothes go when they become soooo last week...? </p>
+                            <p><b>3 out of 5 of these garments end up in the landfill within a year of being purchased. Less than 1% are recycled, reused or repurposed.</b> To make matters worse, most of them are made of synthetic fabrics (yes, that means they’re made of fossil fuels) that shed thousands of microplastics down the drain and take hundreds of years to decompose. Did you know the fast fashion industry is expected to take up 35% more land (that's 115 MILLION hectares) by 2030? On a planet where we are running out of space at an alarming rate, this expansion will spell disaster for wildlife, and us. Should the destruction of liveable habitats really come at the expense of trends that so often turn to trash?</p>
+                        </div>
+                    </div>
+            </div>
+            <br>
+            <div class="about-container" style=" display: flex; flex-direction: row;" >
+                <div class="vip-about-container" style="width: 50%; height:100vh;height:fit-content"> 
+                    <h3 style="color:black;font-size:30px;">Meet the Real Vip<h3>
+                        <div class="about-col">
+                            <p>Vip was a Very Important Primate (get it?) who resided at the Woodland Park Zoo in Seattle, Washington until his death in 2020. An attentive father to seven gorgeous gorilla daughters, Vip is a representative of the resilient endangered animals all around the world, who continue to show us nothing but love in the midst of the peril they face. Since humans are primates too, we named this organization after him to bridge the gap between us and the rest of the animal kingdom.</p>
+                            <br>
+                            <img src="assets/images/about/meet vip.png">
+                        </div>
+                </div>
+                <div style="width: 50%; height:100vh; margin-left: 2%;height:fit-content"> 
+                    <h3 style="color:black;font-size:30px;">Our Philosophy<h3>
+                        <div class="about-col">
+                            <img src="assets/images/about/placeholder.png">
+                            <br><br>
+                            <p>Through handmade, unique, and sustainably made products, we help you to stay looking clean while keeping the Earth the same way. With each purchase, all profits are put towards our own small-scale, community-focused  conservation projects that protect endangered species and empower indigenous knowledge. As a customer or volunteer, you are actively showing your love for sustainable fashion, human and non-humans, and your commitment to participating in the good. Thank you. 💚</p>
+                        </div>
+                </div>
+            </div>
+            <br><br>
+            <div class="about-container">
+                <h3 style="text-align: center; color:black;font-size:30px;">The VIPs Behind VIPs</h3>
+                <br>
+                <div class="row staff-items"></div>
+            </div>
+
+        <!-- Start Scrolling -->
+        <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+        <!-- End Scrolling -->
+    </div>
+
+    <!-- Start Pre-Loader-->
+
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Pre-Loader -->
+
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>
