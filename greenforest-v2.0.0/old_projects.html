@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About us</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Plugin css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lightcase.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.nstSlider.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css" media="all" />
+    <!-- own style css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
+    </script>
+
+    <script type="module">
+        // Import the function from the module file
+        import { populateDropdown } from './cart_manager.mjs';
+
+        window.addEventListener("load", () => {
+            // Call the imported function
+            populateDropdown();
+        });
+    </script>
+
+    <div class="box-style">
+        <div class="color-btn">
+            <a href="#"><i class="fa fa-cog fa-spin" aria-hidden="true"></i></a>
+        </div>
+        <div class="box-style-inner">
+            <h3>Box Layout</h3>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>HTML Layout</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-customize">
+                        <li><a class="boxed-btn" href="#">Boxed</a></li>
+                        <li><a class="wide-btn" href="#">Wide</a></li>
+                        <li><a class="rtl-btn" href="#">Rtl</a></li>
+                        <li><a class="ltl-btn" href="#">Ltl</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>Backgroud Images</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-bg-img">
+                        <li>
+                            <a class="bg-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-2" href="#"><img src="assets/images/box-style/02.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-3" href="#"><img src="assets/images/box-style/03.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-4" href="#"><img src="assets/images/box-style/04.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-5" href="#"><img src="assets/images/box-style/05.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-6" href="#"><img src="assets/images/box-style/06.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-7" href="#"><img src="assets/images/box-style/07.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="bg-8" href="#"><img src="assets/images/box-style/08.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="box-element">
+                <div class="box-heading">
+                    <h5>Backgroud Pattern</h5>
+                </div>
+                <div class="box-content">
+                    <ul class="box-pattern-img">
+                        <li>
+                            <a class="pt-1" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-2" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-3" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-4" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-5" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-6" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-7" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a class="pt-8" href="#"><img src="assets/images/box-style/01.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Page Header Section -->
+    <section class="bg-page-header">
+        <div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h2>OUR WORK</h2>
+                        </div>
+                        <!-- .page-title -->
+                    </div>
+                    <!-- .page-header -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+        </div>
+        <!-- .page-header-overlay -->
+    </section>
+    <!-- End Page Header Section -->
+
+    <section class="vips-projects" id="vips-projects">
+        <div class="projects">
+            <br><br><br><br>
+            <div class="project-container">
+                <div class="project-description">
+                    <div class="project-pic">
+                        <img src="assets/images/about/varibolo resto.webp">
+                        <!--                             <div class="img-text"> 
+                                <p><i><b>VARIBOLO RESTO</b></i></p> 
+                            </div> -->
+                    </div>
+                    <div class="project-text">
+                        <style>
+                            .resto-text {
+                                font-size: 24px;
+                                color: #000;
+                                font-weight: 700;
+                            }
+                        </style>
+                        <p class="resto-text">VARIBOLO RESTO</p>
+                        <p><i><b>Ranomafana, Madagascar</b></i></p>
+                        <p>As the first VIP's Fund conservation project, we worked with Patrick Randriamamonjy in
+                            Ranomafana, Madagascar to support Varibolo Resto, a restaurant and ecotourism company that
+                            provides sustainable jobs to community members right outside the famous Ranomafana National
+                            Park. Many animals, including lemurs, cannot be found naturally anywhere in the world
+                            outside the island of Madagascar. However, poverty runs rampant in here, so Varibolo
+                            provides the opportunity for people to make money without participating in environmentally
+                            destructive industries like logging, slash-and-burn-agriculture, and wood charcoal
+                            production upon which many Malagasy households rely. The Resto takes people on kayak tours
+                            of the Park to educate about the unique biodiversity and importance of conservation in
+                            Madagascar, as well as supporting the restoration of Ranomafana's elementary school!
+                            Conservation education in this school will be a huge step, especially for those who share
+                            living spaces with endangered species like lemurs. Varibolo Resto was forced to shut down
+                            during the pandemic, but with support from VIP's Fund, Patrick reopened in June 2023! </p>
+                    </div>
+                </div>
+                <div class="project-buttons">
+                    <div class="button-column">
+                        <button type="button">Learn More</button>
+                    </div>
+                    <div class="button-column">
+                        <button type="button">Patrick's Website</button>
+                    </div>
+                </div>
+            </div>
+            <div class="project-container">
+                <div class="project-description">
+                    <div class="project-pic">
+                        <img src="assets/images/about/research program.png">
+                        <!--                             <div class="img-text"> 
+                                <p><i><b>RESEARCH PROGRAM</b></i></p> 
+                            </div> -->
+                    </div>
+                    <div class="project-text">
+                        <style>
+                            .research-text {
+                                font-size: 24px;
+                                color: #000;
+                                font-weight: 700;
+                            }
+                        </style>
+                        <p class="research-text">Student-Led Ecological Research Program</p>
+                        <p><i><b>Ranomafana High School, Madagascar</b></i></p>
+                        <p>We are now bringing sophisticated research opportunities to high school students in
+                            Ranomafana, the same community that Varibolo Resto serves. We will collaborate with students
+                            at the high school to develop a research question and design a field study that will
+                            contribute to the formal body of scientific literature surrounding conservation in
+                            Madagascar. Students will supplement their own community's ecological knowledge with lessons
+                            in natural selection, the Scientific Method, data collection, and other topics. they will
+                            then design a study and conduct it in Ranomafana National Park, and write a scientific
+                            report on their findings that we will publish here!</p>
+                        <u>UPDATE: students have currently completed 2 out of their 6 lessons!</u>
+                        <p>We hope that this project will make a career in conservation both more desirable and more
+                            accessible for Ranomafana's young scientific minds, so please consider donating or
+                            purchasing one of our pieces to support this initiative!</p>
+                    </div>
+                </div>
+                <div class="project-buttons">
+                    <div class="button-column">
+                        <button type="button">Learn More</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="project-container">
+                <div class="project-description">
+                    <div class="project-pic">
+                        <img src="assets/images/about/varibolo resto.webp">
+                        <!--                             <div class="img-text"> 
+                                <p><i><b>RESEARCH PROGRAM</b></i></p> 
+                            </div> -->
+                    </div>
+                    <div class="project-text">
+                        <style>
+                            .research-text {
+                                font-size: 24px;
+                                color: #000;
+                                font-weight: 700;
+                            }
+                        </style>
+                        <p class="research-text">Partnership with KOJIMA</p>
+                        <p><i><b>Fandriana, Madagascar</b></i></p>
+                        <p>When we travelled to Madagascar last August, we set up a collaboration with a women's artist
+                            cooperative in Fandriana called KOJIMA. Artists here use regenerative raw materials from
+                            like raffia and cassava to create unique and handmade pieces, much like what our VIP's
+                            volunteer artists do! KOJIMA artists hope to someday use their art to provide sufficient
+                            income for them and their families. They create the entire pieces, from harvest to dying and
+                            weaving the materials! We buy the pieces from their respective artists at whatever price
+                            they set, no questions asked, and bring it back to you to share the beauty of sustainable
+                            art and fashion. Our KOJIMA collection hasn't been released yet, but be on the lookout soon!
+                        </p>
+                    </div>
+                </div>
+                <div class="project-buttons">
+                    <div class="button-column">
+                        <button type="button">Learn More</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Start Scrolling -->
+    <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+    <!-- End Scrolling -->
+    </div>
+
+    <!-- Start Pre-Loader-->
+
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Pre-Loader -->
+
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>

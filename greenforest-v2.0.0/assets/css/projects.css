@@ -1,0 +1,76 @@
+:root {
+    --btn-green: #7F9558;
+}
+
+.vips-projects-container {
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 3.5rem;
+}
+
+.quick-project-links {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.quick-project-links a {
+    padding: 0.25rem 0.75rem;
+    text-transform: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--btn-green);
+    background-color: transparent;
+    border: 3px solid var(--btn-green);
+    border-radius: 7px;
+    transition: all 100ms ease-out;
+}
+
+.quick-project-links a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: var(--btn-green);
+}
+
+.projects-container {
+    display: grid;
+    width: 100%;
+    gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+}
+
+.projects-content {
+    color: black;
+}
+
+.projects-content h1 {
+    width: 80%;
+    line-height: 2.25rem;
+    color: black;
+    font-size: 2.25rem;
+    font-weight: 800;
+}
+
+.projects-content h2 {
+    color: black;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.projects-content img {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.projects-content p {
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.75rem;
+    margin-bottom: 2rem;
+}

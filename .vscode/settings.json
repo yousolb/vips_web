@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/greenforest-v2.0.0/home_onepage.html"
+    "livePreview.defaultPreviewPath": "/greenforest-v2.0.0/home_onepage.html",
+    "liveServer.settings.port": 5501
 }
