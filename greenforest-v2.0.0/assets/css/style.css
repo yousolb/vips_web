@@ -973,6 +973,7 @@ section {
 	right: 3%;
 	bottom: 10%;
 	cursor: pointer;
+	border-radius: 50%;
 	z-index: 99;
 }
 
