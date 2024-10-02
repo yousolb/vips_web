@@ -20,7 +20,7 @@ async function addUser(inEmail) {
     const newDocRef = await addDoc(userCol, myDocumentData);
 }
 
-const alertBar = document.getElementById('alertContainer')
+const alertBar = document.getElementById('alert-container')
 const appendAlert = (message, type) => {
     alertBar.innerHTML = "";
     const wrapper = document.createElement('div')
@@ -33,7 +33,7 @@ const appendAlert = (message, type) => {
     alertBar.append(wrapper)
 }
 
-document.getElementById("enter-email").addEventListener("submit", async function (e) {
+document.getElementById("mail-register").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
