@@ -11,11 +11,9 @@ async function getUsers() {
     return userList;
 }
 
-async function addUser(inEmail, inFName, inLName) {
+async function addUser(inEmail) {
     const myDocumentData = {
         email: inEmail,
-        fname: inFName,
-        lname: inLName,
     };
 
     // Add the document to the collection
@@ -35,7 +33,7 @@ const appendAlert = (message, type) => {
     alertBar.append(wrapper)
 }
 
-document.getElementById("test-form").addEventListener("submit", async function (e) {
+document.getElementById("enter-email").addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
@@ -51,7 +49,7 @@ document.getElementById("test-form").addEventListener("submit", async function (
         appendAlert("Email already in use! Please try a different one.", 'danger');
     } else {
         appendAlert('You\'re signed up!', 'success')
-        addUser(formProps['email'], formProps['fname'], formProps['lname']);
+        addUser(formProps['email']);
     }
 
 });
