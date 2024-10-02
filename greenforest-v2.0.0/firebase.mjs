@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"
-import { getFirestore, collection, getDocs, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
-import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js'
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js'
+import { getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
+import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -10,7 +10,6 @@ import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/f
 const firebaseConfig = {
   apiKey: "AIzaSyBoIm35xD9Ad1Y5Oa722YYLtbf2zDB3JpM",
   authDomain: "vips-web-5807a.firebaseapp.com",
-  databaseURL: "https://vips-web-5807a-default-rtdb.firebaseio.com",
   projectId: "vips-web-5807a",
   storageBucket: "vips-web-5807a.appspot.com",
   messagingSenderId: "754667322013",
@@ -20,10 +19,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+//const analytics = getAnalytics(app);
 
-export const fires = getFirestore(app);
+export let fires = getFirestore(app);
 export let col = collection(fires, 'products');
-export let user_col = collection(fires, 'mailing-list');
 export let artist_col = collection(fires, 'artists');
 export let storage = getStorage(app);
 export const cartItems = []
