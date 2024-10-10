@@ -7589,6 +7589,11 @@ ul>li>a:hover {
 	Sustainability Style Section
 ==================================*/
 
+.sustainability-container {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
 
 .section-title a {
 	color: black;
@@ -7598,4 +7603,156 @@ ul>li>a:hover {
 .section-title a:hover {
 	color: blue;
 	/* Links will turn blue on hover */
+}
+
+.sustainability-box {
+	padding: 20px 0px 20px;
+	background: white;
+}
+
+.sustainability-box p {
+	color: black;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	letter-spacing: 0.8px;
+}
+
+.process-box {
+	width: 100%; 
+	display: grid; 
+	grid-template-columns: 100%;
+	color: black;
+	font-family: 'Manrope', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0.8px;
+}
+
+@media only screen and (min-width: 600px) {
+	.process-box {
+		width: 100%; 
+		display: grid; 
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		color: black;
+		font-family: 'Manrope', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.8px;
+	}
+}
+
+.process-box p {
+	color: black;
+	line-height: 1.25;
+	font-size: 18px;
+}
+
+.process-box h {
+	font-weight: bold;	
+	font-size: 22px;
+}
+
+.step-number {
+	text-align: center;
+    font-size: 23px;
+    color: white;
+    background-color: #d79bbd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+	min-width: 40px;
+	min-height: 40px;
+}
+
+.process-step {
+	flex: 1;
+	display: flex;
+	justify-content: space-evenly;
+	margin-bottom: 8px;
+}
+
+.step-title {
+	font-size: 20px;
+	font-style: bold;
+}
+
+.step {
+	z-index: 100;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+.green-button-empty {
+	padding-top: 12px;
+}
+
+.green-button-empty button {
+	width: 100%;
+	padding: 6px;
+	font-size: 16px;
+	font-weight: bolder;
+	border-color: #7F9558;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 11px;
+	color: #7F9558;
+	background-color: transparent;
+}
+
+.sustainability-box {
+	width: 100%;
+}
+
+.sustainability-box h {
+	color: black;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.sustainability-grid {
+	display: grid;
+	grid-template-columns: 100%;
+	align-items: top;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+	.sustainability-grid {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+}
+
+@media only screen and (min-width: 951px) {
+	.sustainability-grid {
+		display: grid;
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+}
+
+.materials-item {
+	display: flex;
+	padding: 8px;
+}
+
+.materials-item img {
+	max-width: 110px;
+    max-height: 110px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+.materials-item-content {
+	padding: 8px;
+	width: 100%;
+}
+
+.materials-item-content p {
+	font-size: 12px;
+	letter-spacing: 0.8px;
+	line-height: 100%;
 }

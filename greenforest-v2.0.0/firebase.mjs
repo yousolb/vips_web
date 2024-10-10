@@ -24,6 +24,7 @@ const app = initializeApp(firebaseConfig);
 export let fires = getFirestore(app);
 export let col = collection(fires, 'products');
 export let artist_col = collection(fires, 'artists');
+export let materials_and_sourcing_col = collection(fires, 'materials-and-sourcing')
 export let storage = getStorage(app);
 export const cartItems = []
 
