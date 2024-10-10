@@ -7497,6 +7497,11 @@ ul>li>a:hover {
 	Sustainability Style Section
 ==================================*/
 
+.sustainability-container {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
 
 .section-title a {
 	color: black;
@@ -7523,13 +7528,24 @@ ul>li>a:hover {
 
 .process-box {
 	width: 100%; 
-	display: flex; 
-	flex-direction: row; 
-	justify-content: space-between;
+	display: grid; 
+	grid-template-columns: 100%;
 	color: black;
 	font-family: 'Manrope', sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.8px;
+}
+
+@media only screen and (min-width: 600px) {
+	.process-box {
+		width: 100%; 
+		display: grid; 
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		color: black;
+		font-family: 'Manrope', sans-serif;
+		font-weight: 400;
+		letter-spacing: 0.8px;
+	}
 }
 
 .process-box p {
@@ -7559,6 +7575,7 @@ ul>li>a:hover {
 	flex: 1;
 	display: flex;
 	justify-content: space-evenly;
+	margin-bottom: 8px;
 }
 
 .step-title {
@@ -7587,4 +7604,63 @@ ul>li>a:hover {
 	border-radius: 11px;
 	color: #7F9558;
 	background-color: transparent;
+}
+
+.sustainability-box {
+	width: 100%;
+}
+
+.sustainability-box h {
+	color: black;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.sustainability-grid {
+	display: grid;
+	grid-template-columns: 100%;
+	align-items: top;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 600px) {
+	.sustainability-grid {
+		display: grid;
+		grid-template-columns: 50% 50%;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+}
+
+@media only screen and (min-width: 951px) {
+	.sustainability-grid {
+		display: grid;
+		grid-template-columns: 33.33% 33.33% 33.33%;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+}
+
+.materials-item {
+	display: flex;
+	padding: 8px;
+}
+
+.materials-item img {
+	max-width: 110px;
+    max-height: 110px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+.materials-item-content {
+	padding: 8px;
+	width: 100%;
+}
+
+.materials-item-content p {
+	font-size: 12px;
+	letter-spacing: 0.8px;
+	line-height: 100%;
 }
