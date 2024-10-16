@@ -147,7 +147,7 @@ li span {
 /*=== Mailing List ===*/
 
 .tier-body .styled-input {
-  width: 100%;
+  width: 70%;
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 10px;
@@ -155,16 +155,18 @@ li span {
   background-color: transparent;
   padding: 5px 0 5px 10px;
   color: white;
+  margin-right: 2px;
 }
 
 .tier-body .styled-input:focus {
-  width: 100%;
+  width: 70%;
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 10px;
   font-size: 16px;
   background-color: transparent;
   color: white;
+  margin-right: 2px;
 }
 
 .tier-body .styled-input::placeholder {
@@ -173,15 +175,46 @@ li span {
 
 /*=== Button ===*/
 .tier-body button {
+  width: fit-content;
+  padding: 9px 9px;
+  box-sizing: border-box;
   border: 2px solid white;
-  padding: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+  text-transform: none;
+  transition: all 300ms ease-in-out;
+}
+
+.tier-body button:hover {
+  color: var(--tier-1-color);
+  background-color: white;
+}
+
+.tier-body a {
+  width: fit-content;
+  padding: 1px 8px;
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 10px;
   margin-top: 3px;
   background-color: transparent;
   color: white;
+  font-weight: 700;
+  text-transform: none;
 }
+
+.tier-2-button:hover {
+  color: var(--tier-2-color);
+  background-color: white;
+}
+
+.tier-4-button:hover {
+  color: var(--tier-4-color);
+  background-color: white;
+}
+
 
 /*======================
 	End Get Involved css
