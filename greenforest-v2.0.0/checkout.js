@@ -1,20 +1,27 @@
-// This is your test secret API key.
-// const stripe = Stripe("sk_test_51OtTziFV91ot5Yz8WmYztUztwJACVyvOfAj2BBzmqwsIKIEaEUPg1FryNmxHQ2CLKwBE15sTt4AWx0A79sWzTML3006hYR8RtJ");
-const stripe = Stripe("sk_test_51OtTziFV91ot5Yz8WmYztUztwJACVyvOfAj2BBzmqwsIKIEaEUPg1FryNmxHQ2CLKwBE15sTt4AWx0A79sWzTML3006hYR8RtJ");
+// This is your public API key.
+const stripe = Stripe("pk_live_51OtTziFV91ot5Yz84YA5iMOCaOMRZEIPIex8VBFEbooI2bSb30eExeNyzVRwIarhMNr6ErUKv0R7FULyNYToQfEp00VHT7KM44");
 
 initialize();
 
 // Create a Checkout Session
 async function initialize() {
   const fetchClientSecret = async () => {
-    const email = document.getElementById('email').value; // Get the email from input field
-    const response = await fetch('/create-checkout-session', {
-      method: 'POST',
+    const response = await fetch("http://localhost:4242/create-checkout-session", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email }),
+        "Content-Type": "application/json"
+      }
     });
+    if (!response.ok) {
+      throw new Error("Failed to fetch client secret");
+    }
+    const { clientSecret } = await response.json();
+    if (!clientSecret) {
+      console.log("Oops!")
+      throw new Error("Client secret is undefined");
+    }
+    return clientSecret;
+  };
 
   const checkout = await stripe.initEmbeddedCheckout({
     fetchClientSecret,
@@ -22,6 +29,4 @@ async function initialize() {
 
   // Mount Checkout
   checkout.mount('#checkout');
-}}
-
-// following this tutorial: https://docs.stripe.com/checkout/embedded/quickstart
+}
