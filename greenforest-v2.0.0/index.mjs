@@ -25,7 +25,7 @@ for(let i = 0; i < docus.length; i++) {
     </ul>
     <div class="collection-content">
         <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>
-        <h5>${price}</h5>
+        <h5>${price}0</h5>
     </div>
 </div>  `
 
@@ -35,3 +35,9 @@ for(let i = 0; i < docus.length; i++) {
     elt.appendChild(child);
 
 }
+
+document.getElementById('scroll-right').addEventListener('click', function() {
+    const gallery = document.getElementById('scroll');
+    const scrollAmount = 100; // Adjust scroll amount as needed
+    gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});

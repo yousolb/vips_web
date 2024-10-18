@@ -2629,6 +2629,12 @@ section {
 	Start Footer Section
 =============================================*/
 
+.line {
+	width: 50%;          /* Full width of the container */
+    height: 2px;         /* Height of the line */
+    background-color: white; /* Color of the line */
+    margin: 10px 0;      /* Space around the line */
+}
 
 .bg-footer-top {
 	background: #1E6E37;
@@ -2640,16 +2646,16 @@ section {
 }
 
 .widgets-title h3 {
-	color: #fefefe;
+	color: white;
 	text-transform: uppercase;
 }
 
 .widgets-content {
-	color: rgba(247, 251, 240, 0.85)
+	color: white
 }
 
 .widgets-content p {
-	color: #bcbcbc;
+	color: white;
 }
 
 .address-box {
@@ -2700,7 +2706,7 @@ section {
 }
 
 .thumbnail-img {
-	width: 100px;
+	width: 300px;
 	height: 100px;
 	float: Left;
 	margin: 4px 15px 0 0;
@@ -2789,7 +2795,9 @@ section {
 	padding: 28px 0 23px 0;
 }
 
-.footer-bottom {}
+.footer-bottom {
+	
+}
 
 .copyright-txt {
 	float: left;
@@ -3627,6 +3635,18 @@ div#filters {
 	padding: 0.5em 2em;
 }
 
+.shophead-container {
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0.5em 2em;
+}
+
+#scroll-right {
+    position: absolute; /* Position the button absolutely */
+}
+
 .img-card {
 	display: flex;
 	flex-direction: column;
@@ -3797,6 +3817,25 @@ div#filters {
 	background: white;
 	display: grid;
 	padding: 10px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust distance from right */
+    transform: translateY(-50%); /* Center vertically */
+    width: 50px; /* Diameter of the circle */
+    height: 50px; /* Diameter of the circle */
+    background-color: transparent; /* Transparent background */
+    border: 2px solid white; /* White border */
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10; /* Ensure it appears above other elements */
 }
 
 .shop-scroll-bar button {

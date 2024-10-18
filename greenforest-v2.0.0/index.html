@@ -203,9 +203,22 @@
             }
         </style>
 
-        <div class="shop-scroll-bar">
-            <div class="scroll-container">
+        <div class="shophead-container">
+            <style>
+                .latest-collection {
+                    font-size: 24px;
+                    color: #000000;
+                    font-weight: 700;
+                    padding-bottom: 5px;
+                    justify-content: center;
+                }
+            </style>
+            <span class="latest-collection" >Our Latest Collection</span>
+        </div>
 
+        <div class="shop-scroll-bar">
+            <div class="scroll-container" id="scroll">
+                <button id="scroll-right" class="scroll-button">Scroll Right</button>
             </div>
             <!-- <button class="button" id="shop-all" onclick="redirectToShop()">
                 <p style="font-size:35px;color:white"> SHOP</p>
