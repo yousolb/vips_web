@@ -1,53 +1,50 @@
-// This is your test secret API key.
-const stripe = require('stripe')('sk_test_51OtTziFV91ot5Yz8WmYztUztwJACVyvOfAj2BBzmqwsIKIEaEUPg1FryNmxHQ2CLKwBE15sTt4AWx0A79sWzTML3006hYR8RtJ');
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const express = require('express');
+const cors = require('cors');  // Import CORS middleware
+
 const app = express();
-app.use(express.static('public'));
-// FIXME?
-const YOUR_DOMAIN = 'http://127.0.0.1:5500/';
+
+app.use(cors());  // Enable CORS
+
+// Replace this with your actual domain
+const YOUR_DOMAIN = 'http://127.0.0.1:5501';
 
 app.post('/create-checkout-session', async (req, res) => {
-  // Create the shipping rate
-  // placeholder values rn, follwing this: https://docs.stripe.com/payments/during-payment/charge-shipping?payment-ui=checkout
-  const shippingRate = await stripe.shippingRates.create({
-    display_name: 'Ground shipping',
-    type: 'fixed_amount',
-    fixed_amount: {
-      amount: 500,
-      currency: 'usd',
-    },
-    delivery_estimate: {
-      minimum: {
-        unit: 'business_day',
-        value: 5,
+  try {
+    const session = await stripe.checkout.sessions.create({
+      ui_mode: 'embedded',
+      submit_type: 'pay',
+      billing_address_collection: 'auto',
+      shipping_address_collection: {
+        allowed_countries: ['US', 'CA'],
       },
-      maximum: {
-        unit: 'business_day',
-        value: 7,
-      },
-    },
-  });
+      line_items: [{
+        price: 'price_1QAfCMFV91ot5Yz8AoZocJmR',
+        quantity: 1
+      }],
+      mode: 'payment',
+      return_url: `${YOUR_DOMAIN}/return.html?session_id={CHECKOUT_SESSION_ID}`,
+    });
 
-  // Create the checkout session and include the shipping rate
-  const session = await stripe.checkout.sessions.create({
-    line_items: [
-      {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: '{{PRICE_ID}}',
-        quantity: 1,
-      },
-    ],
-    mode: 'payment',
-    shipping_options: [
-      {
-        shipping_rate: shippingRate.id,
-      },
-    ],
-    success_url: `${YOUR_DOMAIN}/success.html`,
-    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
-  });
+    console.log("Session created:", session);
 
-  res.redirect(303, session.url);
+    // Send the session client secret to the client
+    res.send({ clientSecret: session.client_secret });
+  } catch (error) {
+    console.error("Error creating checkout session:", error);
+    res.status(500).send({ error: "Failed to create checkout session" });
+  }
 });
 
-app.listen(4242, () => console.log('Running on port 4242'));
+app.get('/session-status', async (req, res) => {
+  const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+
+  res.send({
+    status: session.status,
+    customer_email: session.customer_details.email
+  });
+});
+
+
+app.listen(4242, () => console.log("Listening on port 4242"))
