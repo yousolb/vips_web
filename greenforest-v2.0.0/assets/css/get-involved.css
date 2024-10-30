@@ -131,17 +131,17 @@
 .tier-body ul {
   color: #fff;
   font-size: 20px;
-  padding-left: 0.75rem;
+  padding-left: 2rem;
+  list-style-position: outside;
 }
 
 .tier-body li {
   list-style-type: disc;
-  list-style-position: inside;
 }
 
 li span {
   position: relative;
-  left: -5px;
+  left: 5px;
 }
 
 /*=== Mailing List ===*/
@@ -198,10 +198,11 @@ li span {
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 10px;
-  margin-top: 3px;
+  margin-top: 10px;
   background-color: transparent;
   color: white;
   font-weight: 700;
+  font-size: medium;
   text-transform: none;
 }
 
