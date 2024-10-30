@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { fires as db } from "./firebase.mjs"
+import { fires as db } from "./firebase.js"
 import { collection, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
 
 const userCol = collection(db, 'mailing-list')

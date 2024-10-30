@@ -1,4 +1,4 @@
-import {artist_col, storage, fires, setSRC, setHTML } from './firebase.mjs'
+import {artist_col, storage, fires, setSRC, setHTML } from './firebase.js'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { query, orderBy, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
