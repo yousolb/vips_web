@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Join us!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- Plugin css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/fonts/flaticon.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/lightcase.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/jquery.nstSlider.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/flexslider.css" media="all" />
+    <!-- own style css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/rtl.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="assets/css/donate.css" media="all">
+    <!-- font awesome-->
+    <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
+    <!-- mailing list -->
+    <script type="module" src="register_mailing.mjs"></script>
+
+</head>
+
+<body>
+
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+            
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
+    </script>
+
+    <script type="module">
+        // Import the function from the module file
+        import { populateDropdown } from './cart_manager.mjs';
+
+        window.addEventListener("load", () => {
+            // Call the imported function
+            populateDropdown();
+        });
+    </script>
+    
+    <!-- Start Page Header Section -->
+    <section class="gi-page-header">
+            <div class="container">
+                <div class="row">
+                    <h2>Donate</h2>
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- .container -->
+    </section>
+    <!-- End Page Header Section -->
+
+    <!-- Start Donations Section -->
+    <section class="donation-section-new">
+        <div class="donation-container">
+            <div class="donation-box" style="background-color: var(--tier-1-color);">
+                <div class="donation-body">
+                    <div class="donation-header">
+                        <h2>Monthly</h2>
+                        <p>(automated charge)</p>
+                    </div>
+                    <div class="donation-content">
+                        <ul>
+                            <li>Become a coveted <b>Very Important Philanthropist</b></li>
+                            <li>Access to the <b>exclusive</b> monthly discounts</li>
+                            <li>Directly contribute to conservation projects!</li>
+                        </ul>
+                    </div>
+                    <div class="button-container">
+                        <button class="button-set-price" type="submit">$1</button>
+                        <button class="button-set-price" type="submit">$5</button>
+                        <button class="button-set-price" type="submit">$10</button>
+                        <button class="button-custom" type="submit">Custom</button>
+                    </div>
+                </div>
+            </div>
+            <div class="donation-box" style="background-color: var(--tier-2-color);">
+                <div class="donation-body">
+                    <div class="donation-header">
+                        <h2>One-Time</h2>
+                        <p></p>
+                    </div>
+                    <div class="donation-content">
+                        <ul>
+                            <li>Access to the <b>exclusive</b> current philanthropist discount</li>
+                            <li>Directly contribute to conservation projects!</li>
+                        </ul>
+                    </div>
+                    <div class="button-container">
+                        <button class="button-set-price" type="submit">$1</button>
+                        <button class="button-set-price" type="submit">$5</button>
+                        <button class="button-set-price" type="submit">$10</button>
+                        <button class="button-custom" type="submit">Custom</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Donations Section -->
+
+    <!-- Start Pre-Loader-->
+
+    <div id="loading">
+        <div id="loading-center">
+            <div id="loading-center-absolute">
+                <div class="object" id="object_one"></div>
+                <div class="object" id="object_two"></div>
+                <div class="object" id="object_three"></div>
+                <div class="object" id="object_four"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- End Pre-Loader -->
+
+    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+
+    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+
+</body>
+
+</html>
