@@ -2630,10 +2630,10 @@ section {
 =============================================*/
 
 .line {
-	width: 50%;          /* Full width of the container */
-    height: 2px;         /* Height of the line */
-    background-color: white; /* Color of the line */
-    margin: 10px 0;      /* Space around the line */
+	width: 100%;
+	height: 2px;
+	background-color: white;
+	margin: 10px 0;
 }
 
 .bg-footer-top {
@@ -2795,9 +2795,7 @@ section {
 	padding: 28px 0 23px 0;
 }
 
-.footer-bottom {
-	
-}
+.footer-bottom {}
 
 .copyright-txt {
 	float: left;
@@ -3644,7 +3642,8 @@ div#filters {
 }
 
 #scroll-right {
-    position: absolute; /* Position the button absolutely */
+	position: absolute;
+	/* Position the button absolutely */
 }
 
 .img-card {
@@ -3710,12 +3709,18 @@ div#filters {
 	border-radius: 10px;
 	font-size: medium;
 	transition: all ease-in-out 100ms;
-	position: absolute;              /* Position the button absolutely within the container */
-    left: 50%;                      /* Center horizontally */
-    transform: translateX(-50%);   /* Adjust to truly center the button */
-    background-color: green;  /* No fill */
-    border: 5px solid white;        /* White border */
-    color: white;                   /* White text */
+	position: absolute;
+	/* Position the button absolutely within the container */
+	left: 50%;
+	/* Center horizontally */
+	transform: translateX(-50%);
+	/* Adjust to truly center the button */
+	background-color: green;
+	/* No fill */
+	border: 5px solid white;
+	/* White border */
+	color: white;
+	/* White text */
 	z-index: 1;
 }
 
@@ -3816,33 +3821,38 @@ div#filters {
 	background: white;
 	display: grid;
 	padding: 10px;
-    align-items: center;
-    overflow: hidden;
+	align-items: center;
+	overflow: hidden;
 }
 
 .scroll-button {
-    position: absolute;
-    top: 50%;
-    right: 10px; /* Adjust distance from right */
-    transform: translateY(-50%); /* Center vertically */
-    display: flex;
-    cursor: pointer;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	/* Adjust distance from right */
+	transform: translateY(-50%);
+	/* Center vertically */
+	display: flex;
+	cursor: pointer;
 	width: 40px;
 	height: 40px;
-    z-index: 10; /* Ensure it appears above other elements */
-	justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+	z-index: 10;
+	/* Ensure it appears above other elements */
+	justify-content: center;
+	/* Center content horizontally */
+	align-items: center;
+	/* Center content vertically */
 }
 
 .scroll-button::after {
-    content: '';
-    width: 0;
-    height: 0;
+	content: '';
+	width: 0;
+	height: 0;
 	/* display: block; */
-    border-left: 8px solid white;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    margin-left: 2px;
+	border-left: 8px solid white;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	margin-left: 2px;
 }
 
 .shop-scroll-bar button {
@@ -3851,7 +3861,8 @@ div#filters {
 	width: 40px;
 	height: 40px;
 	justify-self: center;
-	border-radius: 50%; /* Ensure it's a circle */
+	border-radius: 50%;
+	/* Ensure it's a circle */
 }
 
 .product-card {
@@ -4158,7 +4169,7 @@ ul>li>a:hover {
 	padding-right: 100px;
 }
 
-.email-list-container{
+.email-list-container {
 	height: fit-content;
 	padding-right: 50px;
 	display: flex;
@@ -4178,42 +4189,45 @@ ul>li>a:hover {
 }
 
 .left-section h1 {
-    font-size: 3em;
-    color: #7F9558;
-    font-weight: bold;
-	display: flex; /* Use flexbox to center content within each section */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center horizontally */
+	font-size: 3em;
+	color: #7F9558;
+	font-weight: bold;
+	display: flex;
+	/* Use flexbox to center content within each section */
+	flex-direction: column;
+	/* Stack items vertically */
+	align-items: center;
+	/* Center horizontally */
 }
 
 .middle-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .benefits-title {
-    font-weight: bold;
-    color: #7F9558;
+	font-weight: bold;
+	color: #7F9558;
 }
 
 .benefits-list {
-    list-style-type: disc;
-    color: #7F9558;
-    padding-left: 0;
-    text-align: left;
+	list-style-type: disc;
+	color: #7F9558;
+	padding-left: 0;
+	text-align: left;
 }
 
 .right-section p {
-    font-size: 1em;
-    color: #7F9558;
-    font-weight: bold;
+	font-size: 1em;
+	color: #7F9558;
+	font-weight: bold;
 }
 
 .right-section h1 {
-    font-size: 2em;
-    color: #7F9558;
-    font-weight: bold;
+	font-size: 2em;
+	color: #7F9558;
+	font-weight: bold;
 }
 
 .article-row {
@@ -4226,21 +4240,21 @@ ul>li>a:hover {
 	float: left;
 }
 
-.article-blurb{
+.article-blurb {
 	text-align: left;
 }
 
-.article-title{
+.article-title {
 	font-size: 17px;
-    margin-bottom: 10px;
-	color:black;
+	margin-bottom: 10px;
+	color: black;
 	padding-left: 10px;
 }
 
-.article-author{
+.article-author {
 	font-size: 16px;
-    color: black;
-    margin-bottom: 15px; 
+	color: black;
+	margin-bottom: 15px;
 	padding-left: 10px;
 }
 
@@ -7704,8 +7718,8 @@ ul>li>a:hover {
 }
 
 .process-box {
-	width: 100%; 
-	display: grid; 
+	width: 100%;
+	display: grid;
 	grid-template-columns: 100%;
 	color: black;
 	font-family: 'Manrope', sans-serif;
@@ -7715,8 +7729,8 @@ ul>li>a:hover {
 
 @media only screen and (min-width: 600px) {
 	.process-box {
-		width: 100%; 
-		display: grid; 
+		width: 100%;
+		display: grid;
 		grid-template-columns: 33.33% 33.33% 33.33%;
 		color: black;
 		font-family: 'Manrope', sans-serif;
@@ -7732,18 +7746,18 @@ ul>li>a:hover {
 }
 
 .process-box h {
-	font-weight: bold;	
+	font-weight: bold;
 	font-size: 22px;
 }
 
 .step-number {
 	text-align: center;
-    font-size: 23px;
-    color: white;
-    background-color: #d79bbd;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+	font-size: 23px;
+	color: white;
+	background-color: #d79bbd;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
 	min-width: 40px;
 	min-height: 40px;
 }
@@ -7826,7 +7840,7 @@ ul>li>a:hover {
 
 .materials-item img {
 	max-width: 110px;
-    max-height: 110px;
+	max-height: 110px;
 	aspect-ratio: 1;
 	border-radius: 50%;
 }
@@ -7840,4 +7854,25 @@ ul>li>a:hover {
 	font-size: 12px;
 	letter-spacing: 0.8px;
 	line-height: 100%;
+}
+
+/* Mailing list */
+
+#test-form h1 {
+	color: white !important;
+	font-size: 15px !important;
+}
+
+#test-form input {
+	border: none;
+	border-bottom: 2px solid rgba(255, 255, 255);
+	border-radius: 0 !important;
+	background-color: transparent;
+	color: white;
+	transition: all 100ms ease-out;
+}
+
+#test-form input::placeholder {
+	color: rgba(255, 255, 255, 0.8) !important;
+	font-style: italic;
 }
