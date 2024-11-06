@@ -10,6 +10,9 @@ let id = urlParams.get('prodid');
 let product_object = await getProductData(id);
 console.log(product_object)
 
+let largeImg = document.querySelector(`.largeImg`);
+largeImg.innerHTML = '';
+
 async function addCartSingle() {
     console.log(id);
     addToCart(id);
@@ -20,7 +23,7 @@ button.onclick = addCartSingle
 
 for (let i = 0; i < product_object.product_images.length; i++) {
     let url = product_object.product_images[i]
-    let largeImg = document.querySelector(`.largeImg`)
+    // let largeImg = document.querySelector(`.largeImg`)
     var li = document.createElement('li')
     var img = document.createElement('img')
     img.class = `prod-img-${i + 1}`

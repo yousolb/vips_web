@@ -1398,6 +1398,7 @@ section {
 .main-menu-area ul li {
 	position: relative;
 	list-style: none;
+	text-align: center;
 }
 
 .main-menu-area ul li a {
@@ -1601,10 +1602,10 @@ section {
 
 
 .cart-option {
-	display: inline-block;
-	position: relative;
-	float: left;
-	padding: 24px 25px 16px 25px;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* float: left; */
+	/* padding: 24px 25px 16px 25px; */
 }
 
 .cart-icon {
@@ -3045,7 +3046,7 @@ section {
 
 .header-style-2 .cart-option,
 .header-style-3 .cart-option {
-	padding: 35px 22px 24px 22px;
+	/* padding: 35px 22px 24px 22px; */
 }
 
 .header-style-2 .cart-option:hover .cart-dropdown-menu,
@@ -3625,6 +3626,28 @@ div#filters {
 	align-items: flex-end;
 }
 
+.header-container{
+	position: relative;
+    width: 100%;
+    background-image: url('/mnt/data/Group%20117.png'); /* Path to your uploaded image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.header-content{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+    z-index: 1;
+}
+
 .pics-container {
 	height: fit-content;
 	display: flex;
@@ -3760,6 +3783,10 @@ div#filters {
 	transition: all 100ms ease-out;
 }
 
+#shop-now {
+	top: -1rem !important;
+}
+
 .image-btn button:hover {
 	background-color: #1E6E37;
 }
@@ -3827,7 +3854,7 @@ div#filters {
 
 .scroll-button {
 	position: absolute;
-	top: 50%;
+	top: 90%;
 	right: 10px;
 	/* Adjust distance from right */
 	transform: translateY(-50%);
@@ -4188,27 +4215,38 @@ ul>li>a:hover {
 	gap: 1.5rem;
 }
 
+.left-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
 .left-section h1 {
-	font-size: 3em;
-	color: #7F9558;
-	font-weight: bold;
-	display: flex;
-	/* Use flexbox to center content within each section */
-	flex-direction: column;
-	/* Stack items vertically */
-	align-items: center;
-	/* Center horizontally */
+    font-size: 3em;
+    color: #7F9558;
+    font-weight: bold;
+	text-align: center;
+	max-width: 60%;
+	margin: 0 auto;
+    align-items: center;
 }
 
 .middle-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	text-align: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .benefits-title {
-	font-weight: bold;
-	color: #7F9558;
+    font-weight: bold;
+    color: #7F9558;
+	align-items: left;
+	text-align: left;
 }
 
 .benefits-list {
@@ -4218,16 +4256,32 @@ ul>li>a:hover {
 	text-align: left;
 }
 
+.right-section {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+	display: flex;
+    height: 100%;
+}
+
 .right-section p {
-	font-size: 1em;
-	color: #7F9558;
-	font-weight: bold;
+    font-size: 1em;
+    color: #7F9558;
+    font-weight: bold;
+	text-align: left;
+	max-width: 40%;
+	margin: 0 auto;
+    align-items: center;
 }
 
 .right-section h1 {
-	font-size: 2em;
-	color: #7F9558;
-	font-weight: bold;
+	font-size: 3em;
+    color: #7F9558;
+    font-weight: bold;
+	text-align: center;
+	max-width: 60%;
+	margin: 0 auto;
+    align-items: center;
 }
 
 .article-row {
