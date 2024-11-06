@@ -6,12 +6,14 @@ const cors = require('cors');  // Import CORS middleware
 const app = express();
 
 app.use(cors());  // Enable CORS
+app.use(express.json())
 
 // Replace this with your actual domain
 const YOUR_DOMAIN = 'http://127.0.0.1:5501';
 
 app.post('/create-checkout-session', async (req, res) => {
   try {
+    const { items } = req.body
     const session = await stripe.checkout.sessions.create({
       ui_mode: 'embedded',
       submit_type: 'pay',
@@ -19,10 +21,7 @@ app.post('/create-checkout-session', async (req, res) => {
       shipping_address_collection: {
         allowed_countries: ['US', 'CA'],
       },
-      line_items: [{
-        price: 'price_1QAfCMFV91ot5Yz8AoZocJmR',
-        quantity: 1
-      }],
+      line_items: items,
       mode: 'payment',
       return_url: `${YOUR_DOMAIN}/return.html?session_id={CHECKOUT_SESSION_ID}`,
     });
