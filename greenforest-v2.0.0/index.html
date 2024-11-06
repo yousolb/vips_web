@@ -29,8 +29,8 @@
     <!-- font awesome-->
     <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
 
-    <script src="index.mjs" type="module"></script>
-    <script type="module" src="register_mailing.mjs"></script>
+    <script src="index.js" type="module"></script>
+    <script type="module" src="register_mailing.js"></script>
 </head>
 
 <script>
@@ -45,7 +45,7 @@
 
 <script type="module">
     // Import the function from the module file
-    import { populateDropdown } from './cart_manager.mjs';
+    import { populateDropdown } from './cart_manager.js';
 
     window.addEventListener("load", () => {
         // Call the imported function
@@ -193,32 +193,47 @@
                 right: 0;
             }
 
-            .shop-scroll-bar button {
-                width: 150px;
-                height: 60px;
-            }
-
             .button:hover {
                 transform: scale(1.1);
             }
         </style>
 
+        <div class="header-container">
+                <img src="assets/images/homeonepage/header_group.png"
+                style="width: 100%; object-fit: cover;">
+                <div class="header-content">
+                    <style>
+                        .background-text{
+                            font-size: 2em;
+                            font-weight: bold;
+                            margin-bottom: 20px;
+                            color: white;
+                            white-space: nowrap;
+                        }
+                    </style>
+                    <div class="background-text">100% of profits from every sale go to our wildlife conservation projects</div>
+                    <div class="image-btn">
+                        <button type="button" id="shop-now"><a href="shop.html">SHOP NOW</a></button>
+                    </div>
+            </div>
+        </div>
+
         <div class="shophead-container">
             <style>
                 .latest-collection {
+                    display: flex;
                     font-size: 24px;
                     color: #000000;
                     font-weight: 700;
-                    padding-bottom: 5px;
                     justify-content: center;
                 }
             </style>
-            <span class="latest-collection" >Our Latest Collection</span>
+            <span class="latest-collection">Our Latest Collection</span>
         </div>
 
         <div class="shop-scroll-bar">
             <div class="scroll-container" id="scroll">
-                <button id="scroll-right" class="scroll-button">Scroll Right</button>
+                <button id="scroll-right" class="scroll-button"></button>
             </div>
             <!-- <button class="button" id="shop-all" onclick="redirectToShop()">
                 <p style="font-size:35px;color:white"> SHOP</p>
@@ -240,7 +255,7 @@
                         padding-bottom: 5px;
                     }
                 </style>
-                <span class="learn-more" >LEARN MORE</span>
+                <span class="learn-more">LEARN MORE</span>
                 <section class="pics-images">
                     <div class="image-btn">
                         <img src="assets/images/homeonepage/vip gorilla pic.jpeg"
@@ -248,79 +263,46 @@
                         <button type="button"><a href="about.html">WHAT IS VIPs?</a></button>
                     </div>
                     <div class="image-btn">
-                        <img src="assets/images/homeonepage/kojima1.jpg"
-                            style="width: 100%; object-fit: cover;">
+                        <img src="assets/images/homeonepage/kojima1.jpg" style="width: 100%; object-fit: cover;">
                         <button type="button"><a href="projects.html">Our projects</a></button>
                     </div>
                 </section>
             </div>
         </section>
-        
+
         <div class="prod-bar">
             <style>
-                .product-desc{
+                .product-desc {
                     font-size: 24px;
                     color: #000000;
                     font-weight: 700;
                 }
             </style>
-            <span class="product-desc">Each product is <u>one-of-a-kind</u> and <u>handmade</u> with sustainably-sourced materials</span>
+            <span class="product-desc">Each product is <u>one-of-a-kind</u> and <u>handmade</u> with sustainably-sourced
+                materials</span>
         </div>
 
         <section class="home-header">
             <div class="email-list-container">
                 <section class="email-list">
-
+                    <div class="left-section">
+                        <h1>Join the VIPs Club!</h1>
+                    </div>
+                    <div class="middle-section">
+                        <p class="benefits-title">Members Get:</p>
+                        <ul class="benefits-list">
+                            <li>First dibs on new VIPs pieces</li>
+                            <li>Exclusive discounts</li>
+                            <li>Free patterns and tutorial videos</li>
+                        </ul>
+                    </div>
+                    <div class="right-section">
+                        <p>Or...</p>
+                        <h1>Get Involved</h1>
+                    </div>
                 </section>
             </div>
         </section>
-
-        <!-- Mailing List Section -->
-        <!-- Modal -->
-        <div class="modal fade" id="mailing-signup-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header px-4">
-                        <h1 class="modal-title fs-2" style="color: #070707" id="exampleModalLabel">Join our
-                            mailing list
-                        </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-4">
-                        <div id="alertContainer"></div>
-                        <form id="test-form">
-                            <div class="mb-3">
-                                <label for="fname" class="form-label" style="color: #070707">First Name</label>
-                                <input type="text" placeholder="John" id="fname" name="fname"
-                                    class="form-control px-3 py-2 rounded rounded-5" required>
-                            </div>
-                            <div class="mb-3  fw-normal">
-                                <label for="lname" class="form-label" style="color: #070707">Last Name</label>
-                                <input type="text" placeholder="Adams" id="lname" name="lname"
-                                    class="form-control px-3 py-2 rounded rounded-5" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label" style="color: #070707">Email</label>
-                                <input type="email" placeholder="johnadams@example.com" id="email" name="email"
-                                    class="form-control px-3 py-2 rounded rounded-5" required>
-                            </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" style="text-transform: capitalize !important;" class="btn btn-secondary"
-                            data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit"
-                            style="text-transform: capitalize !important; background-color: #53a92c; border: none;"
-                            class="btn btn-primary">Submit</button>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- End of Test Section -->
-
-
 
         <!-- Start More Info Section -->
         <section class="more-info">
@@ -344,14 +326,14 @@
                                         style="width:200px">
                                 </div>
                                 <div class="article-blurb">
-                                    <h1 class ="article-title">Article Title</h1>
-                                        <p class="article-author">Author Name</p>
-                                            <div class="article-text">
-                                                <p>Blurb of what the article talks about here
-                                                    balnknkfjsrgnjwsrkjgwnskngsknrgsrnssj
-                                                    jsbrgkjsnrgjsknf:KSngksnlngsknfgdnkgd
-                                                    wekng;kjwnrgjwnkrngownrwgkwrgoigwr</p>
-                                            </div>
+                                    <h1 class="article-title">Article Title</h1>
+                                    <p class="article-author">Author Name</p>
+                                    <div class="article-text">
+                                        <p>Blurb of what the article talks about here
+                                            balnknkfjsrgnjwsrkjgwnskngsknrgsrnssj
+                                            jsbrgkjsnrgjsknf:KSngksnlngsknfgdnkgd
+                                            wekng;kjwnrgjwnkrngownrwgkwrgoigwr</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="article-row">
@@ -361,13 +343,13 @@
                                 </div>
                                 <div class="article-blurb">
                                     <h1 class="article-title">Article Title</h1>
-                                        <p class="article-author">Author Name</p>
-                                            <div class="article-text">
-                                                <p>Blurb of what the article talks about here
-                                                    balnknkfjsrgnjwsrkjgwnskngsknrgsrnssj
-                                                    jsbrgkjsnrgjsknf:KSngksnlngsknfgdnkgd
-                                                    wekng;kjwnrgjwnkrngownrwgkwrgoigwr</p>
-                                            </div>
+                                    <p class="article-author">Author Name</p>
+                                    <div class="article-text">
+                                        <p>Blurb of what the article talks about here
+                                            balnknkfjsrgnjwsrkjgwnskngsknrgsrnssj
+                                            jsbrgkjsnrgjsknf:KSngksnlngsknfgdnkgd
+                                            wekng;kjwnrgjwnkrngownrwgkwrgoigwr</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { fires as db } from "./firebase.mjs"
-import { collection, getDocs, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"
+import { collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"
 
 const userCol = collection(db, 'mailing-list')
 
@@ -20,8 +20,15 @@ async function addUser(inEmail) {
     const newDocRef = await addDoc(userCol, myDocumentData);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("test-form");
+    form.addEventListener("submit", handleSubmit);
+    console.log("YAY!")
+});
+
 const alertBar = document.getElementById('alert-container')
 const appendAlert = (message, type) => {
+    console.log("HEHEHEHEE")
     alertBar.innerHTML = "";
     const wrapper = document.createElement('div')
     wrapper.innerHTML = [
@@ -33,7 +40,9 @@ const appendAlert = (message, type) => {
     alertBar.append(wrapper)
 }
 
-document.getElementById("mail-register").addEventListener("submit", async function (e) {
+
+async function handleSubmit(e) {
+    console.log("Triggered")
     e.preventDefault();
 
     const formData = new FormData(e.target);
@@ -52,5 +61,4 @@ document.getElementById("mail-register").addEventListener("submit", async functi
         addUser(formProps['email']);
     }
 
-});
-
+};
