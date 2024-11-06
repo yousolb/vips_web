@@ -1398,6 +1398,7 @@ section {
 .main-menu-area ul li {
 	position: relative;
 	list-style: none;
+	text-align: center;
 }
 
 .main-menu-area ul li a {
@@ -1601,10 +1602,10 @@ section {
 
 
 .cart-option {
-	display: inline-block;
-	position: relative;
-	float: left;
-	padding: 24px 25px 16px 25px;
+	/* display: inline-block; */
+	/* position: relative; */
+	/* float: left; */
+	/* padding: 24px 25px 16px 25px; */
 }
 
 .cart-icon {
@@ -3047,7 +3048,7 @@ section {
 
 .header-style-2 .cart-option,
 .header-style-3 .cart-option {
-	padding: 35px 22px 24px 22px;
+	/* padding: 35px 22px 24px 22px; */
 }
 
 .header-style-2 .cart-option:hover .cart-dropdown-menu,
