@@ -128,7 +128,7 @@
 		padding: 33px 6px;
 	}
 	.header-style-2 .cart-option, .header-style-3 .cart-option {
-		padding: 35px 18px 29px 20px;
+		/* padding: 35px 18px 29px 20px; */
 	}
 	
 	/*================= Slider ================*/
@@ -249,6 +249,14 @@
 }
 @media screen and (max-width: 991px){
 	/*============== Header =================*/
+	#wide-screen {
+		display: none;
+	}
+
+	#mobile {
+		display: block;
+	}
+
 	.header-top{
 		text-align: center;
 	}
@@ -1077,6 +1085,14 @@
 }
 
 @media screen and (min-width: 992px){
+	#mobile {
+		display: none;
+	}
+
+	#wide-screen {
+		display: block;
+	}
+
 	@media screen and (max-width: 1199px){
 		.main-menu-bottom {
 			justify-content: center;
