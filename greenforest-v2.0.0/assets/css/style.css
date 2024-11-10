@@ -1392,7 +1392,7 @@ section {
 
 .main-menu-area ul {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
 
 .main-menu-area ul li {
@@ -1476,8 +1476,6 @@ section {
 
 	}
 
-
-
 	.header-style-1 .main-menu .nav>.dropdown:hover ul.sub-menu,
 	.header-style-2 .main-menu .nav>.dropdown:hover ul.sub-menu,
 	.header-style-3 .main-menu .nav>.dropdown:hover ul.sub-menu {
@@ -1485,12 +1483,6 @@ section {
 		opacity: 1;
 		visibility: visible;
 	}
-
-	/* .boxed #bs-example-navbar-collapse-1{
-		display: inline-block!important;
-	} */
-
-
 
 	.sub-sub-menu {
 		left: 100%;
