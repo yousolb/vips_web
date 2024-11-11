@@ -16,21 +16,40 @@ app.post('/create-checkout-session', async (req, res) => {
   try {
     console.log(req.body);
     const { items } = req.body;
+    console.log("FIRST ITEM IN LIST\n\n\n", items[0].price);
 
     // console.log(req)
-    const session = await stripe.checkout.sessions.create({
-      ui_mode: 'embedded',
-      submit_type: 'pay',
-      billing_address_collection: 'auto',
-      shipping_address_collection: {
-        allowed_countries: ['US', 'CA'],
-      },
-      line_items: items,
-      mode: 'payment',
-      return_url: `${YOUR_DOMAIN}/return.html?session_id={CHECKOUT_SESSION_ID}`,
-    });
+    let session;
+    if (items[0].price == "price_1QJhzHFV91ot5Yz8FhTn4iLa" ||
+        items[0].price == "price_1QJhzYFV91ot5Yz8cEgfWEOp" ||
+        items[0].price == "price_1QJhzmFV91ot5Yz8mylkjmTh") {
+        session = await stripe.checkout.sessions.create({
+        ui_mode: 'embedded',
+        // submit_type: 'pay',
+        billing_address_collection: 'auto',
+        shipping_address_collection: {
+          allowed_countries: ['US', 'CA'],
+        },
+        line_items: items,
+        mode: 'subscription',
+        return_url: `${YOUR_DOMAIN}/return.html?session_id={CHECKOUT_SESSION_ID}`,
+      });
+    } else {
+        session = await stripe.checkout.sessions.create({
+        ui_mode: 'embedded',
+        submit_type: 'pay',
+        billing_address_collection: 'auto',
+        shipping_address_collection: {
+          allowed_countries: ['US', 'CA'],
+        },
+        line_items: items,
+        mode: 'payment',
+        return_url: `${YOUR_DOMAIN}/return.html?session_id={CHECKOUT_SESSION_ID}`,
+      });
+    }
+    
 
-    console.log("Session created:", session);
+    // console.log("Session created:", session);
 
     // Send the session client secret to the client
     res.send({ clientSecret: session.client_secret });

@@ -6,9 +6,33 @@ const donateOptions = {
     price: "price_1QIHS0FV91ot5Yz8upssMn0D",
     quantity: 1
   },
+  "donate-once-5": {
+    price: "price_1QJhkUFV91ot5Yz8MZjEiA6V",
+    quantity: 1
+  },
+  "donate-once-10": {
+    price: "price_1QJhkhFV91ot5Yz86LexvQku",
+    quantity: 1
+  },
+  "donate-once-custom": {
+    price: "price_1QJhnOFV91ot5Yz8I8ZHezZf",
+    quantity: 1
+  },
+  "donate-monthly-1": {
+    price: "price_1QJhzHFV91ot5Yz8FhTn4iLa",
+    quantity: 1
+  },
+  "donate-monthly-5": {
+    price: "price_1QJhzYFV91ot5Yz8cEgfWEOp",
+    quantity: 1
+  },
+  "donate-monthly-10": {
+    price: "price_1QJhzmFV91ot5Yz8mylkjmTh",
+    quantity: 1
+  },
   "donate-monthly-custom": {
     price: "price_1QAg1cFV91ot5Yz8Q32xYYTg",
-    quntity: 1
+    quantity: 1
   }
 }
 
