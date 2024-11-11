@@ -44,7 +44,6 @@
 .donation-container {
   height: 70%;
   width: 100%;
-  background-color: aquamarine;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
