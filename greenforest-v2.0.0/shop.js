@@ -17,7 +17,20 @@ if (selectedItem === 'gameday') {
     let header = document.getElementById('header-title')
     header.innerHTML = 'All Collections';
     qs = await getDocs(query(col, where('collection', '!=', 'none')));
-} /* else if (selectedItem === 'varibolo') {
+} else if (selectedItem === 'fashion') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'Clothing';
+    qs = await getDocs(query(col, where('type', '==', 'clothing')));
+} else if (selectedItem === 'accessories') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'Accessories';
+    qs = await getDocs(query(col, where('type', '==', 'accessory')));
+} else if (selectedItem === 'plushies') {
+    let header = document.getElementById('header-title')
+    header.innerHTML = 'Plushies';
+    qs = await getDocs(query(col, where('type', '==', 'plush')));
+}
+/* else if (selectedItem === 'varibolo') {
     let header = document.getElementById('header-title')
     header.innerHTML = 'VARIBOLO Collection';
     qs = await getDocs(query(col, where('collection', '==', 'varibolo')));
