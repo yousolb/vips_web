@@ -1392,7 +1392,7 @@ section {
 
 .main-menu-area ul {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
 
 .main-menu-area ul li {
@@ -1444,6 +1444,29 @@ section {
 	right: 5px;
 }
 
+@media (max-width: 768px) {
+    #bg-about-vips .about-container {
+        display: block !important;
+    }
+
+	#bg-about-vips .volunteers-items {
+		border-bottom: 2px solid #ccc;
+		padding-bottom: 10px;
+	}
+
+    #bg-about-vips .vip-about-container,
+    #bg-about-vips .about-container > div {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+		border-right: none !important;
+		border-top: 2px solid #ccc;
+		padding-top: 40px;
+		padding-bottom: 20px;
+		text-align: center;
+    }
+}
+
 
 @media screen and (min-width: 992px) {
 	.main-menu-area .navbar-collapse {
@@ -1476,8 +1499,6 @@ section {
 
 	}
 
-
-
 	.header-style-1 .main-menu .nav>.dropdown:hover ul.sub-menu,
 	.header-style-2 .main-menu .nav>.dropdown:hover ul.sub-menu,
 	.header-style-3 .main-menu .nav>.dropdown:hover ul.sub-menu {
@@ -1485,12 +1506,6 @@ section {
 		opacity: 1;
 		visibility: visible;
 	}
-
-	/* .boxed #bs-example-navbar-collapse-1{
-		display: inline-block!important;
-	} */
-
-
 
 	.sub-sub-menu {
 		left: 100%;
@@ -3139,8 +3154,10 @@ section {
 ====================================================*/
 
 .about-mission p {
-	color: black;
-	background-color: #C1ADE5;
+	color: white;
+	
+	background-color: #7f9558;
+	border-radius: 15px;
 	padding: 20px 25px 20px 25px;
 	font-family: 'Manrope', sans-serif;
 	font-weight: 400;
@@ -4003,7 +4020,7 @@ ul>li>a:hover {
 
 .bg-shop-section .container {
 	display: inline-flex;
-	margin-left: 10%;
+	display: flex;
 	width: 100%;
 }
 
@@ -6458,7 +6475,7 @@ ul>li>a:hover {
 /*================================================= Start Shop Option ================================*/
 
 .bg-shop-section {
-	padding: 120px 0;
+	padding: 80px 0;
 }
 
 .shop-option {}

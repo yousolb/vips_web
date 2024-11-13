@@ -44,7 +44,6 @@
 .donation-container {
   height: 70%;
   width: 100%;
-  background-color: aquamarine;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -139,6 +138,141 @@
   text-transform: none;
   transition: all 300ms ease-in-out;
 }
+
+/*===================Start Mobile===================*/
+@media (max-width: 767px) {
+  /*================ Header ===================*/
+  .gi-page-header {
+    /* background: url(../../assets/images/about/bg-page-header.jpg) no-repeat; */
+    /* background: url(../../assets/images/patterns/paper.jpg) no-repeat; */
+    /* background-size: cover; */
+    /* background-position: 50% 50%; */
+    height: 25vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+  }
+
+  .gi-page-header .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .gi-page-header .row h2 {
+    color: #fff;
+    line-height: 23px;
+  }
+
+  /*================ Tier Container ===================*/
+
+  .donation-section-new {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  /*======== Donation Boxes ========*/
+
+  .donation-container {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .donation-box {
+    height: 45%;
+    width: 80%;
+    border-radius: 15px;
+    padding: 1.5rem 1rem 2rem 1rem;
+  }
+
+  /*=== Body Content ===*/
+
+  .donation-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .donation-body > * {
+    flex: 1 0 33%;
+  }
+
+  .donation-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*=== Text Styling ===*/
+
+  .donation-body h2 {
+    color: #fff;
+    line-height: 12px;
+    font-size: 21px;
+  }
+
+  .donation-body p {
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .donation-body ul {
+    color: #fff;
+    font-size: 15px;
+    line-height: normal;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .donation-body li {
+    list-style-type: disc;
+  }
+
+  /*=== Button ===*/
+  .button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: auto;
+  }
+
+  .button-set-price {
+    width: 15%;
+    height: 100%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: none;
+    transition: all 300ms ease-in-out;
+  }
+
+  .button-custom {
+    width: 40%;
+    padding: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: none;
+    transition: all 300ms ease-in-out;
+  }
+}
+/*===================End Mobile===================*/
 
 /*======================
 	End Donate css
