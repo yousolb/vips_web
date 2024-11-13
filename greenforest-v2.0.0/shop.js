@@ -64,11 +64,11 @@ for(let i = 0; i < docus.length; i++) {
     console.log(product_data.product_name)
 
     let collection_items = `
-    <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 22%;">
+    <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 22%;min-width:200px">
     <div class="collection-items">
     <div class="collection-img">
         <div class="collection-overlay"></div>
-        <img src="${url}" alt="collection-img-1" style="width:20vw;height:40vh;object-fit: cover;"/>
+        <img src="${url}" alt="collection-img-1" style="height:40vh;object-fit: cover;"/>
         <ul class="collection-icon">
         </ul>
     </div>
