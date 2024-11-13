@@ -33,7 +33,7 @@
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -48,16 +48,16 @@
             populateDropdown();
         });
     </script>
-    
+
     <!-- Start Page Header Section -->
     <section class="gi-page-header">
-            <div class="container">
-                <div class="row">
-                    <h2>Donate</h2>
-                </div>
-                <!-- .row -->
+        <div class="container">
+            <div class="row">
+                <h2>Donate</h2>
             </div>
-            <!-- .container -->
+            <!-- .row -->
+        </div>
+        <!-- .container -->
     </section>
     <!-- End Page Header Section -->
 
@@ -98,10 +98,18 @@
                         </ul>
                     </div>
                     <div class="button-container">
+<<<<<<< HEAD
+                        <button class="button-set-price" type="button" id="donate-1"><a
+                                href="donate-checkout.html?val=donate-once-1">$1</a></button>
+                        <button class="button-set-price" type="submit">$5</button>
+                        <button class="button-set-price" type="submit">$10</button>
+                        <button class="button-custom" type="submit">Custom</button>
+=======
                         <button class="button-set-price" type="button" id="donate-1"><a href="donate-checkout.html?val=donate-once-1">$1</a></button>
                         <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-once-5">$5</a></button>
                         <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-once-10">$10</a></button>
                         <button class="button-custom" type="submit"><a href="donate-checkout.html?val=donate-once-custom">Custom</a></button>
+>>>>>>> 48f90a61e8b859c935bdb92f1fa3ed3c04fdb82d
                     </div>
                 </div>
             </div>

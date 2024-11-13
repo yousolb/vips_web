@@ -1,6 +1,9 @@
 // This is your public API key.
 const stripe = Stripe("pk_live_51OtTziFV91ot5Yz84YA5iMOCaOMRZEIPIex8VBFEbooI2bSb30eExeNyzVRwIarhMNr6ErUKv0R7FULyNYToQfEp00VHT7KM44");
 
+<<<<<<< HEAD
+const params = new URLSearchParams(window.location.search);
+=======
 const donateOptions = {
   "donate-once-1": {
     price: "price_1QIHS0FV91ot5Yz8upssMn0D",
@@ -37,6 +40,7 @@ const donateOptions = {
 }
 
 const params = new URLSearchParams(window.location.search)
+>>>>>>> 48f90a61e8b859c935bdb92f1fa3ed3c04fdb82d
 const option = params.get("val")
 console.log(option)
 
@@ -52,8 +56,20 @@ async function initialize() {
       },
       body: JSON.stringify({
         items: [
+<<<<<<< HEAD
+          {
+            price: 'price_1QAfCMFV91ot5Yz8AoZocJmR',
+            quantity: 1
+          },
+          {
+            price: 'price_1QAfCMFV91ot5Yz8AoZocJmR',
+            quantity: 1
+          }
+        ]
+=======
           donateOptions[option]
         ],
+>>>>>>> 48f90a61e8b859c935bdb92f1fa3ed3c04fdb82d
       })
     });
     if (!response.ok) {
