@@ -30,33 +30,6 @@ if (selectedItem === 'gameday') {
     header.innerHTML = 'Plushies';
     qs = await getDocs(query(col, where('type', '==', 'plush')));
 }
-/* else if (selectedItem === 'varibolo') {
-    let header = document.getElementById('header-title')
-    header.innerHTML = 'VARIBOLO Collection';
-    qs = await getDocs(query(col, where('collection', '==', 'varibolo')));
-} else if (selectedItem === 'affection') {
-    qs = await getDocs(query(col, where('collection', '==', 'affection')));
-} else if (selectedItem === 'gaia') {
-    let header = document.getElementById('header-title')
-    header.innerHTML = 'GAIA Collection';
-    qs = await getDocs(query(col, where('collection', '==', 'gaia')));
-} else if (selectedItem === 'fashion') {
-    let header = document.getElementById('header-title')
-    header.innerHTML = 'Fashion Collection';
-    qs = await getDocs(query(col, where('type', '==', 'clothing')));
-} else if (selectedItem === 'plushes') {
-    let header = document.getElementById('header-title')
-    header.innerHTML = 'Plushes Collection';
-    qs = await getDocs(query(col, where('type', '==', 'plush')));
-} else if (selectedItem === 'accessories') {
-    let header = document.getElementById('header-title')
-    header.innerHTML = 'Accessories Collection';
-    qs = await getDocs(query(col, where('type', '==', 'accessory')));
-} else if (selectedItem === 'kojima') {
-    let header = document.getElementById('header-title')
-    header.innerHTML = 'KOJIMA Collection';
-    qs = await getDocs(query(col, where('collection', '==', 'kojima')));
-} */
 let docus = qs.docs;
 
 for(let i = 0; i < docus.length; i++) {
@@ -74,26 +47,32 @@ for(let i = 0; i < docus.length; i++) {
     const formattedPrice = `${priceInDollars}.${formattedCents}`;
     let price = `$${cents === 0 ? `${priceInDollars}.00` : formattedPrice}`;
     let prod_id = doc.id;
+    let soldOutClass = product_data.sold ? 'sold-out' : '';
+    let soldOutOverlay = product_data.sold ? '<div class="out-of-stock-overlay">Out of Stock</div>' : '';
+    let link = product_data.sold 
+    ? `<a style="pointer-events: none; color: gray;">${product_data.product_name}</a>` 
+    : `<a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a>`;
     console.log(product_data.product_name)
 
     let collection_items = `
-    <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 22%;min-width:200px">
-    <div class="collection-items">
+    <div class="col-lg-4 col-sm-6 col-12" style="flex: 1 0 22%; min-width:200px">
+    <div class="collection-items ${soldOutClass}">
     <div class="collection-img">
         <div class="collection-overlay"></div>
         <img src="${url}" alt="collection-img-1" style="height:40vh;object-fit: cover;"/>
+        ${soldOutOverlay}
         <ul class="collection-icon">
         </ul>
     </div>
     <!-- .collection-img -->
     <div class="collection-content">
-        <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>
+        <h4>${link}</h4>
         <h5>${price}</h5>
     </div>
     <!-- .collection-content -->
     </div>
     <!-- .collection-items -->
-    </div>`
+    </div>`;
 
     var div = document.createElement('div');
     div.innerHTML = collection_items.trim();
