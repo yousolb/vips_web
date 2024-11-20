@@ -69,7 +69,7 @@ export async function getFromDatabase(id) {
     desc += "- " + product_data.description_lines[i];
     desc += "<br/>";
   }
-  database_product.product_desc = desc
+  database_product.product_desc = desc;
   let artist = await getDoc(product_data.artist);
   let artist_data = artist.data();
   let artist_info = `

@@ -30,13 +30,15 @@ export async function populateDropdown() {
         await new Promise(r => setTimeout(r, 10));
         dropdown_cart = document.querySelector(`.cart-dropdown-menu`);
     }
-    dropdown_cart.innerHTML = `<div class="total-price">
-    <p><span>Total Price :</span> <span class="total-pricing">$0</span> </p>
-</div>
-<!-- .total-prices -->
-<div class="checkout-btn">
-    <a href="shop_cart.html" class="btn btn-default">checkout</a>
-</div>`
+    dropdown_cart.innerHTML = `
+        <div class="total-price">
+            <p><span>Total Price :</span> <span class="total-pricing">$0</span> </p>
+        </div>
+        <!-- .total-prices -->
+        <div class="checkout-btn">
+            <a href="shop_cart.html" class="btn btn-default">checkout</a>
+        </div>
+    `
     let total_pricing = 0
     var carts = []
     if (localStorage.getItem("carts") === null) {
@@ -47,10 +49,11 @@ export async function populateDropdown() {
     }
     for (let i = 0; i < carts.length; i++) {
         let id = carts[i];
-        let pricing = await dropdownCartItem(id)
+        let pricing = parseFloat(await dropdownCartItem(id))
+        console.log(pricing)
         total_pricing = total_pricing + pricing
     }
-    let total_price = `\$${Math.floor(total_pricing / 100)}.${total_pricing % 100}`;
+    let total_price = `\$${total_pricing.toFixed(2)}`;
     setHTML(".total-pricing", total_price)
 }
 
@@ -78,5 +81,5 @@ async function dropdownCartItem(id) {
     var template = document.createElement('template');
     template.innerHTML = collection_items.trim();
     dropdown_cart.append(template.content.firstChild);
-    return prod_obj.price_cents;
+    return price.replace('$', '');
 }

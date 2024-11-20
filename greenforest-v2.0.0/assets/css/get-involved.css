@@ -79,6 +79,8 @@
   height: 100%;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
+  padding-top: 9.6rem;
   align-self: stretch;
 }
 
@@ -216,6 +218,330 @@ li span {
   background-color: white;
 }
 
+/*=========Resources Section==========*/
+.resource-container {
+  height: 100vh;
+  background-color: white;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resource-container h2 {
+  font-size: 30px;
+}
+
+.resource-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 5rem; /* Adjusts the space between columns */
+  max-width: 90%; /* Adjust to your preference */
+  margin: 0 auto; /* Centers the grid on the page */
+  padding-top: 2rem;
+}
+
+.resource-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.resource-item img {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.resource-item a {
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  padding-top: 1rem;
+  line-height: normal;
+}
+
+.resource-item p {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+/*===================Start Mobile===================*/
+@media (max-width: 767px) {
+  /*================ Header ===================*/
+  .gi-page-header {
+    /* background: url(../../assets/images/about/bg-page-header.jpg) no-repeat; */
+    /* background: url(../../assets/images/patterns/paper.jpg) no-repeat; */
+    /* background-size: cover; */
+    /* background-position: 50% 50%; */
+    height: 25vh;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+  }
+
+  .gi-page-header .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .gi-page-header .row h2 {
+    color: #fff;
+    line-height: 23px;
+  }
+
+  /*================ Tier Container ===================*/
+
+  .tier-container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*======== Tier Header ========*/
+
+  .tier-header {
+    flex: 1 1 auto;
+    padding: 1rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tier-header .row p {
+    line-height: 15px;
+    font-size: medium;
+    font-weight: 500;
+    color: black;
+  }
+
+  /*======== Tier ========*/
+
+  .tier {
+    flex: 5 5 auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+
+  .tier .container {
+    height: 100%;
+    /* width: 50%; */
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 2rem !important;
+    /* align-items: flex-start; */
+  }
+
+  /*=== Rotated Text ===*/
+
+  .text-rotate-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    align-self: stretch;
+  }
+
+  .text-rotate {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    padding-top: 2.1rem;
+    font-size: 12.5px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /*=== Tier Number ===*/
+
+  .big-number-container {
+    height: 100%;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .big-number {
+    line-height: 1;
+    font-size: 90px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /*=== Tier Body ===*/
+
+  .tier-body {
+    color: #fff;
+    height: 100%;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .tier-body h2 {
+    color: #fff;
+    font-size: 14px;
+  }
+
+  .tier-body p {
+    color: #fff;
+    font-size: 10px;
+  }
+
+  .tier-body ul {
+    color: #fff;
+    font-size: 10px;
+    padding-left: 2rem;
+    list-style-position: outside;
+  }
+
+  .tier-body li {
+    list-style-type: disc;
+  }
+
+  li span {
+    position: relative;
+    left: 2.5px;
+  }
+
+  /*=== Mailing List ===*/
+
+  .tier-body .styled-input {
+    width: 70%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 8px;
+    background-color: transparent;
+    padding: 2.5px 0 2.5px 5px;
+    color: white;
+    margin-right: 1px;
+  }
+
+  .tier-body .styled-input:focus {
+    width: 70%;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-size: 8px;
+    background-color: transparent;
+    color: white;
+    margin-right: 1px;
+  }
+
+  .tier-body .styled-input::placeholder {
+    color: white;
+  }
+
+  /*=== Button ===*/
+  .tier-body button {
+    width: fit-content;
+    padding: 4.5px 4.5px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 8px;
+    text-transform: none;
+    transition: all 300ms ease-in-out;
+  }
+
+  .tier-body button:hover {
+    color: var(--tier-1-color);
+    background-color: white;
+  }
+
+  .tier-body a {
+    width: fit-content;
+    padding: 0.5px 4px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: none;
+  }
+
+  .tier-2-button:hover {
+    color: var(--tier-2-color);
+    background-color: white;
+  }
+
+  .tier-4-button:hover {
+    color: var(--tier-4-color);
+    background-color: white;
+  }
+
+  /*=========Resources Section==========*/
+  .resource-container {
+    height: fit-content;
+    background-color: white;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .resource-container h2 {
+    font-size: 15px;
+  }
+
+  .resource-row {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2.5rem; /* Adjusts the space between columns */
+    max-width: 90%; /* Adjust to your preference */
+    margin: 0 auto; /* Centers the grid on the page */
+    padding-top: 1rem;
+  }
+
+  .resource-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resource-item img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .resource-item a {
+    color: black;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0;
+    padding-top: 0.5rem;
+    line-height: normal;
+  }
+
+  .resource-item p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: black;
+  }
+}
+/*===================End Mobile===================*/
 
 /*======================
 	End Get Involved css

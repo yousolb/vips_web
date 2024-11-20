@@ -33,7 +33,7 @@
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -48,16 +48,16 @@
             populateDropdown();
         });
     </script>
-    
+
     <!-- Start Page Header Section -->
     <section class="gi-page-header">
-            <div class="container">
-                <div class="row">
-                    <h2>Donate</h2>
-                </div>
-                <!-- .row -->
+        <div class="container">
+            <div class="row">
+                <h2>Donate</h2>
             </div>
-            <!-- .container -->
+            <!-- .row -->
+        </div>
+        <!-- .container -->
     </section>
     <!-- End Page Header Section -->
 
@@ -78,10 +78,9 @@
                         </ul>
                     </div>
                     <div class="button-container">
-                        <button class="button-set-price" type="submit">$1</button>
-                        <button class="button-set-price" type="submit">$5</button>
-                        <button class="button-set-price" type="submit">$10</button>
-                        <button class="button-custom" type="submit">Custom</button>
+                        <a class="monthly-button" href="donate-checkout.html?val=donate-monthly-1">$1</a>
+                        <a class="monthly-button" href="donate-checkout.html?val=donate-monthly-5">$5</a>
+                        <a class="monthly-button" href="donate-checkout.html?val=donate-monthly-10">$10</a>
                     </div>
                 </div>
             </div>
@@ -98,13 +97,17 @@
                         </ul>
                     </div>
                     <div class="button-container">
-                        <button class="button-set-price" type="submit">$1</button>
-                        <button class="button-set-price" type="submit">$5</button>
-                        <button class="button-set-price" type="submit">$10</button>
-                        <button class="button-custom" type="submit">Custom</button>
+                        <a class="button-set-price" href="donate-checkout.html?val=donate-once-1">$1</a>
+                        <a class="button-set-price" href="donate-checkout.html?val=donate-once-5">$5</a>
+                        <a class="button-set-price" href="donate-checkout.html?val=donate-once-10">$10</a>
+                        <a class="button-custom" href="donate-checkout.html?val=donate-once-custom">Custom</a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div>
+            <a class="button-join-email" href="get_involved.html">JOIN THE VERY IMPORTANT PRIMATES EMAIL LIST</a>
         </div>
     </section>
     <!-- End Donations Section -->
