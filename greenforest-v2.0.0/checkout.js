@@ -10,7 +10,19 @@ async function initialize() {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
-      }
+      },
+      body: JSON.stringify({
+        items: [
+          {
+            price: 'price_1QAfCMFV91ot5Yz8AoZocJmR',
+            quantity: 1
+          },
+          {
+            price: 'price_1QAfCMFV91ot5Yz8AoZocJmR',
+            quantity: 1
+          }
+        ]
+      })
     });
     if (!response.ok) {
       throw new Error("Failed to fetch client secret");

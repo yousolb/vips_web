@@ -14,20 +14,26 @@ for(let i = 0; i < docus.length; i++) {
     let url = await getDownloadURL(imglist.items[0]);
     let pricing = product_data.price;
     let price = `\$${Math.floor(pricing/100)}.${pricing%100}`;
+    let soldOutClass = product_data.sold ? 'sold-out' : '';
+    let soldOutOverlay = product_data.sold ? '<div class="out-of-stock-overlay">Out of Stock</div>' : '';
     let prod_id = doc.id;
+    let link = product_data.sold 
+    ? `<a style="pointer-events: none; color: gray;">${product_data.product_name}</a>` 
+    : `<a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a>`;
 
     console.log(prod_id)
 
-    let collection_items = `<div class="product-card">
-    <img src="${url}" alt="varibolo-gloves" style="height:30vh;object-fit:cover;display:flex;justify-content:center;"/>
-    <ul class="collection-icon">
-        <li style="padding: 0 4em;"><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
-    </ul>
-    <div class="collection-content">
-        <h4><a href="shop_single.html?prodid=${prod_id}">${product_data.product_name}</a></h4>
-        <h5>${price}0</h5>
-    </div>
-</div>  `
+    let collection_items = `
+    <div class="product-card ${soldOutClass}">
+        <img src="${url}" alt="varibolo-gloves" style="height:30vh;object-fit:cover;display:flex;justify-content:center;"/>
+        <ul class="collection-icon">
+            <li style="padding: 0 4em;"><a href="shop_cart.html"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
+        </ul>
+        <div class="collection-content">
+            <h4>${link}</h4> <!-- Product name link with pointer-events handling -->
+            <h5>${price}0</h5>
+        </div>
+    </div>`;
 
     var div = document.createElement('div');
     div.innerHTML = collection_items.trim();
