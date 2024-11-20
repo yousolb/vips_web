@@ -15,16 +15,6 @@ async function addCartSingle() {
     addToCart(id);
 }
 
-const button_div = document.getElementById("buy-button");
-let form = document.createElement('form')
-form.action = product_object.checkout_link
-let buy_btn = document.createElement('button')
-buy_btn.type = "submit"
-buy_btn.className = "add-cart-btn"
-buy_btn.innerText = "Buy"
-form.appendChild(buy_btn)
-button_div.appendChild(form)
-
 const loadImages = () => {
     console.log(product_object.product_images.length);
     let largeImg = document.querySelector(`.largeImg`)
@@ -48,6 +38,7 @@ const loadImages = () => {
 await loadImages()
 
 export const artist_id = product_object.artist_id
+export const checkout_link = product_object.checkout_link
 
 setHTML('.product_name', product_object.product_name);
 setHTML('.product_price', product_object.product_price);
