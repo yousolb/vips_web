@@ -107,10 +107,10 @@ export async function artistDatabase(id) {
 }
 
 export async function getProductData(id) {
-  if (sessionStorage.getItem(id) === null) {
-    let product_object = await getFromDatabase(id);
-    sessionStorage.setItem(id, JSON.stringify(product_object));
-    return product_object;
+  if (sessionStorage.getItem(id) === null) { //if not in session storage
+    let product_object = await getFromDatabase(id); //wait until got from database to continue
+    sessionStorage.setItem(id, JSON.stringify(product_object)); //put object into session storage
+    return product_object; //return object
   }
   else {
     return JSON.parse(sessionStorage.getItem(id))

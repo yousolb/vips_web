@@ -204,11 +204,20 @@
                 <div class="header-content">
                     <style>
                         .background-text{
-                            font-size: 2em;
+                            font-size: 200%;
                             font-weight: bold;
                             margin-bottom: 20px;
                             color: white;
                             white-space: nowrap;
+                        }
+                        @media (max-width: 768px) {
+                            .background-text {
+                                font-size: 0.75em;
+                                font-weight: bold;
+                                margin-bottom: 5px;
+                                color: white;
+                                white-space: nowrap;
+                            }
                         }
                     </style>
                     <div class="background-text">100% of profits from every sale go to our wildlife conservation projects</div>
@@ -226,6 +235,14 @@
                     color: #000000;
                     font-weight: 700;
                     justify-content: center;
+                }
+                @media (max-width: 768px) {
+                    .latest-collection {
+                        font-size: 18px;
+                        color: #000000;
+                        font-weight: 700;
+                        padding-bottom: 5px;
+                    }
                 }
             </style>
             <span class="latest-collection">Our Latest Collection</span>
@@ -254,6 +271,14 @@
                         font-weight: 700;
                         padding-bottom: 5px;
                     }
+                    @media (max-width: 768px) {
+                        .learn-more {
+                            font-size: 18px;
+                            color: #000000;
+                            font-weight: 700;
+                            padding-bottom: 5px;
+                        }
+                    }
                 </style>
                 <span class="learn-more">LEARN MORE</span>
                 <section class="pics-images">
@@ -277,6 +302,13 @@
                     color: #000000;
                     font-weight: 700;
                 }
+                @media (max-width: 768px) {
+                    .product-desc {
+                        font-size: 18px;
+                        color: #000000;
+                        font-weight: 700;
+                    }
+                }
             </style>
             <span class="product-desc">Each product is <u>one-of-a-kind</u> and <u>handmade</u> with sustainably-sourced
                 materials</span>
@@ -298,7 +330,7 @@
                     </div>
                     <div class="right-section">
                         <p>Or...</p>
-                        <h1>Get Involved</h1>
+                        <h1><a href=volunteer.html>Get Involved</a></h1>
                     </div>
                 </section>
             </div>
@@ -317,39 +349,54 @@
                                         color: #000000;
                                         font-weight: 700;
                                     }
+                                    @media (max-width: 768px) {
+                                        .read-about-us {
+                                            font-size: 18px;
+                                            color: #000000;
+                                            font-weight: 700;
+                                            justify-content: center;
+                                        }
+                                    }
                                 </style>
                                 <p class="read-about-us">READ ABOUT OUR WORK</p>
                             </div>
-                            <div class="article-row">
-                                <div class="article-pic">
-                                    <img src="https://img.freepik.com/premium-vector/isolated-newspaper-illustration-cartoon-newspaper-vector_641602-339.jpg"
-                                        style="width:200px">
+                            <div class = "article-row-container">
+                                <div class="article-row">
+                                    <a href="https://lsa.umich.edu/lsa/news-events/all-news/search-news/conscious-couture--from-paris-fashion-week-to-your-closet.html">
+                                        <div class="article-pic">
+                                            <img src="assets/images/homeonepage/conscious_couture.png"
+                                                style="width:200px">
+                                        </div>
+                                        <div class="article-blurb">
+                                            <h1 class="article-title">Conscious Couture: From Paris Fashion Week to Your Closet</h1>
+                                            <p class="article-author">Stephanie Wong</p>
+                                            <div class="article-text">
+                                                <p>LSA students delve into the
+                                                    world of sustainable fashion, 
+                                                    where they teach us that you 
+                                                    can reduce climate debt one 
+                                                    garment at a time.</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
-                                <div class="article-blurb">
-                                    <h1 class="article-title">Article Title</h1>
-                                    <p class="article-author">Author Name</p>
-                                    <div class="article-text">
-                                        <p>Blurb of what the article talks about here
-                                            balnknkfjsrgnjwsrkjgwnskngsknrgsrnssj
-                                            jsbrgkjsnrgjsknf:KSngksnlngsknfgdnkgd
-                                            wekng;kjwnrgjwnkrngownrwgkwrgoigwr</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-row">
-                                <div class="article-pic">
-                                    <img src="https://img.freepik.com/premium-vector/isolated-newspaper-illustration-cartoon-newspaper-vector_641602-339.jpg"
-                                        style="width:200px">
-                                </div>
-                                <div class="article-blurb">
-                                    <h1 class="article-title">Article Title</h1>
-                                    <p class="article-author">Author Name</p>
-                                    <div class="article-text">
-                                        <p>Blurb of what the article talks about here
-                                            balnknkfjsrgnjwsrkjgwnskngsknrgsrnssj
-                                            jsbrgkjsnrgjsknf:KSngksnlngsknfgdnkgd
-                                            wekng;kjwnrgjwnkrngownrwgkwrgoigwr</p>
-                                    </div>
+                                <div class="article-row">
+                                    <a href="https://www.michigandaily.com/news/campus-life/umix-hosts-sustainaball-showcasing-sustainable-clothing-for-fashion-lovers/">
+                                        <div class="article-pic">
+                                            <img src="assets/images/homeonepage/umix.jpg"
+                                                style="width:200px">
+                                        </div>
+                                        <div class="article-blurb">
+                                            <h1 class="article-title">UMix hosts ‘Sustainaball’ showcasing sustainable clothing</h1>
+                                            <p class="article-author">Vivian Carper</p>
+                                            <div class="article-text">
+                                                <p>University of Michigan students recently 
+                                                    gathered for "Sustainaball," a vibrant 
+                                                    celebration of sustainable fashion, creativity,
+                                                     and environmental activism.</p>
+                                            </div>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

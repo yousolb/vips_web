@@ -23,8 +23,8 @@
 
     <!-- font awesome-->
     <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
-
-    <script src="shop_single.js" type = "module"></script>
+        
+    <!-- <script src="shop_single.js" type = "module"></script> -->
 
 </head>
 
@@ -50,7 +50,7 @@
         });
     </script>
 
-    <script type="module">
+    <!-- <script type="module">
         import { artist_id } from './shop_single.js';
 
         function artistPage() {
@@ -64,7 +64,7 @@
                 imageElement.addEventListener('click', artistPage);
             }
         });
-    </script>
+    </script> -->
     
     <div class="box-layout">
         <div class="box-style">
@@ -318,6 +318,21 @@
 
     <script type="text/javascript" src="assets/js/custom.js"></script>
 
+    <script type="module">
+        import { artist_id } from './shop_single.js';
+
+        function artistPage() {
+            window.location.href = `team_single.html?prodid=${artist_id}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Find the image element and attach the click event
+            const imageElement = document.querySelector('.artist_img');
+            if (imageElement) {
+                imageElement.addEventListener('click', artistPage);
+            }
+        });
+    </script>
 
 </body>
 

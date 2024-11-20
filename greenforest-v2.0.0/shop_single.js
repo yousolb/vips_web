@@ -10,9 +10,6 @@ let id = urlParams.get('prodid');
 let product_object = await getProductData(id);
 console.log(product_object)
 
-let largeImg = document.querySelector(`.largeImg`);
-largeImg.innerHTML = '';
-
 async function addCartSingle() {
     console.log(id);
     addToCart(id);
@@ -21,18 +18,27 @@ async function addCartSingle() {
 const button = document.getElementById("add_cart_id");
 button.onclick = addCartSingle
 
-for (let i = 0; i < product_object.product_images.length; i++) {
-    let url = product_object.product_images[i]
-    // let largeImg = document.querySelector(`.largeImg`)
-    var li = document.createElement('li')
-    var img = document.createElement('img')
-    img.class = `prod-img-${i + 1}`
-    img.src = url
-    img.alt = 'product pic'
-    img.title = 'product-pic'
-    li.appendChild(img)
-    largeImg.appendChild(li.cloneNode(true))
+const loadImages = () => {
+    console.log(product_object.product_images.length);
+    let largeImg = document.querySelector(`.largeImg`)
+    console.log(largeImg);
+    for (let i = 0; i < product_object.product_images.length; i++) { //product_object is being initialized fine so something is wrong in this loop
+        let url = product_object.product_images[i]
+        var li = document.createElement('li')
+        var img = document.createElement('img')
+        img.class = `prod-img-${i + 1}`
+        img.src = url
+        img.alt = 'product pic'
+        img.title = 'product-pic'
+        li.appendChild(img)
+        li.style.display = "block";
+        // largeImg.appendChild(li.cloneNode(true))
+        largeImg.appendChild(li)
+    }
+    $('.flexslider').flexslider();
 }
+
+await loadImages()
 
 export const artist_id = product_object.artist_id
 
