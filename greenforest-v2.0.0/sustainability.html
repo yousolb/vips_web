@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" media="all" />
     <!-- font awesome-->
     <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
-    <script src="sustainability.js" type = "module"></script>
+    <script src="sustainability.js" type="module"></script>
 
 </head>
 
@@ -31,8 +31,36 @@
     <script>
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                console.log("I'm ready!")
+                const mobile_menu_btn = document.querySelector("#hamburger-menu");
+                mobile_menu_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const mobile_close_btn = document.querySelector("#close-btn");
+                mobile_close_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+                shop_menu.forEach(menu => {
+                    menu.addEventListener("click", () => {
+                        const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                        if (shop_list) {
+                            shop_list.classList.toggle("mobile-shop-sublist-show");
+                            shop_list.classList.toggle("mobile-shop-sublist-hide");
+                        }
+                    });
+                });
+            });
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -135,90 +163,102 @@
             </div>
         </div>
     </div>
-    
-        <!-- Start Page Header Section -->
-        <section class="bg-page-header">
-            <div class="page-header-overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h2>Sustainability</h2>
-                            </div>
-                            <!-- .page-title -->
+
+    <!-- Start Page Header Section -->
+    <section class="bg-page-header">
+        <div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h2>Sustainability</h2>
                         </div>
-                        <!-- .page-header -->
+                        <!-- .page-title -->
                     </div>
-                    <!-- .row -->
+                    <!-- .page-header -->
                 </div>
-                <!-- .container -->
+                <!-- .row -->
             </div>
-            <!-- .page-header-overlay -->
-        </section>
-        <!-- End Page Header Section -->
+            <!-- .container -->
+        </div>
+        <!-- .page-header-overlay -->
+    </section>
+    <!-- End Page Header Section -->
 
-        <div class="sustainability-container">
-            <br><br>
-            <div style="width:100%; height:fit-content; display:flex; flex-direction:column; align-items:center;"> 
-                <h3 style="color:black;font-size:30px;">Our Promise<h3>
-                <div class="sustainability-box">
-                    <p>The fast fashion industry promotes constant avalanches of microtrends that last only a couple of weeks before being trumped by the next trend. But where do all these clothes go when they become soooo last week...? </p>
-                    <br>
-                    <p><b>3 out of 5 of these garments end up in the landfill within a year of being purchased. Less than 1% are recycled, reused or repurposed.</b> To make matters worse, most of them are made of synthetic fabrics (yes, that means they’re made of fossil fuels) that shed thousands of microplastics down the drain and take hundreds of years to decompose. Did you know the fast fashion industry is expected to take up 35% more land (that's 115 MILLION hectares) by 2030? On a planet where we are running out of space at an alarming rate, this expansion will spell disaster for wildlife, and us. Should the destruction of liveable habitats really come at the expense of trends that so often turn to trash?</p>
-                </div>
-            </div>
+    <div class="sustainability-container">
+        <br><br>
+        <div style="width:100%; height:fit-content; display:flex; flex-direction:column; align-items:center;">
+            <h3 style="color:black;font-size:30px;">Our Promise<h3>
+                    <div class="sustainability-box">
+                        <p>The fast fashion industry promotes constant avalanches of microtrends that last only a couple
+                            of weeks before being trumped by the next trend. But where do all these clothes go when they
+                            become soooo last week...? </p>
+                        <br>
+                        <p><b>3 out of 5 of these garments end up in the landfill within a year of being purchased. Less
+                                than 1% are recycled, reused or repurposed.</b> To make matters worse, most of them are
+                            made of synthetic fabrics (yes, that means they’re made of fossil fuels) that shed thousands
+                            of microplastics down the drain and take hundreds of years to decompose. Did you know the
+                            fast fashion industry is expected to take up 35% more land (that's 115 MILLION hectares) by
+                            2030? On a planet where we are running out of space at an alarming rate, this expansion will
+                            spell disaster for wildlife, and us. Should the destruction of liveable habitats really come
+                            at the expense of trends that so often turn to trash?</p>
+                    </div>
+        </div>
 
-            <div style="width:100%; display:flex; flex-direction:column; align-items:center;"> 
-                <h3 style="color:black;font-size:30px;">Our Process</h3>
-                <div class="sustainability-box">
-                    <div class="process-box"> 
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <div class="step">
-                                <h>Materials Sourcing</h>
-                                <p>Our items are made sourced through a mixture of secondhand, repurposed, and retail materials. See below for more details.</p>
-                            </div>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <div class="step">
-                                <h>Crafting</h>
-                                <p>Each piece is handcrafted by volunteer artists in the USA and sponsored artists in Madagascar to be one-of-a-kind, sustainable, and ethically produced.</p>
-                            </div>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <div class="step">
-                                <h>Selling</h>
-                                <p>Find our items at our pop-up shops, online, and in small boutiques in Ann Arbor, Michigan!</p>
-                                <div class="green-button-empty">
-                                    <button>SHOP NOW</button>
-                                </div>
-                            </div>
+        <div style="width:100%; display:flex; flex-direction:column; align-items:center;">
+            <h3 style="color:black;font-size:30px;">Our Process</h3>
+            <div class="sustainability-box">
+                <div class="process-box">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step">
+                            <h>Materials Sourcing</h>
+                            <p>Our items are made sourced through a mixture of secondhand, repurposed, and retail
+                                materials. See below for more details.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <br>
-
-            <div style="width:100%; height:fit-content; display:flex; flex-direction:column; align-items:center;"> 
-                <h3 style="color:black;font-size:30px;">Materials & Sourcing</h3>
-                <div class="sustainability-box" style="padding-top: 0px;"> 
-                        <h>Secondhand / Reused</h>
-                        <div id="secondhand-reused" class="sustainability-grid"></div>
-                    
-                        <h>Retail</h>
-                        <div id="retail" class="sustainability-grid "></div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step">
+                            <h>Crafting</h>
+                            <p>Each piece is handcrafted by volunteer artists in the USA and sponsored artists in
+                                Madagascar to be one-of-a-kind, sustainable, and ethically produced.</p>
+                        </div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step">
+                            <h>Selling</h>
+                            <p>Find our items at our pop-up shops, online, and in small boutiques in Ann Arbor,
+                                Michigan!</p>
+                            <div class="green-button-empty">
+                                <button>SHOP NOW</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        
+
         <br>
 
-        <!-- Start Scrolling -->
-        <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-        <!-- End Scrolling -->
+        <div style="width:100%; height:fit-content; display:flex; flex-direction:column; align-items:center;">
+            <h3 style="color:black;font-size:30px;">Materials & Sourcing</h3>
+            <div class="sustainability-box" style="padding-top: 0px;">
+                <h>Secondhand / Reused</h>
+                <div id="secondhand-reused" class="sustainability-grid"></div>
+
+                <h>Retail</h>
+                <div id="retail" class="sustainability-grid "></div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Start Scrolling -->
+    <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+    <!-- End Scrolling -->
     </div>
 
     <!-- Start Pre-Loader-->

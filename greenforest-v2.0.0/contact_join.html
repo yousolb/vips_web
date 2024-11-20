@@ -30,8 +30,36 @@
     <script>
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                console.log("I'm ready!")
+                const mobile_menu_btn = document.querySelector("#hamburger-menu");
+                mobile_menu_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const mobile_close_btn = document.querySelector("#close-btn");
+                mobile_close_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+                shop_menu.forEach(menu => {
+                    menu.addEventListener("click", () => {
+                        const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                        if (shop_list) {
+                            shop_list.classList.toggle("mobile-shop-sublist-show");
+                            shop_list.classList.toggle("mobile-shop-sublist-hide");
+                        }
+                    });
+                });
+            });
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -134,7 +162,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Start Page Header Section -->
     <section class="bg-page-header">
         <div class="page-header-overlay">
@@ -156,9 +184,9 @@
     </section>
     <!-- End Page Header Section -->
 
-    <section class="bg-about-vips" id = "bg-about-vips">
+    <section class="bg-about-vips" id="bg-about-vips">
 
-    
+
         <!-- Start Contact us Section -->
         <section class="bg-contact-us">
             <div class="container">
@@ -168,86 +196,96 @@
                             <h2 style="font-weight:800;">Join Us!</h2>
                             <br>
                             <p>
-                                If you make art and want to be part of a group of lovely people that uses crafting for good, or you have another talent that could help further help further the mission, please reach out!
+                                If you make art and want to be part of a group of lovely people that uses crafting for
+                                good, or you have another talent that could help further help further the mission,
+                                please reach out!
                                 <br><br>
-                                We are always looking for volunteers and would love to grow our community of artists and conservationists. Email our volunteer coordinator at sasha@vipsfund.org or fill out the form below and join the team!
+                                We are always looking for volunteers and would love to grow our community of artists and
+                                conservationists. Email our volunteer coordinator at sasha@vipsfund.org or fill out the
+                                form below and join the team!
                                 <br><br>
-                                We welcome volunteers in any capacity, from one-time donor artists to full-time new members of our crochet club at the University of Michigan. We are also hoping to expand to other college campuses, so please reach out if you would be interested in starting a VIP's branch at your institution!
+                                We welcome volunteers in any capacity, from one-time donor artists to full-time new
+                                members of our crochet club at the University of Michigan. We are also hoping to expand
+                                to other college campuses, so please reach out if you would be interested in starting a
+                                VIP's branch at your institution!
                                 <br><br>
                             </p>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <img src="assets/images/joinus/join_img.png" alt="fixme">
-                            </div>
-                            <div class="col-lg-8">
-                                <form action="send_email.php" method="post" class="contact-form">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" id="name" name="name" color="#1E6E37" placeholder="Full Name" required>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <img src="assets/images/joinus/join_img.png" alt="fixme">
+                                </div>
+                                <div class="col-lg-8">
+                                    <form action="send_email.php" method="post" class="contact-form">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="name" name="name"
+                                                        color="#1E6E37" placeholder="Full Name" required>
+                                                </div>
+                                                <!-- .form-group -->
                                             </div>
-                                            <!-- .form-group -->
-                                        </div>
-                                        <!-- .col-md-6 -->
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                                            <!-- .col-md-6 -->
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" id="email" name="email"
+                                                        placeholder="Email Address" required>
+                                                </div>
                                             </div>
+                                            <!-- .col-md-6 -->
                                         </div>
-                                        <!-- .col-md-6 -->
-                                    </div>
-                                    <!-- .row -->
+                                        <!-- .row -->
 
-                                    <textarea class="form-control text-area" id="message" name="message" rows="3" placeholder="Message" required></textarea>
-                                    <button type="submit" value="Send" class="btn btn-default">Send Email</button>
-                                </form>
-                                
-                                <!-- TODO: once we have domain name, follow rest of steps to actually send emails w/ phpmailer -->
-                                
+                                        <textarea class="form-control text-area" id="message" name="message" rows="3"
+                                            placeholder="Message" required></textarea>
+                                        <button type="submit" value="Send" class="btn btn-default">Send Email</button>
+                                    </form>
+
+                                    <!-- TODO: once we have domain name, follow rest of steps to actually send emails w/ phpmailer -->
+
+                                </div>
+
                             </div>
-                            
+                            <!-- .row -->
                         </div>
-                        <!-- .row -->
+                        <!-- .contact-us -->
                     </div>
-                    <!-- .contact-us -->
+                    <!-- .row -->
                 </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
+                <!-- .container -->
         </section>
         <!-- End Contact us Section -->
 
-    <!-- Start Pre-Loader-->
+        <!-- Start Pre-Loader-->
 
-    <div id="loading">
-        <div id="loading-center">
-            <div id="loading-center-absolute">
-                <div class="object" id="object_one"></div>
-                <div class="object" id="object_two"></div>
-                <div class="object" id="object_three"></div>
-                <div class="object" id="object_four"></div>
+        <div id="loading">
+            <div id="loading-center">
+                <div id="loading-center-absolute">
+                    <div class="object" id="object_one"></div>
+                    <div class="object" id="object_two"></div>
+                    <div class="object" id="object_three"></div>
+                    <div class="object" id="object_four"></div>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- End Pre-Loader -->
+        <!-- End Pre-Loader -->
 
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+        <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+        <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+        <script type="text/javascript" src="assets/js/lightcase.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+        <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+        <script type="text/javascript" src="assets/js/custom.map.js"></script>
 
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+        <script type="text/javascript" src="assets/js/custom.js"></script>
 
 
 </body>

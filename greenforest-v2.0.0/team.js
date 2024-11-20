@@ -1,4 +1,4 @@
-import {artist_col, storage, fires, setSRC, setHTML } from './firebase.js'
+import { artist_col, storage, fires, setSRC, setHTML } from './firebase.js'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { query, orderBy, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
@@ -6,7 +6,7 @@ let qs = await getDocs(query(artist_col, orderBy('fav_animal')));
 let docus = qs.docs;
 let elt = document.querySelector(`.staff-items`);
 
-for(let i = 0; i < docus.length; i++) {
+for (let i = 0; i < docus.length; i++) {
     let doc = docus[i];
     let artist_data = doc.data();
     let reference = ref(storage, artist_data.image);

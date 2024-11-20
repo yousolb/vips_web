@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { fires as db } from "./firebase.mjs"
+import { fires as db } from "./firebase.js"
 import { collection, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js"
 
 const userCol = collection(db, 'mailing-list')
@@ -21,14 +21,12 @@ async function addUser(inEmail) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("test-form");
+    const form = document.getElementById("mailing-form");
     form.addEventListener("submit", handleSubmit);
-    console.log("YAY!")
 });
 
 const alertBar = document.getElementById('alert-container')
 const appendAlert = (message, type) => {
-    console.log("HEHEHEHEE")
     alertBar.innerHTML = "";
     const wrapper = document.createElement('div')
     wrapper.innerHTML = [
@@ -42,7 +40,6 @@ const appendAlert = (message, type) => {
 
 
 async function handleSubmit(e) {
-    console.log("Triggered")
     e.preventDefault();
 
     const formData = new FormData(e.target);

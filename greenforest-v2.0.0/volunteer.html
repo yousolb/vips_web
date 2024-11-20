@@ -30,8 +30,36 @@
     <script>
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                console.log("I'm ready!")
+                const mobile_menu_btn = document.querySelector("#hamburger-menu");
+                mobile_menu_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const mobile_close_btn = document.querySelector("#close-btn");
+                mobile_close_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+                shop_menu.forEach(menu => {
+                    menu.addEventListener("click", () => {
+                        const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                        if (shop_list) {
+                            shop_list.classList.toggle("mobile-shop-sublist-show");
+                            shop_list.classList.toggle("mobile-shop-sublist-hide");
+                        }
+                    });
+                });
+            });
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -156,30 +184,32 @@
     </section>
     <!-- End Page Header Section -->
     <style>
-    .column {
-        float: left;
-        width: 33.33%;
-        padding: 5px;
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     </style>
 
-     <!-- Start Contact us Section -->
-     <section class="bg-contact-us">
+    <!-- Start Contact us Section -->
+    <section class="bg-contact-us">
         <div class="container">
             <h2 style="color:black;font-size: 32px;">Get Involved</h2>
-            <p>Do you know or want to learn how to crochet, knit, sew, etc, and want to help out the Fund? Do you have some other skill that could help the organization? We are always looking for volunteers and would love to showcase your talents! Email sasha@vipsfund.org to join the effort!</p>
+            <p>Do you know or want to learn how to crochet, knit, sew, etc, and want to help out the Fund? Do you have
+                some other skill that could help the organization? We are always looking for volunteers and would love
+                to showcase your talents! Email sasha@vipsfund.org to join the effort!</p>
             <br>
             <div class="row">
                 <h2 style="color:black;font-size: 32px;">Our Current Volunteers</h2>
                 <div class="contact-us" style="display:flex;  justify-content:center;">
-                    <img style="width:70%;margin-top:2%"src="assets/images/joinus/members.png" alt="Contact Image">
+                    <img style="width:70%;margin-top:2%" src="assets/images/joinus/members.png" alt="Contact Image">
                 </div>
             </div>
             <br><br>
-                <h2 style="color:black;font-size: 32px;">Volunteer Resources</h2>
+            <h2 style="color:black;font-size: 32px;">Volunteer Resources</h2>
             <br>
             <div class="section-title" style="display:flex;justify-content: center;">
                 <div class="column">
@@ -201,7 +231,7 @@
     </section>
     <!-- End Contact us Section -->
 
-    
+
 
     <!-- Start Pre-Loader-->
 

@@ -1,4 +1,4 @@
-import {col, storage, fires, setSRC, setHTML, getProductData, getArtistData } from './firebase.js'
+import { col, storage, fires, setSRC, setHTML, getProductData, getArtistData } from './firebase.js'
 import { getStorage, ref, list, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-storage.js'
 import { query, where, getFirestore, collection, getDocs, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js'
 
@@ -21,7 +21,7 @@ let qs = await getDocs(query(col, where('artist', '==', artist_id_p)));
 let docus = qs.docs;
 let elt = document.querySelector(`.more_from_artist`);
 
-for(let i = 0; i < docus.length; i++) {
+for (let i = 0; i < docus.length; i++) {
     let doc = docus[i];
     let product_data = doc.data();
     let reference = ref(storage, product_data.image_folder);

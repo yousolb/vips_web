@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +25,7 @@
     <!-- font awesome-->
     <script src="https://kit.fontawesome.com/808142aef7.js" crossorigin="anonymous"></script>
 
-    <script src="shop_single.js" type = "module"></script>
+    <script src="shop_single.js" type="module"></script>
 
 </head>
 
@@ -33,8 +34,36 @@
     <script>
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                console.log("I'm ready!")
+                const mobile_menu_btn = document.querySelector("#hamburger-menu");
+                mobile_menu_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const mobile_close_btn = document.querySelector("#close-btn");
+                mobile_close_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+                shop_menu.forEach(menu => {
+                    menu.addEventListener("click", () => {
+                        const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                        if (shop_list) {
+                            shop_list.classList.toggle("mobile-shop-sublist-show");
+                            shop_list.classList.toggle("mobile-shop-sublist-hide");
+                        }
+                    });
+                });
+            });
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -65,7 +94,7 @@
             }
         });
     </script>
-    
+
     <div class="box-layout">
         <div class="box-style">
             <div class="color-btn">
@@ -125,29 +154,37 @@
                     </div>
                     <div class="box-content">
                         <ul class="box-pattern-img">
-                        <li>
-                            <a class="pt-1" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/01.png"" alt=""></a>
+                            <li>
+                                <a class="pt-1" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/01.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-2" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/02.png"" alt=""></a>
+                            <a class=" pt-2" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/02.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-3" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/03.png"" alt=""></a>
+                            <a class=" pt-3" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/03.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-4" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/04.png"" alt=""></a>
+                            <a class=" pt-4" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/04.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-5" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/05.png"" alt=""></a>
+                            <a class=" pt-5" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/05.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-6" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/06.png"" alt=""></a>
+                            <a class=" pt-6" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/06.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-7" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/07.png"" alt=""></a>
+                            <a class=" pt-7" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/07.png"" alt=""></a>
                         </li>
                         <li>
-                            <a class="pt-8" href="#"><img src="https://www.codexcoder.com/images/auror/pt-image/08.png"" alt=""></a>
+                            <a class=" pt-8" href="#"><img
+                                        src="https://www.codexcoder.com/images/auror/pt-image/08.png"" alt=""></a>
                         </li>
                     </ul>
                     </div>
@@ -155,168 +192,183 @@
             </div>
         </div>
         <!-- Start Page Header Section -->
-        <section class="bg-page-header">
-            <div class="page-header-overlay">
-                <div class="container">
-                    <div class="row">
-                        <div class="page-header">
-                            <div class="page-title">
-                                <h2 class="product_name">product single page</h2>
-                            </div>
-                            <!-- .page-title -->
-                        </div>
-                        <!-- .page-header -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .container -->
-            </div>
-            <!-- .page-header-overlay -->
-        </section>
-        <!-- End Page Header Section -->
-
-
-        <!-- Start Single Shop Project Section -->
-        <section class="bg-shop-section">
-            <div class="container">
-                <div class="row">
-                    <div class="shop-option">
-                        <div class="row"style="justify-content:flex-start;">
-                            <div class="col-lg-9" style="margin-left:12vw;width:fit-content">
-                                <div class="row">
-                                    <div class="col-md-5">
-                                        <div class="single-product-slider" style="width:25vw;">
-                                            <div id="slider" class="flexslider">
-                                                <ul class="slides largeImg">
-                                                    
-                                                </ul>
-                                            </div>
-                                            
-                                        </div>
-                                        <!-- .single-product -->
-
-                                    </div>
-                                    <!-- .col-md-5 -->
-                                    <div class="col-md-7">
-                                        <div class="about-product-datails">
-                                            <h3 class="product_name">Product Title Here</h3>
-                                            <h4 class="product_price">$250.00</h4>
-                                            <p class="product_desc">Intactvely engineer prospective competencies and rather and resource sucking process imrovement ompetently envisioneer real awesome theme a and internalsources through open areaweosme product event t-shart.</p>
-                                            <!-- <a href="#" class="btn add-cart-btn">Add to Cart</a> -->
-                                            <button href="#" title="cart-button" class="btn add-cart-btn" id="add_cart_id">Add to Cart</button>
-                                        </div>
-                                        <!-- .about-product-datails -->
-                                    </div>
-                                    <!-- .col-md-7 -->
-                                </div>
-                                <!-- .row -->
-
-                                <div class="product-review">
-
-                                    <!-- Tab panes -->
-                                    <div class="tab-content">
-                                        <div role="tabpanel" class="tab-pane active" id="description">
-                                            <div class="product-description">
-                                                <style>
-                                                    .description-title{
-                                                        font-size: 30px;
-                                                        color: #000000;
-                                                        font-weight: 700;
-                                                        text-transform: uppercase;
-                                                        margin-bottom: 0px;
-                                                        margin-top: 0px;
-                                                    }
-                                                </style>
-                                                <p class="description-title">Meet the Artist</p>
-                                                <style>
-                                                    .desc-content {
-                                                        display: flex;
-                                                        align-content: flex-start;
-                                                    }
-                                                    .artist_desc {
-                                                        margin-left: 1em;
-                                                    }
-                                                    .artist_img {
-                                                        border-radius: 50%;
-                                                        display: block;
-                                                    }
-                                                    .artist_img {
-                                                        transition: transform 0.3s ease;
-                                                    }
-
-                                                    .artist_img:hover {
-                                                        transform: scale(1.1);
-                                                        filter: opacity(80%)
-                                                    }
-                                                </style>
-                                                <div class="desc-content">
-                                                    <div>
-                                                        <img src="" class="artist_img" style="width:200px;" onclick="artistPage()"></img>
+        <section class=" bg-page-header">
+                                    <div class="page-header-overlay">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="page-header">
+                                                    <div class="page-title">
+                                                        <h2 class="product_name">product single page</h2>
                                                     </div>
-                                                    <div>
-                                                        <p class="artist_desc"></p>
-                                                    </div>
+                                                    <!-- .page-title -->
                                                 </div>
-                                                <!-- .desc-content -->
+                                                <!-- .page-header -->
                                             </div>
-                                            <!-- .product-description -->
+                                            <!-- .row -->
                                         </div>
-                                        <!-- .description -->
+                                        <!-- .container -->
                                     </div>
-                                     <!-- .tab-content -->
-                                </div>
-                                 <!-- .product-review -->
-                            </div>
-                            <!-- .col-lg-9 -->
-                            
-                        </div>
-                        <!-- .row -->
+                                    <!-- .page-header-overlay -->
+                                    </section>
+                                    <!-- End Page Header Section -->
+
+
+                                    <!-- Start Single Shop Project Section -->
+                                    <section class="bg-shop-section">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="shop-option">
+                                                    <div class="row" style="justify-content:flex-start;">
+                                                        <div class="col-lg-9"
+                                                            style="margin-left:12vw;width:fit-content">
+                                                            <div class="row">
+                                                                <div class="col-md-5">
+                                                                    <div class="single-product-slider"
+                                                                        style="width:25vw;">
+                                                                        <div id="slider" class="flexslider">
+                                                                            <ul class="slides largeImg">
+
+                                                                            </ul>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <!-- .single-product -->
+
+                                                                </div>
+                                                                <!-- .col-md-5 -->
+                                                                <div class="col-md-7">
+                                                                    <div class="about-product-datails">
+                                                                        <h3 class="product_name">Product Title Here</h3>
+                                                                        <h4 class="product_price">$250.00</h4>
+                                                                        <p class="product_desc">Intactvely engineer
+                                                                            prospective competencies and rather and
+                                                                            resource sucking process imrovement
+                                                                            ompetently envisioneer real awesome theme a
+                                                                            and internalsources through open areaweosme
+                                                                            product event t-shart.</p>
+                                                                        <!-- <a href="#" class="btn add-cart-btn">Add to Cart</a> -->
+                                                                        <!-- <button href="#" title="cart-button" class="btn add-cart-btn" id="add_cart_id">Add to Cart</button> -->
+                                                                        <div id="buy-button"></div>
+                                                                    </div>
+                                                                    <!-- .about-product-datails -->
+                                                                </div>
+                                                                <!-- .col-md-7 -->
+                                                            </div>
+                                                            <!-- .row -->
+
+                                                            <div class="product-review">
+
+                                                                <!-- Tab panes -->
+                                                                <div class="tab-content">
+                                                                    <div role="tabpanel" class="tab-pane active"
+                                                                        id="description">
+                                                                        <div class="product-description">
+                                                                            <style>
+                                                                                .description-title {
+                                                                                    font-size: 30px;
+                                                                                    color: #000000;
+                                                                                    font-weight: 700;
+                                                                                    text-transform: uppercase;
+                                                                                    margin-bottom: 0px;
+                                                                                    margin-top: 0px;
+                                                                                }
+                                                                            </style>
+                                                                            <p class="description-title">Meet the Artist
+                                                                            </p>
+                                                                            <style>
+                                                                                .desc-content {
+                                                                                    display: flex;
+                                                                                    align-content: flex-start;
+                                                                                }
+
+                                                                                .artist_desc {
+                                                                                    margin-left: 1em;
+                                                                                }
+
+                                                                                .artist_img {
+                                                                                    border-radius: 50%;
+                                                                                    display: block;
+                                                                                }
+
+                                                                                .artist_img {
+                                                                                    transition: transform 0.3s ease;
+                                                                                }
+
+                                                                                .artist_img:hover {
+                                                                                    transform: scale(1.1);
+                                                                                    filter: opacity(80%)
+                                                                                }
+                                                                            </style>
+                                                                            <div class="desc-content">
+                                                                                <div>
+                                                                                    <img src="" class="artist_img"
+                                                                                        style="width:200px;"
+                                                                                        onclick="artistPage()"></img>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <p class="artist_desc"></p>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- .desc-content -->
+                                                                        </div>
+                                                                        <!-- .product-description -->
+                                                                    </div>
+                                                                    <!-- .description -->
+                                                                </div>
+                                                                <!-- .tab-content -->
+                                                            </div>
+                                                            <!-- .product-review -->
+                                                        </div>
+                                                        <!-- .col-lg-9 -->
+
+                                                    </div>
+                                                    <!-- .row -->
+                                                </div>
+                                                <!-- .shop-option -->
+                                            </div>
+                                            <!-- .row -->
+                                        </div>
+                                        <!-- .container -->
+                                    </section>
+                                    <!-- End Shop Project Section -->
+
+
+                                    <!-- Start Scrolling -->
+                                    <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
+                                    <!-- End Scrolling -->
+
+
                     </div>
-                    <!-- .shop-option -->
-                </div>
-                <!-- .row -->
-            </div>
-            <!-- .container -->
-        </section>
-        <!-- End Shop Project Section -->
+
+                    <!-- Start Pre-Loader-->
+                    <div id="loading">
+                        <div id="loading-center">
+                            <div id="loading-center-absolute">
+                                <div class="object" id="object_one"></div>
+                                <div class="object" id="object_two"></div>
+                                <div class="object" id="object_three"></div>
+                                <div class="object" id="object_four"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Pre-Loader -->
 
 
-        <!-- Start Scrolling -->
-        <div class="scroll-img"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-        <!-- End Scrolling -->
+                    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
+                    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
+                    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
+                    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
+                    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
+                    <script type="text/javascript" src="assets/js/lightcase.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
+                    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
+                    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
+                    <script type="text/javascript" src="assets/js/custom.map.js"></script>
 
-
-    </div>
-
-    <!-- Start Pre-Loader-->
-    <div id="loading">
-        <div id="loading-center">
-            <div id="loading-center-absolute">
-                <div class="object" id="object_one"></div>
-                <div class="object" id="object_two"></div>
-                <div class="object" id="object_three"></div>
-                <div class="object" id="object_four"></div>
-            </div>
-        </div>
-    </div>
-    <!-- End Pre-Loader -->
-
-
-    <script type="text/javascript" src="assets/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.waypoints.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-    <script type="text/javascript" src="assets/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/js/plugins.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="assets/js/lightcase.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.nstSlider.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/js/custom.isotope.js"></script>
-    <script type="text/javascript" src="assets/js/custom.map.js"></script>
-
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+                    <script type="text/javascript" src="assets/js/custom.js"></script>
 
 
 </body>

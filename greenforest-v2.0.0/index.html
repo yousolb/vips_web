@@ -36,7 +36,35 @@
 <script>
     fetch('header.html')
         .then(response => response.text())
-        .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+        .then(data => {
+            document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+            console.log("I'm ready!")
+            const mobile_menu_btn = document.querySelector("#hamburger-menu");
+            mobile_menu_btn.addEventListener("click", () => {
+                const menu = document.querySelector("#mobile-menu")
+                menu.classList.toggle("mobile-menu-hide")
+                menu.classList.toggle("mobile-menu-show")
+            })
+
+            const mobile_close_btn = document.querySelector("#close-btn");
+            mobile_close_btn.addEventListener("click", () => {
+                const menu = document.querySelector("#mobile-menu")
+                menu.classList.toggle("mobile-menu-hide")
+                menu.classList.toggle("mobile-menu-show")
+            })
+
+            const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+            shop_menu.forEach(menu => {
+                menu.addEventListener("click", () => {
+                    const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                    if (shop_list) {
+                        shop_list.classList.toggle("mobile-shop-sublist-show");
+                        shop_list.classList.toggle("mobile-shop-sublist-hide");
+                    }
+                });
+            });
+        });
 
     fetch('footer.html')
         .then(response => response.text())
@@ -199,22 +227,22 @@
         </style>
 
         <div class="header-container">
-                <img src="assets/images/homeonepage/header_group.png"
-                style="width: 100%; object-fit: cover;">
-                <div class="header-content">
-                    <style>
-                        .background-text{
-                            font-size: 2em;
-                            font-weight: bold;
-                            margin-bottom: 20px;
-                            color: white;
-                            white-space: nowrap;
-                        }
-                    </style>
-                    <div class="background-text">100% of profits from every sale go to our wildlife conservation projects</div>
-                    <div class="image-btn">
-                        <button type="button" id="shop-now"><a href="shop.html">SHOP NOW</a></button>
-                    </div>
+            <img src="assets/images/homeonepage/header_group.png" style="width: 100%; object-fit: cover;">
+            <div class="header-content">
+                <style>
+                    .background-text {
+                        font-size: 2em;
+                        font-weight: bold;
+                        margin-bottom: 20px;
+                        color: white;
+                        white-space: nowrap;
+                    }
+                </style>
+                <div class="background-text">100% of profits from every sale go to our wildlife conservation projects
+                </div>
+                <div class="image-btn">
+                    <button type="button" id="shop-now"><a href="shop.html">SHOP NOW</a></button>
+                </div>
             </div>
         </div>
 

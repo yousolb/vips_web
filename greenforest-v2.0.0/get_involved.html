@@ -32,8 +32,36 @@
     <script>
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
-            
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                console.log("I'm ready!")
+                const mobile_menu_btn = document.querySelector("#hamburger-menu");
+                mobile_menu_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const mobile_close_btn = document.querySelector("#close-btn");
+                mobile_close_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+                shop_menu.forEach(menu => {
+                    menu.addEventListener("click", () => {
+                        const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                        if (shop_list) {
+                            shop_list.classList.toggle("mobile-shop-sublist-show");
+                            shop_list.classList.toggle("mobile-shop-sublist-hide");
+                        }
+                    });
+                });
+            });
+
         fetch('footer.html')
             .then(response => response.text())
             .then(data => document.querySelector('body').insertAdjacentHTML('beforeend', data));
@@ -48,22 +76,22 @@
             populateDropdown();
         });
     </script>
-    
+
     <!-- Start Page Header Section -->
     <section class="gi-page-header">
-            <div class="container">
-                <div class="row">
-                    <h2>Get Involved</h2>
-                </div>
-                <!-- .row -->
+        <div class="container">
+            <div class="row">
+                <h2>Get Involved</h2>
             </div>
-            <!-- .container -->
+            <!-- .row -->
+        </div>
+        <!-- .container -->
     </section>
     <!-- End Page Header Section -->
 
     <!-- Start Tiers Section -->
     <section class="tier-container">
-        <div class="tier-header"> 
+        <div class="tier-header">
             <div class="row">
                 <p>Thanks for your interest in becoming a Very Important Primate! Here’s how it works:</p>
             </div>
@@ -132,8 +160,8 @@
                         </li>
                         <li>
                             <span>
-                                Donate completed pieces (we will reimburse you for materials), 
-                                as long as it is unique, made of approved materials, and original, 
+                                Donate completed pieces (we will reimburse you for materials),
+                                as long as it is unique, made of approved materials, and original,
                                 you can make whatever you'd like!
                             </span>
                         </li>
@@ -183,7 +211,7 @@
                         </li>
                     </ul>
                     <p>
-                        We onboard new volunteers in <b>September</b> and <b>February</b>. 
+                        We onboard new volunteers in <b>September</b> and <b>February</b>.
                         <b>Follow our Instagram (@vipsfund)</b> and keep your eyes peeled for updates!
                     </p>
                 </div>
@@ -208,8 +236,8 @@
                 <div class="tier-body">
                     <h2>Philanthropist</h2>
                     <p>
-                        If you donate monthly or if you ever make a one-time donation of 
-                        over $100, you qualify as a Very Important Philanthropist! 
+                        If you donate monthly or if you ever make a one-time donation of
+                        over $100, you qualify as a Very Important Philanthropist!
                         <b>In addition to all the perks from above,</b> philanthropists receive:
                     </p>
                     <ul>

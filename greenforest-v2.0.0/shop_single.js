@@ -18,15 +18,22 @@ async function addCartSingle() {
     addToCart(id);
 }
 
-const button = document.getElementById("add_cart_id");
-button.onclick = addCartSingle
+const button_div = document.getElementById("buy-button");
+let form = document.createElement('form')
+form.action = product_object.checkout_link
+let buy_btn = document.createElement('button')
+buy_btn.type = "submit"
+buy_btn.className = "add-cart-btn"
+buy_btn.innerText = "Buy"
+form.appendChild(buy_btn)
+button_div.appendChild(form)
 
 for (let i = 0; i < product_object.product_images.length; i++) {
     let url = product_object.product_images[i]
     // let largeImg = document.querySelector(`.largeImg`)
     var li = document.createElement('li')
     var img = document.createElement('img')
-    img.class = `prod-img-${i + 1}`
+    img.className = `prod-img-${i + 1}`
     img.src = url
     img.alt = 'product pic'
     img.title = 'product-pic'

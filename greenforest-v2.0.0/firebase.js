@@ -56,6 +56,7 @@ export async function getFromDatabase(id) {
     formattedCents = formattedCents.padEnd(2, '0');
   }
   database_product.product_price = `$${cents === 0 ? `${priceInDollars}.00` : `${priceInDollars}.${formattedCents}`}`;
+  database_product.checkout_link = product_data.checkout_link
 
   database_product.product_images = []
   let reference = ref(storage, product_data.image_folder);

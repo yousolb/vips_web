@@ -32,7 +32,35 @@
     <script>
         fetch('header.html')
             .then(response => response.text())
-            .then(data => document.querySelector('body').insertAdjacentHTML('afterbegin', data));
+            .then(data => {
+                document.querySelector('body').insertAdjacentHTML('afterbegin', data);
+                console.log("I'm ready!")
+                const mobile_menu_btn = document.querySelector("#hamburger-menu");
+                mobile_menu_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const mobile_close_btn = document.querySelector("#close-btn");
+                mobile_close_btn.addEventListener("click", () => {
+                    const menu = document.querySelector("#mobile-menu")
+                    menu.classList.toggle("mobile-menu-hide")
+                    menu.classList.toggle("mobile-menu-show")
+                })
+
+                const shop_menu = document.querySelectorAll(".mobile-shop-menu");
+
+                shop_menu.forEach(menu => {
+                    menu.addEventListener("click", () => {
+                        const shop_list = menu.nextElementSibling; // Get the next sibling <ul>
+                        if (shop_list) {
+                            shop_list.classList.toggle("mobile-shop-sublist-show");
+                            shop_list.classList.toggle("mobile-shop-sublist-hide");
+                        }
+                    });
+                });
+            });
 
         fetch('footer.html')
             .then(response => response.text())
@@ -78,10 +106,15 @@
                         </ul>
                     </div>
                     <div class="button-container">
-                        <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-monthly-1">$1</a></button>
-                        <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-monthly-5">$5</a></button>
-                        <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-monthly-10">$10</a></button>
-                        <button class="button-custom" type="submit">Custom</button>
+                        <form action="https://donate.stripe.com/eVabM1ekM6VP66k7sw">
+                            <button class="button-set-price" type="submit">$1</button>
+                        </form>
+                        <form action="https://donate.stripe.com/6oEeYdb8A1Bv0M07sx">
+                            <button class="button-set-price" type="submit">$5</button>
+                        </form>
+                        <form action="https://donate.stripe.com/28o9DTa4w93X66kaEK">
+                            <button class="button-set-price" type="submit">$10</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -98,18 +131,14 @@
                         </ul>
                     </div>
                     <div class="button-container">
-<<<<<<< HEAD
-                        <button class="button-set-price" type="button" id="donate-1"><a
-                                href="donate-checkout.html?val=donate-once-1">$1</a></button>
-                        <button class="button-set-price" type="submit">$5</button>
-                        <button class="button-set-price" type="submit">$10</button>
-                        <button class="button-custom" type="submit">Custom</button>
-=======
-                        <button class="button-set-price" type="button" id="donate-1"><a href="donate-checkout.html?val=donate-once-1">$1</a></button>
-                        <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-once-5">$5</a></button>
-                        <button class="button-set-price" type="submit"><a href="donate-checkout.html?val=donate-once-10">$10</a></button>
-                        <button class="button-custom" type="submit"><a href="donate-checkout.html?val=donate-once-custom">Custom</a></button>
->>>>>>> 48f90a61e8b859c935bdb92f1fa3ed3c04fdb82d
+                        <button class="button-set-price" type="submit"><a
+                                href="https://buy.stripe.com/eVadU94Kcgwp8esfYY">$1</a></button>
+                        <button class="button-set-price" type="submit"><a
+                                href="https://buy.stripe.com/fZe8zP3G85RL66k3cd">$5</a></button>
+                        <button class="button-set-price" type="submit"><a
+                                href="https://buy.stripe.com/eVa7vL90s3JDeCQbIK">$10</a></button>
+                        <button class="button-custom" type="submit"><a
+                                href="https://donate.stripe.com/8wM5nD4Kc4NHamA8wz">Custom</a></button>
                     </div>
                 </div>
             </div>
