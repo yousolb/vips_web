@@ -19,6 +19,15 @@ const loadImages = () => {
     console.log(product_object.product_images.length);
     let largeImg = document.querySelector(`.largeImg`)
     console.log(largeImg);
+    const button_div = document.getElementById("buy-button");
+    let form = document.createElement('form')
+    form.action = product_object.checkout_link
+    let buy_btn = document.createElement('button')
+    buy_btn.type = "submit"
+    buy_btn.className = "add-cart-btn"
+    buy_btn.innerText = "Buy"
+    form.appendChild(buy_btn)
+    button_div.appendChild(form)
     for (let i = 0; i < product_object.product_images.length; i++) { //product_object is being initialized fine so something is wrong in this loop
         let url = product_object.product_images[i]
         var li = document.createElement('li')
@@ -38,7 +47,6 @@ const loadImages = () => {
 await loadImages()
 
 export const artist_id = product_object.artist_id
-export const checkout_link = product_object.checkout_link
 
 setHTML('.product_name', product_object.product_name);
 setHTML('.product_price', product_object.product_price);

@@ -369,7 +369,7 @@
                     <script type="text/javascript" src="assets/js/custom.js"></script>
 
                     <script type="module">
-                        import { artist_id, checkout_link } from './shop_single.js';
+                        import { artist_id } from './shop_single.js';
 
                         function artistPage() {
                             window.location.href = `team_single.html?prodid=${artist_id}`;
@@ -381,16 +381,6 @@
                             if (imageElement) {
                                 imageElement.addEventListener('click', artistPage);
                             }
-
-                            const button_div = document.getElementById("buy-button");
-                            let form = document.createElement('form')
-                            form.action = checkout_link
-                            let buy_btn = document.createElement('button')
-                            buy_btn.type = "submit"
-                            buy_btn.className = "add-cart-btn"
-                            buy_btn.innerText = "Buy"
-                            form.appendChild(buy_btn)
-                            button_div.appendChild(form)
                         });
                     </script>
 
