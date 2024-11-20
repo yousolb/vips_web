@@ -156,6 +156,14 @@ strong {
 	font-weight: 700;
 }
 
+@media (max-width: 768px) {
+	b,
+	strong {
+		font-weight: 500;
+		font-size: 10px;
+	}
+}
+
 small {
 	font-size: 80%;
 }
@@ -372,6 +380,14 @@ p {
 	font-size: 15px;
 	font-weight: 400;
 	color: #696969;
+}
+
+@media (max-width: 768px) {
+    p {
+		font-size: 10px;
+		margin: 0;
+		padding: 0;
+	}
 }
 
 a {
@@ -3777,13 +3793,35 @@ div#filters {
 	gap: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .pics-images {
+        grid-template-columns: 1fr;
+		gap: 0.5rem;
+        grid-template-rows: auto;
+    }
+}
+
 .pics-images img {
 	border-radius: 10px;
 	height: 100%;
 }
 
+@media (max-width: 768px) {
+	.pics-images img {
+		width: 100%;
+	}
+}
+
 .image-btn {
 	height: 100%;
+	width: 100%;
+}
+
+@media (max-width: 768px) {
+	.image-btn{
+		height: 70%;
+		width: 100%;
+	}
 }
 
 .image-btn a:hover {
@@ -3801,8 +3839,21 @@ div#filters {
 	transition: all 100ms ease-out;
 }
 
+@media (max-width: 768px) {
+	.image-btn button {
+		position: relative;
+		color: white;
+		background-color: transparent;
+		padding: 0.25rem 1rem;
+		border: 1px solid white;
+		border-radius: 10px;
+		transition: all 100ms ease-out;
+		font-size: 10px;
+	}
+}
+
 #shop-now {
-	top: -1rem !important;
+	top: 0rem !important;
 }
 
 .image-btn button:hover {
@@ -3872,7 +3923,7 @@ div#filters {
 
 .scroll-button {
 	position: absolute;
-	top: 90%;
+	top: 80%;
 	right: 10px;
 	/* Adjust distance from right */
 	transform: translateY(-50%);
@@ -3889,6 +3940,22 @@ div#filters {
 	/* Center content vertically */
 }
 
+@media (max-width: 768px) {
+	.scroll-button {
+		position: absolute;
+		top: 45%;
+		right: 5px;
+		transform: translateY(-50%);
+		display: flex;
+		cursor: pointer;
+		width: 20px;
+		height: 20px;
+		z-index: 5;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .scroll-button::after {
 	content: '';
 	width: 0;
@@ -3900,6 +3967,18 @@ div#filters {
 	margin-left: 2px;
 }
 
+@media (max-width: 768px) {
+	.scroll-button::after {
+		content: '';
+		width: 0;
+		height: 0;
+		border-left: 5px solid white;
+		border-top: 3px solid transparent;
+		border-bottom: 3px solid transparent;
+		margin-left: 2px;
+	}
+}
+
 .shop-scroll-bar button {
 	background-color: #7F9558;
 	color: white;
@@ -3908,6 +3987,18 @@ div#filters {
 	justify-self: center;
 	border-radius: 50%;
 	/* Ensure it's a circle */
+}
+
+@media (max-width: 768px) {
+	.shop-scroll-bar button {
+		background-color: #7F9558;
+		color: white;
+		width: 20px;
+		height: 20px;
+		justify-self: center;
+		border-radius: 50%;
+		/* Ensure it's a circle */
+	}
 }
 
 .product-card {
@@ -3938,6 +4029,28 @@ div#filters {
 	white-space: nowrap;
 	padding: 10px; */
 }
+
+.sold-out img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.out-of-stock-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black;
+}
+
+.out-of-stock {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
 
 .collection-img {
 	position: relative;
@@ -4038,7 +4151,7 @@ ul>li>a:hover {
 	z-index: 1;
 }
 
-.collection-icon {
+/* .collection-icon {
 	position: absolute;
 	width: 100%;
 	top: 50%;
@@ -4071,7 +4184,7 @@ ul>li>a:hover {
 .collection-icon li a:hover {
 	background: #53a92c;
 	color: #fff;
-}
+} */
 
 .collection-content {
 	padding: 10px 0 10px 0;
@@ -4080,6 +4193,22 @@ ul>li>a:hover {
 .collection-content h4 a {
 	font-size: 15px;
 	font-weight: bold;
+}
+
+@media (max-width: 768px) {
+	.collection-content {
+		padding: 0 0 0 0;
+	}
+	.collection-content h4 a {
+		font-size: 10px;
+		font-weight: bold;
+	}
+	.collection-content h5 {
+		font-size: 8px;
+		text-transform: uppercase;
+		font-weight: normal;
+		color: #000;
+	}
 }
 
 .collection-content h5 {
@@ -4176,11 +4305,6 @@ ul>li>a:hover {
 	text-align: center;
 }
 
-.info-container .row {
-	padding-left: 40px;
-}
-
-
 .vips-info-bar {
 	width: 100%;
 	/* Adjust the width as needed */
@@ -4194,7 +4318,7 @@ ul>li>a:hover {
 	/* Adjust the width as needed */
 	padding: 30px;
 	text-align: center;
-	padding-left: 100px;
+	justify-content: center;
 }
 
 .learn-more-bar {
@@ -4225,6 +4349,19 @@ ul>li>a:hover {
 	border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+    .email-list-container {
+        width: 85%;
+		height: fit-content;
+		padding-right: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 1em 2em;
+		border-radius: 8px;
+    }
+}
+
 .email-list {
 	display: grid;
 	height: fit-content;
@@ -4233,12 +4370,30 @@ ul>li>a:hover {
 	gap: 1.5rem;
 }
 
+@media (max-width: 768px) {
+    .email-list {
+		width: 100%; /* Ensure it fills the container horizontally */
+        grid-template-columns: 1fr; /* Stack items vertically */
+        grid-template-rows: auto; /* Allow rows to auto-adjust for mobile */
+        gap: 1.5rem;
+    }
+}
+
 .left-section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	text-align: center;
+}
+
+@media (max-width: 768px) {
+    .left-section {
+        width: 100%;
+		justify-content: center;
+    	align-items: center;
+    	text-align: center;
+    }
 }
 
 .left-section h1 {
@@ -4251,6 +4406,17 @@ ul>li>a:hover {
 	align-items: center;
 }
 
+@media (max-width: 768px) {
+    .left-section h1 {
+		margin: 0 auto;
+    	align-items: center;
+		text-align: center;
+        font-size: 1.5em;
+		max-width: 60%;
+		margin-top: 15px;
+    }
+}
+
 .middle-section {
 	display: flex;
 	flex-direction: column;
@@ -4260,11 +4426,24 @@ ul>li>a:hover {
 	height: 100%;
 }
 
+@media (max-width: 768px) {
+    .middle-section {
+        margin-bottom: 2rem;
+		width: 100%;
+    }
+}
+
 .benefits-title {
 	font-weight: bold;
 	color: #7F9558;
 	align-items: left;
 	text-align: left;
+}
+
+@media (max-width: 768px) {
+    .benefits-title {
+        font-size: 1.2em;
+    }
 }
 
 .benefits-list {
@@ -4274,12 +4453,27 @@ ul>li>a:hover {
 	text-align: left;
 }
 
+@media (max-width: 768px) {
+    .benefits-list {
+        padding-left: 20px;
+        font-size: 1.1em;
+    }
+}
+
 .right-section {
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	display: flex;
 	height: 100%;
+}
+
+@media (max-width: 768px) {
+    .right-section {
+        width: 100%;
+		grid-template-columns: 1fr;
+		display: grid;
+    }
 }
 
 .right-section p {
@@ -4292,6 +4486,13 @@ ul>li>a:hover {
 	align-items: center;
 }
 
+@media (max-width: 768px) {
+    .right-section p {
+        font-size: 1em;
+		margin-bottom: 20px;
+    }
+}
+
 .right-section h1 {
 	font-size: 3em;
 	color: #7F9558;
@@ -4302,39 +4503,106 @@ ul>li>a:hover {
 	align-items: center;
 }
 
+@media (max-width: 768px) {
+    .right-section h1 {
+        font-size: 1.5em;
+		margin-bottom: 20px;
+    }
+}
+
+.right-section a {
+    color: #7F9558;
+	text-align: center;
+	max-width: 60%;
+	margin: 0 auto;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .right-section a {
+        font-size: 1.2em;
+    }
+}
+
 .article-row {
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: 40px;
+	padding-right: 40px;
 	padding-bottom: 40px;
 	text-align: right;
 	display: flex;
 	align-items: center;
 	float: left;
+	justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .article-row {
+        display: flex;
+		width: 95%;
+        flex-direction: column;
+        align-items: flex-start; 
+		align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+		margin-bottom: 1.5rem;
+    }
+}
+
+.article-row-container {
+	align-items: center;
+	display: grid;
+	height: fit-content;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 400px;
+	gap: 1.5rem;
 }
 
 .article-blurb {
-	text-align: left;
+	text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	max-width: 80%;
+    word-wrap: break-word;
 }
 
 .article-title {
 	font-size: 17px;
-	margin-bottom: 10px;
+	word-wrap: break-word;
+    margin-bottom: 0.5rem;
+    max-width: 300px;
 	color: black;
-	padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .article-title {
+		font-size: 15px;
+	}
 }
 
 .article-author {
 	font-size: 16px;
 	color: black;
-	margin-bottom: 15px;
-	padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .article-author {
+		font-size: 13px;
+	}
 }
 
 .article-text {
-	padding-top: 10px;
-	padding-left: 10px;
-	max-width: 300px;
+	max-width: 250px;
 }
+
+/* @media (max-width: 768px) {
+    .article-text {
+		max-width: 250px;
+	}
+} */
 
 /*=======================
 	End More Info Section 
