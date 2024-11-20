@@ -218,6 +218,60 @@ li span {
   background-color: white;
 }
 
+/*=========Resources Section==========*/
+.resource-container {
+  height: 100vh;
+  background-color: white;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.resource-container h2 {
+  font-size: 30px;
+}
+
+.resource-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 5rem; /* Adjusts the space between columns */
+  max-width: 90%; /* Adjust to your preference */
+  margin: 0 auto; /* Centers the grid on the page */
+  padding-top: 2rem;
+}
+
+.resource-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.resource-item img {
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.resource-item a {
+  color: black;
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  padding-top: 1rem;
+  line-height: normal;
+}
+
+.resource-item p {
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
 /*===================Start Mobile===================*/
 @media (max-width: 767px) {
   /*================ Header ===================*/
@@ -429,6 +483,62 @@ li span {
   .tier-4-button:hover {
     color: var(--tier-4-color);
     background-color: white;
+  }
+
+  /*=========Resources Section==========*/
+  .resource-container {
+    height: fit-content;
+    background-color: white;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .resource-container h2 {
+    font-size: 15px;
+  }
+
+  .resource-row {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    gap: 2.5rem; /* Adjusts the space between columns */
+    max-width: 90%; /* Adjust to your preference */
+    margin: 0 auto; /* Centers the grid on the page */
+    padding-top: 1rem;
+  }
+
+  .resource-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resource-item img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .resource-item a {
+    color: black;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0;
+    padding-top: 0.5rem;
+    line-height: normal;
+  }
+
+  .resource-item p {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: black;
   }
 }
 /*===================End Mobile===================*/

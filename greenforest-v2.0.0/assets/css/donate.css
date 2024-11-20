@@ -106,14 +106,32 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex: auto;
 }
 
+.monthly-button {
+  height: fit-content;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  font-weight: normal;
+  font-size: 24px;
+  text-transform: none;
+  transition: all 300ms ease-in-out;
+}
+
+.monthly-button:hover {
+  color: var(--tier-1-color);
+  background-color: white;
+}
+
 .button-set-price {
-  width: 15%;
-  height: 100%;
-  padding: 10px 0;
+  height: fit-content;
+  padding: 0 20px;
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 10px;
@@ -126,8 +144,8 @@
 }
 
 .button-custom {
-  width: 40%;
-  padding: 10px 0;
+  height: fit-content;
+  padding: 0 60px;
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 10px;
@@ -137,6 +155,35 @@
   font-size: 24px;
   text-transform: none;
   transition: all 300ms ease-in-out;
+}
+
+.button-set-price:hover {
+  color: var(--tier-2-color);
+  background-color: white;
+}
+
+.button-custom:hover {
+  color: var(--tier-2-color);
+  background-color: white;
+}
+
+.button-join-email {
+  height: fit-content;
+  padding: 0 40px;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: transparent;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: none;
+  transition: all 300ms ease-in-out;
+}
+
+.button-join-email:hover {
+  text-decoration: none;
+  color: black; 
 }
 
 /*===================Start Mobile===================*/
@@ -166,7 +213,7 @@
   /*================ Tier Container ===================*/
 
   .donation-section-new {
-    height: 70vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -239,14 +286,27 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex: auto;
   }
 
+  .monthly-button {
+    height: fit-content;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: normal;
+    font-size: 18px;
+    text-transform: none;
+    transition: all 300ms ease-in-out;
+  }
+
   .button-set-price {
-    width: 15%;
-    height: 100%;
-    padding: 5px 0;
+    height: fit-content;
+    padding: 0 10px;
     box-sizing: border-box;
     border: 1px solid white;
     border-radius: 5px;
@@ -259,8 +319,8 @@
   }
 
   .button-custom {
-    width: 40%;
-    padding: 5px 0;
+    height: fit-content;
+    padding: 0 30px;
     box-sizing: border-box;
     border: 1px solid white;
     border-radius: 5px;
@@ -270,6 +330,25 @@
     font-size: 18px;
     text-transform: none;
     transition: all 300ms ease-in-out;
+  }
+
+  .button-join-email {
+    height: fit-content;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: none;
+    transition: all 300ms ease-in-out;
+  }
+  
+  .button-join-email:hover {
+    text-decoration: none;
+    color: black; 
   }
 }
 /*===================End Mobile===================*/
