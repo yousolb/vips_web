@@ -269,6 +269,12 @@
     font-size: 15px;
   }
 
+  .donation-body b {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
   .donation-body ul {
     color: #fff;
     font-size: 15px;
