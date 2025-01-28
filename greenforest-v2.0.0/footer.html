@@ -1,96 +1,78 @@
-<!-- Start Footer -->
 <footer>
-    <div class="bg-footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="footer-top">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="footer-widgets">
-                                <div class="widgets-title"></div>
-                                <div class="widgets-content">
-                                    <div class="latest-news">
-                                        <!-- Form on top of social links -->
-                                        <div id="alert-container"></div>
-                                        <form style="margin-bottom: 20px;" id="mailing-form">
-                                            <input class="email-textbox" type="email" name="email"
-                                                placeholder="Enter your email" required>
-                                            <button class="email-btn" type="submit">
-                                                Subscribe
-                                            </button>
-                                        </form>
+    <div class="left-col">
+        <div id="alert-container"></div>
+        <form style="margin-bottom: 20px; display: flex; flex-direction: row;" id="mailing-form">
+            <input class="email-textbox" type="email" name="email" placeholder="Enter your email" required>
+            <button class="email-btn" type="submit" style="text-transform: none; font-size: medium;">
+                Subscribe
+            </button>
+        </form>
+        <li>
+            <span class="thumbnail-img" style="height: fit-content;">
+                <a href="https://instagram.com/vipsfund?igshid=YmMyMTA2M2Y=" style="margin-right: 10px;">
+                    <i class="fa fa-instagram" aria-hidden="true" style="font-size: 30px;"></i>
+                </a>
 
-                                        <!-- Social Media Links -->
-                                        <li>
-                                            <span class="thumbnail-img">
-                                                <a href="https://instagram.com/vipsfund?igshid=YmMyMTA2M2Y="
-                                                    style="margin-right: 10px;">
-                                                    <i class="fa fa-instagram" aria-hidden="true"
-                                                        style="font-size: 30px;"></i>
-                                                </a>
+                <style>
+                    @media (max-width: 768px) {
+                        .fa fa-instagram {
+                            font-size: 10px;
+                        }
+                    }
+                </style>
 
-                                                <style>
-                                                    @media (max-width: 768px) {
-                                                        .fa fa-instagram {
-                                                            font-size: 10px;
-                                                        }
-                                                    }
-                                                </style>
+                <a href="https://www.facebook.com/vipsfund" style="margin-right: 10px;">
+                    <i class="fa-brands fa-facebook" aria-hidden="true" style="font-size: 30px;"></i>
+                </a>
 
-                                                <a href="https://www.facebook.com/vipsfund" style="margin-right: 10px;">
-                                                    <i class="fa-brands fa-facebook" aria-hidden="true"
-                                                        style="font-size: 30px;"></i>
-                                                </a>
-
-                                                <a href="https://www.linkedin.com/company/vips-fund-nonprofit/">
-                                                    <i class="fa-brands fa-linkedin" aria-hidden="true"
-                                                        style="font-size: 30px;"></i>
-                                                </a>
-                                            </span>
-                                            <!-- .thumbnail-content -->
-                                        </li>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- .footer-widgets -->
-                        </div>
-                        <!-- .col-lg-3 -->
-                        <div class="col-sm-6">
-                            <div class="widgets-content">
-                                <h5>
-                                    <a href="contact.html">
-                                        <b>Contact</b>
-                                    </a> <br>
-                                </h5>
-                                <h5>
-                                    <a href="sustainability.html">
-                                        <b>Sustainability</b>
-                                    </a>
-                                </h5>
-                                <div class="line"></div>
-                                <h5>
-                                    <a>
-                                        <b>Very Important Primates Fund (VIPs Fund) 501(c)(3)</b>
-                                    </a> <br>
-                                </h5>
-                                <h5>
-                                    <a>
-                                        <b>© 2024 vipsfund.org</b>
-                                    </a>
-                                </h5>
-                            </div>
-                            <a href="http://interserver.net"><b>Powered by Interserver!</b>
-                        </div>
-                        <!-- .col-lg-3 -->
-                    </div>
-                    <!-- .row -->
-                </div>
-                <!-- .footer-top -->
-            </div>
-            <!-- .row -->
-        </div>
-        <!-- .container -->
+                <a href="https://www.linkedin.com/company/vips-fund-nonprofit/">
+                    <i class="fa-brands fa-linkedin" aria-hidden="true" style="font-size: 30px;"></i>
+                </a>
+            </span>
+        </li>
     </div>
-    <!-- .bg-footer-top -->
+    <div class="right-col">
+        <div class="">
+            <h5>
+                <a href="contact.html">
+                    <b>Contact</b>
+                </a> <br>
+            </h5>
+            <h5>
+                <a href="sustainability.html">
+                    <b>Sustainability</b>
+                </a>
+            </h5>
+            <div class="line"></div>
+            <h5>
+                <a>
+                    <b>Very Important Primates Fund (VIPs Fund) 501(c)(3)</b>
+                </a> <br>
+            </h5>
+            <h5>
+                <a>
+                    <b>© 2024 vipsfund.org</b>
+                </a>
+            </h5>
+        </div>
+        <a href="http://interserver.net"><b>Powered by Interserver!</b>
+    </div>
+    <style>
+        @media (max-width: 768px) {
+            footer {
+                background: #28562B;
+                padding: 2rem;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            footer>first-child {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: baseline;
+            }
+        }
+    </style>
 </footer>
-<!-- End Footer -->
