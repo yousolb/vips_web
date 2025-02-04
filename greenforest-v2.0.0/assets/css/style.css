@@ -3843,7 +3843,7 @@ div#filters {
 
 @media (max-width: 768px) {
 	.image-btn {
-		height: 70%;
+		height: 90%;
 		width: 100%;
         justify-content: center; /* Horizontally center the button */
         align-items: center;
@@ -4390,7 +4390,7 @@ ul>li>a:hover {
 	.prod-bar {
 		width: 95%;
 		/* Adjust the width as needed */
-		padding: 30px;
+		padding: 10px;
 		text-align: center;
 		padding-left: 50px;
 		padding-right: 50px;
